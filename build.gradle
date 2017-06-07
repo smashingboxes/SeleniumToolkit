@@ -6,6 +6,7 @@
  * user guide available at https://docs.gradle.org/3.5/userguide/java_library_plugin.html
  */
 group = 'com.smashingboxes.seleniumtoolkit'
+version = '0.1'
 
 // Apply the java-library plugin to add support for Java Library
 apply plugin: 'java-library'
