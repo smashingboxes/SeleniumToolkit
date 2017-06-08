@@ -15,4 +15,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'SeleniumFramework2beta'
+rootProject.name = 'SeleniumToolkit'
