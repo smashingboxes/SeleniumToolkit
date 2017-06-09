@@ -17,7 +17,7 @@ public class Commands {
 
 	public static void assertInTable(WebDriver d, String attrType, String attrValue, String uniqueCol, HashMap<String, String> hm, Boolean click, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue).findElement(By.xpath("/tbody/"));
-		List<WebElement> elHeaders = CommandHelpers.getElementsBy(null, el, PropsCommands.trth);  //tr[0]/th level (WebElement list of headers)
+		List<WebElement> elHeaders = CommandHelpers.getElementsBy(null, el, PropsCommands.xpath, PropsCommands.trth);  //tr[0]/th level (WebElement list of headers)
 		List<String> listHeaders = new ArrayList<String>();
 		Integer iUniqueCol = -1;
 		
@@ -31,11 +31,11 @@ public class Commands {
 		
 		//If there are headers and if there is a unique column index
 		if (listHeaders != null && iUniqueCol != -1){
-			List<WebElement> elRows = CommandHelpers.getElementsBy(null, el, PropsCommands.tr);  //tr level (List of rows)
+			List<WebElement> elRows = CommandHelpers.getElementsBy(null, el, PropsCommands.xpath, PropsCommands.tr);  //tr level (List of rows)
 			Boolean foundRow = false;
 			//Loop through all table rows except header row
 			for (int i=1; i<elRows.size(); i++){
-				List<WebElement> elCells = CommandHelpers.getElementsBy(null, elRows.get(i), PropsCommands.td);
+				List<WebElement> elCells = CommandHelpers.getElementsBy(null, elRows.get(i), PropsCommands.xpath, PropsCommands.td);
 				//If cell text equals the expected value for that specific column
 				if (elCells.get(iUniqueCol).getText() == hm.get(uniqueCol)){
 					foundRow = false;
@@ -62,6 +62,22 @@ public class Commands {
 				}
 			}
 		}
+	}
+	
+	public static void assertRadio(WebDriver d, String attrType, String attrValue, String expValue, Boolean click, String desc){
+		List<WebElement> el = CommandHelpers.getElementsBy(d, null, attrType, attrValue);
+		for (int i=0; i<el.size(); i++){
+			if (el.get(i).getAttribute("value").equalsIgnoreCase(expValue)){
+				if (!click){  //if asserting selected value
+					assertEquals(el.get(i).isSelected(), true);
+					break;
+				} else {  //else if clicking on an option
+					el.get(i).click();
+					break;
+				}
+			}
+		}
+		
 	}
 	
 	public static void assertText(WebDriver d, String attrType, String attrValue, String expValue, String desc){

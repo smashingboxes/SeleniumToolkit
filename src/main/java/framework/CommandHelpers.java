@@ -11,20 +11,34 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class CommandHelpers {
+	
 	public static WebElement getElementBy(WebDriver d, String attrType, String attrValue){
 		switch(attrType){
 			case "id": return d.findElement(By.id(attrValue));
 			case "name": return d.findElement(By.name(attrValue));
 			case "cssSelector": return d.findElement(By.cssSelector(attrValue));
+			case "xpath": return d.findElement(By.xpath(attrValue));
 			default: return null;
 		}
 	}
 	
-	public static List<WebElement> getElementsBy(WebDriver d, WebElement el, String listTag){
+	public static List<WebElement> getElementsBy(WebDriver d, WebElement el, String attrType, String attrValue){
 		if (d.equals(null)){
-			return el.findElements(By.xpath(listTag));
+			switch(attrType){
+				case "id": return el.findElements(By.id(attrValue));
+				case "name": return el.findElements(By.name(attrValue));
+				case "cssSelector": return el.findElements(By.cssSelector(attrValue));
+				case "xpath": return el.findElements(By.xpath(attrValue));
+				default: return null;
+			}
 		} else {
-			return d.findElements(By.xpath(listTag));
+			switch(attrType){
+				case "id": return d.findElements(By.id(attrValue));
+				case "name": return d.findElements(By.name(attrValue));
+				case "cssSelector": return d.findElements(By.cssSelector(attrValue));
+				case "xpath": return d.findElements(By.xpath(attrValue));
+				default: return null;
+			}
 		}
 	}
 	
