@@ -10,7 +10,7 @@ public class Drivers {
 
 	//Chrome WebDriver
 	public static WebDriver chromeDriver(WebDriver d, String app){
-		System.setProperty("webdriver.chrome.driver", "exe/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "webDrivers/chromedriver");
 		d = new ChromeDriver();
 		d.get(app);
 		return d;
@@ -28,7 +28,7 @@ public class Drivers {
 	//Also, there is a known issue with geckodriver
 	public static WebDriver firefoxDriver(WebDriver d, String app){
 		//Configure to use GeckoDriver
-		System.setProperty("webdriver.gecko.driver", "exe/geckodriver");
+		System.setProperty("webdriver.gecko.driver", "webDrivers/geckodriver");
 		DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 		capabilities.setCapability("marionette", true);
 		
