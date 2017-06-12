@@ -106,7 +106,7 @@ public class Commands {
 	public static void waitForEl(WebDriver d, String attrType, String attrValue){
 		String desc = "Waiting for next element to be visible";
 		WebDriverWait wait = new WebDriverWait(d, 10);
-		wait.until(ExpectedConditions.visibilityOf(CommandHelpers.getElementBy(d, attrType, attrValue)));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(CommandHelpers.getVisibleElementBy(d, attrType, attrValue)));
 		CommandHelpers.printSteps(PropsCommands.waitForEl, desc);
 	}
 	
