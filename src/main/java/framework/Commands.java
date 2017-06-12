@@ -104,11 +104,10 @@ public class Commands {
 	}
 	
 	public static void waitForEl(WebDriver d, String attrType, String attrValue){
-		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
-		WebDriverWait wait = new WebDriverWait(d, 30);
 		String desc = "Waiting for next element to be visible";
+		WebDriverWait wait = new WebDriverWait(d, 10);
+		wait.until(ExpectedConditions.visibilityOf(CommandHelpers.getElementBy(d, attrType, attrValue)));
 		CommandHelpers.printSteps(PropsCommands.waitForEl, desc);
-		el = wait.until(ExpectedConditions.visibilityOf(el));
 	}
 	
 	public static void waitForSecs(Integer secs){
