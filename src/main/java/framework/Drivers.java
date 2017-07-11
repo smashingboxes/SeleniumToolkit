@@ -74,7 +74,7 @@ public class Drivers {
 				caps.setCapability("version", "52.0");
 				
 				switch (platform){
-					case "Windows": caps.setCapability("platform", platform); return caps;
+					case "Windows 10": caps.setCapability("platform", platform); return caps;
 					default: return null;
 				}
 			case "chrome":
@@ -82,7 +82,7 @@ public class Drivers {
 				caps.setCapability("version", "58");
 				
 				switch (platform){
-					case "Windows": caps.setCapability("platform", platform); return caps;
+					case "Windows 10": caps.setCapability("platform", platform); return caps;
 				default: return null;
 			}
 			default: return null;
