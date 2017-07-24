@@ -64,15 +64,44 @@ public class Commands {
 		}
 	}
 	
+	public static void assertInList(WebDriver d, String attrType, String attrValue, String itemValue, String parentXPATH, Boolean isDatePicker, Boolean click, String desc){
+		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue).findElement(By.xpath(parentXPATH));
+		List<WebElement> elItems = CommandHelpers.getElementsBy(d, el, PropsCommands.xpath, PropsCommands.div);
+		Boolean foundRow = false;
+		
+		//Loop through items in list
+		for (int i=0; i<elItems.size(); i++){
+			if (elItems.get(i).getText().equals(itemValue)){
+				foundRow = true;
+				
+				if (!click){
+					assertEquals(elItems.get(i).isSelected(), true);
+					CommandHelpers.printSteps(PropsCommands.assertText, desc);
+				} else {
+					elItems.get(i).click();
+					CommandHelpers.printSteps(PropsCommands.click, desc);
+				}
+				
+				break;
+			}
+		}
+		
+		if (!foundRow){
+			fail("Cannot find " + itemValue + " in the list");
+		}
+	}
+	
 	public static void assertRadio(WebDriver d, String attrType, String attrValue, String expValue, Boolean click, String desc){
 		List<WebElement> el = CommandHelpers.getElementsBy(d, null, attrType, attrValue);
 		for (int i=0; i<el.size(); i++){
 			if (el.get(i).getAttribute("value").equalsIgnoreCase(expValue)){
 				if (!click){  //if asserting selected value
 					assertEquals(el.get(i).isSelected(), true);
+					CommandHelpers.printSteps(PropsCommands.assertText, desc);
 					break;
 				} else {  //else if clicking on an option
 					el.get(i).click();
+					CommandHelpers.printSteps(PropsCommands.click, desc);
 					break;
 				}
 			}
@@ -101,6 +130,7 @@ public class Commands {
 	public static void selectOption(WebDriver d, String attrType, String attrValue, String getBy, String thisString, Integer thisIndex, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
 		CommandHelpers.getSelectOptionBy(d, el, getBy, attrValue, thisIndex);
+		CommandHelpers.printSteps(PropsCommands.selectOption, desc);
 	}
 	
 	public static void waitForEl(WebDriver d, String attrType, String attrValue){
