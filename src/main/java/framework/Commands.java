@@ -10,6 +10,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -119,6 +120,13 @@ public class Commands {
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
 		el.click();
 		CommandHelpers.printSteps(PropsCommands.click, desc);
+	}
+	
+	public static void clickOffSet(WebDriver d, String attrType, String attrValue, String desc){
+		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
+		int width = el.getSize().getWidth();
+		Actions act = new Actions(d);
+		act.moveToElement(el).moveByOffset((width/2)-2, 0).click().perform();
 	}
 	
 	public static void enterText(WebDriver d, String attrType, String attrValue, String thisString, String desc){
