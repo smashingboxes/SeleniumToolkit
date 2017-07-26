@@ -137,7 +137,7 @@ public class Commands {
 	
 	public static void selectOption(WebDriver d, String attrType, String attrValue, String getBy, String thisString, Integer thisIndex, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
-		CommandHelpers.getSelectOptionBy(d, el, getBy, attrValue, thisIndex);
+		CommandHelpers.getSelectOptionBy(d, el, getBy, thisString, thisIndex);
 		CommandHelpers.printSteps(PropsCommands.selectOption, desc);
 	}
 	

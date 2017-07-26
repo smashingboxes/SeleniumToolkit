@@ -52,11 +52,11 @@ public class CommandHelpers {
 		}
 	}
 	
-	public static void getSelectOptionBy(WebDriver d, WebElement el, String getBy, String attrValue, Integer attrIndex){
+	public static void getSelectOptionBy(WebDriver d, WebElement el, String getBy, String thisString, Integer attrIndex){
 		Select select = new Select(el);
 		switch(getBy){
-			case "visibleText": select.selectByVisibleText(attrValue);
-			case "value": select.selectByValue(attrValue);
+			case "visibleText": select.selectByVisibleText(thisString);
+			case "value": select.selectByValue(thisString);
 			case "index": select.selectByIndex(attrIndex);
 		}
 	}
