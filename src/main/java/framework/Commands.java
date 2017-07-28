@@ -65,13 +65,24 @@ public class Commands {
 		}
 	}
 	
-	public static void assertInList(WebDriver d, String attrType, String attrValue, String itemValue, String parentXPATH, Boolean isDatePicker, Boolean click, String desc){
-		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue).findElement(By.xpath(parentXPATH));
-		List<WebElement> elItems = CommandHelpers.getElementsBy(d, el, PropsCommands.xpath, PropsCommands.div);
+	public static void assertInList(WebDriver d, String attrType, String attrValue, String itemValue, String[] tagName, Boolean click, String desc){
+		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
+		List<WebElement> elItems = el.findElements(By.tagName(tagName[0]));
+//		List<WebElement> elNestedItems = null;
 		Boolean foundRow = false;
+//		Boolean multTagNames = false;
+		
+//		if (tagName.length<1){
+//			multTagNames = true;
+//		}
+
+		System.out.println(tagName.length);
+//		System.out.println(multTagNames);
 		
 		//Loop through items in list
 		for (int i=0; i<elItems.size(); i++){
+			System.out.println(elItems.get(i).getText());
+			
 			if (elItems.get(i).getText().equals(itemValue)){
 				foundRow = true;
 				
@@ -85,6 +96,47 @@ public class Commands {
 				
 				break;
 			}
+			
+			
+			
+//			//If there's only one level in the list
+//			if (!multTagNames){
+//				System.out.println(elItems.get(i).getText());
+//				if (elItems.get(i).getText().equals(itemValue)){
+//					foundRow = true;
+//					
+//					if (!click){
+//						assertEquals(elItems.get(i).isSelected(), true);
+//						CommandHelpers.printSteps(PropsCommands.assertText, desc);
+//					} else {
+//						elItems.get(i).click();
+//						CommandHelpers.printSteps(PropsCommands.click, desc);
+//					}
+//					
+//					break;
+//				}
+//			} else { //If there are more than one levels in the list
+//				for (int ii=1; ii<=tagName.length; ii++){
+//					elNestedItems = elItems.get(i).findElements(By.tagName(tagName[ii]));
+//				}
+//				
+//				for (int ii=0; ii<elNestedItems.size(); ii++){
+//					if (elNestedItems.get(ii).getText().equals(itemValue)){
+//						foundRow = true;
+//						
+//						if (!click){
+//							assertEquals(elNestedItems.get(ii).isSelected(), true);
+//							CommandHelpers.printSteps(PropsCommands.assertText, desc);
+//						} else {
+//							elNestedItems.get(ii).click();
+//							CommandHelpers.printSteps(PropsCommands.click, desc);
+//						}
+//						
+//						break;
+//					}
+//				}
+//			}
+			
 		}
 		
 		if (!foundRow){

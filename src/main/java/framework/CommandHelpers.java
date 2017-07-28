@@ -55,9 +55,9 @@ public class CommandHelpers {
 	public static void getSelectOptionBy(WebDriver d, WebElement el, String getBy, String thisString, Integer attrIndex){
 		Select select = new Select(el);
 		switch(getBy){
-			case "visibleText": select.selectByVisibleText(thisString);
-			case "value": select.selectByValue(thisString);
-			case "index": select.selectByIndex(attrIndex);
+			case "visibleText": select.selectByVisibleText(thisString); break;
+			case "value": select.selectByValue(thisString); break;
+			case "index": select.selectByIndex(attrIndex); break;
 		}
 	}
 	
