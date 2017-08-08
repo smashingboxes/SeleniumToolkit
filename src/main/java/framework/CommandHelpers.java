@@ -49,6 +49,7 @@ public class CommandHelpers {
 			case "name": return By.name(attrValue);
 			case "cssSelector": return By.cssSelector(attrValue);
 			case "xpath": return By.xpath(attrValue);
+			case "linkText": return By.linkText(attrValue);
 			default: return null;
 		}
 	}
