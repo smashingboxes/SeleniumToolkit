@@ -18,6 +18,7 @@ public class CommandHelpers {
 			case "name": return d.findElement(By.name(attrValue));
 			case "cssSelector": return d.findElement(By.cssSelector(attrValue));
 			case "xpath": return d.findElement(By.xpath(attrValue));
+			case "linkText": return d.findElement(By.linkText(attrValue));
 			default: return null;
 		}
 	}
