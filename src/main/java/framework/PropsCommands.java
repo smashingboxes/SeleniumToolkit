@@ -8,6 +8,7 @@ public interface PropsCommands {
 	public String cssSelector = "cssSelector";
 	public String xpath = "xpath";
 	public String linkText = "linkText";
+	public String className = "className";
 	
 	//Select getBy types
 	public String visibleText = "visibleText";

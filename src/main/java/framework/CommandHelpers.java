@@ -19,6 +19,7 @@ public class CommandHelpers {
 			case "cssSelector": return d.findElement(By.cssSelector(attrValue));
 			case "xpath": return d.findElement(By.xpath(attrValue));
 			case "linkText": return d.findElement(By.linkText(attrValue));
+			case "className": return d.findElement(By.className(attrValue));
 			default: return null;
 		}
 	}
@@ -30,6 +31,8 @@ public class CommandHelpers {
 				case "name": return el.findElements(By.name(attrValue));
 				case "cssSelector": return el.findElements(By.cssSelector(attrValue));
 				case "xpath": return el.findElements(By.xpath(attrValue));
+				case "linkText": return el.findElements(By.linkText(attrValue));
+				case "className": return el.findElements(By.className(attrValue));
 				default: return null;
 			}
 		} else {
@@ -38,6 +41,8 @@ public class CommandHelpers {
 				case "name": return d.findElements(By.name(attrValue));
 				case "cssSelector": return d.findElements(By.cssSelector(attrValue));
 				case "xpath": return d.findElements(By.xpath(attrValue));
+				case "linkText": return d.findElements(By.linkText(attrValue));
+				case "className": return d.findElements(By.className(attrValue));
 				default: return null;
 			}
 		}
@@ -50,6 +55,7 @@ public class CommandHelpers {
 			case "cssSelector": return By.cssSelector(attrValue);
 			case "xpath": return By.xpath(attrValue);
 			case "linkText": return By.linkText(attrValue);
+			case "className": return By.className(attrValue);
 			default: return null;
 		}
 	}
