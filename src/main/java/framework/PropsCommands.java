@@ -31,5 +31,5 @@ public interface PropsCommands {
 	public String tr = "/tr";
 	public String trth = "/tr[0]/th";
 	public String trtd = "/tr/td";
-	public String div = "/div/";
+	public String div = "div";
 }

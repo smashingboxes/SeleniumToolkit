@@ -65,9 +65,9 @@ public class Commands {
 		}
 	}
 	
-	public static void assertInList(WebDriver d, String attrType, String attrValue, String itemValue, String[] tagName, Boolean click, String desc){
+	public static void assertInList(WebDriver d, String attrType, String attrValue, String itemValue, String tagName, Boolean click, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
-		List<WebElement> elItems = el.findElements(By.tagName(tagName[0]));
+		List<WebElement> elItems = el.findElements(By.tagName(tagName));
 //		List<WebElement> elNestedItems = null;
 		Boolean foundRow = false;
 //		Boolean multTagNames = false;
@@ -75,9 +75,6 @@ public class Commands {
 //		if (tagName.length<1){
 //			multTagNames = true;
 //		}
-
-		System.out.println(tagName.length);
-//		System.out.println(multTagNames);
 		
 		//Loop through items in list
 		for (int i=0; i<elItems.size(); i++){

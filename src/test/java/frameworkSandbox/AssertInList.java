@@ -32,7 +32,7 @@ public class AssertInList {
 		
 //		d.findElement(By.cssSelector(cssDropdown));
 //		Commands.selectOption(d, PropsCommands.cssSelector, cssDropdown, PropsCommands.visibleText, "Value 3", null, null);
-		String[] tagNames = {"article"};
+		String tagNames = "article";
 		Commands.assertInList(d, PropsCommands.cssSelector, cssNewsList, "Thousands leave NC island after power loss", tagNames, true, null);
 	}
 }
