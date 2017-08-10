@@ -20,6 +20,8 @@ public interface PropsCommands {
 	public String enterText = "enterText";
 	public String assertText = "assertText";
 	public String assertInList = "assertInList";
+	public String clickOffset = "clickOffset";
+	public String fileUpload = "fileUpload";
 	public String selectOption = "selectOption";
 	public String waitForSecs = "waitForSecs";
 	public String waitForEl = "waitForEl";

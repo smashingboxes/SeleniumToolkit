@@ -68,17 +68,10 @@ public class Commands {
 	public static void assertInList(WebDriver d, String attrType, String attrValue, String itemValue, String tagName, Boolean click, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
 		List<WebElement> elItems = el.findElements(By.tagName(tagName));
-//		List<WebElement> elNestedItems = null;
 		Boolean foundRow = false;
-//		Boolean multTagNames = false;
-		
-//		if (tagName.length<1){
-//			multTagNames = true;
-//		}
 		
 		//Loop through items in list
 		for (int i=0; i<elItems.size(); i++){
-			System.out.println(elItems.get(i).getText());
 			
 			if (elItems.get(i).getText().equals(itemValue)){
 				foundRow = true;
@@ -93,47 +86,6 @@ public class Commands {
 				
 				break;
 			}
-			
-			
-			
-//			//If there's only one level in the list
-//			if (!multTagNames){
-//				System.out.println(elItems.get(i).getText());
-//				if (elItems.get(i).getText().equals(itemValue)){
-//					foundRow = true;
-//					
-//					if (!click){
-//						assertEquals(elItems.get(i).isSelected(), true);
-//						CommandHelpers.printSteps(PropsCommands.assertText, desc);
-//					} else {
-//						elItems.get(i).click();
-//						CommandHelpers.printSteps(PropsCommands.click, desc);
-//					}
-//					
-//					break;
-//				}
-//			} else { //If there are more than one levels in the list
-//				for (int ii=1; ii<=tagName.length; ii++){
-//					elNestedItems = elItems.get(i).findElements(By.tagName(tagName[ii]));
-//				}
-//				
-//				for (int ii=0; ii<elNestedItems.size(); ii++){
-//					if (elNestedItems.get(ii).getText().equals(itemValue)){
-//						foundRow = true;
-//						
-//						if (!click){
-//							assertEquals(elNestedItems.get(ii).isSelected(), true);
-//							CommandHelpers.printSteps(PropsCommands.assertText, desc);
-//						} else {
-//							elNestedItems.get(ii).click();
-//							CommandHelpers.printSteps(PropsCommands.click, desc);
-//						}
-//						
-//						break;
-//					}
-//				}
-//			}
-			
 		}
 		
 		if (!foundRow){
@@ -156,7 +108,6 @@ public class Commands {
 				}
 			}
 		}
-		
 	}
 	
 	public static void assertText(WebDriver d, String attrType, String attrValue, String expValue, String desc){
@@ -176,12 +127,19 @@ public class Commands {
 		int width = el.getSize().getWidth();
 		Actions act = new Actions(d);
 		act.moveToElement(el).moveByOffset((width/2)-2, 0).click().perform();
+		CommandHelpers.printSteps(PropsCommands.clickOffset, desc);
 	}
 	
 	public static void enterText(WebDriver d, String attrType, String attrValue, String thisString, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
 		el.sendKeys(thisString);
 		CommandHelpers.printSteps(PropsCommands.enterText, desc);
+	}
+	
+	public static void fileUpload(WebDriver d, String attrType, String attrValue, String fileDir, String desc){
+		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
+		el.sendKeys(fileDir);
+		CommandHelpers.printSteps(PropsCommands.fileUpload, desc);
 	}
 	
 	public static void selectOption(WebDriver d, String attrType, String attrValue, String getBy, String thisString, Integer thisIndex, String desc){
