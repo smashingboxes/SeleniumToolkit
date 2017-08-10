@@ -132,6 +132,7 @@ public class Commands {
 	
 	public static void enterText(WebDriver d, String attrType, String attrValue, String thisString, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
+		el.clear();
 		el.sendKeys(thisString);
 		CommandHelpers.printSteps(PropsCommands.enterText, desc);
 	}
