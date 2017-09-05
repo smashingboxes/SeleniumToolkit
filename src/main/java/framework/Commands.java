@@ -121,6 +121,11 @@ public class Commands {
 		el.click();
 		CommandHelpers.printSteps(PropsCommands.click, desc);
 	}
+
+	public static void click(WebElement el, String desc){
+		el.click();
+		CommandHelpers.printSteps(PropsCommands.click, desc);
+	}
 	
 	public static void clickOffSet(WebDriver d, String attrType, String attrValue, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
@@ -136,9 +141,20 @@ public class Commands {
 		el.sendKeys(thisString);
 		CommandHelpers.printSteps(PropsCommands.enterText, desc);
 	}
+
+	public static void enterText(WebElement el, String thisString, String desc){
+		el.clear();
+		el.sendKeys(thisString);
+		CommandHelpers.printSteps(PropsCommands.enterText, desc);
+	}
 	
 	public static void fileUpload(WebDriver d, String attrType, String attrValue, String fileDir, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
+		el.sendKeys(fileDir);
+		CommandHelpers.printSteps(PropsCommands.fileUpload, desc);
+	}
+
+	public static void fileUpload(WebElement el, String fileDir, String desc){
 		el.sendKeys(fileDir);
 		CommandHelpers.printSteps(PropsCommands.fileUpload, desc);
 	}
