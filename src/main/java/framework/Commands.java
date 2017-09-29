@@ -171,6 +171,13 @@ public class Commands {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(CommandHelpers.getVisibleElementBy(d, attrType, attrValue)));
 		CommandHelpers.printSteps(PropsCommands.waitForEl, desc);
 	}
+
+	public static void waitForEl(WebDriver d, WebElement el){
+		String desc = "Waiting for next element to be visible";
+		WebDriverWait wait = new WebDriverWait(d, 10);
+		wait.until(ExpectedConditions.visibilityOf(el));
+		CommandHelpers.printSteps(PropsCommands.waitForEl, desc);
+	}
 	
 	public static void waitForSecs(Integer secs){
 		try {
