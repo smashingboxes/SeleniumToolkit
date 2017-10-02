@@ -136,6 +136,14 @@ public class Commands {
 	
 	public static void clickOffSet(WebDriver d, String attrType, String attrValue, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
+		clickOffSet(d, el, desc);
+//		int width = el.getSize().getWidth();
+//		Actions act = new Actions(d);
+//		act.moveToElement(el).moveByOffset((width/2)-2, 0).click().perform();
+//		CommandHelpers.printSteps(PropsCommands.clickOffset, desc);
+	}
+
+	public static void clickOffSet(WebDriver d, WebElement el, String desc){
 		int width = el.getSize().getWidth();
 		Actions act = new Actions(d);
 		act.moveToElement(el).moveByOffset((width/2)-2, 0).click().perform();
@@ -197,5 +205,17 @@ public class Commands {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	public static void waitForURL(WebDriver d, String urlContain){
+		Integer i = 0;
+		do{
+			if (!d.getCurrentUrl().contains(urlContain)) {
+				Commands.waitForSecs(1000);
+				i++;
+			} else {
+				break;
+			}
+		} while (i < 10);
 	}
 }
