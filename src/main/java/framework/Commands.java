@@ -112,14 +112,21 @@ public class Commands {
 	
 	public static void assertText(WebDriver d, String attrType, String attrValue, String expValue, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
-		assertEquals(el.getText(), expValue);
-		CommandHelpers.printSteps(PropsCommands.assertText, desc);
+		assertText(el, expValue, desc);
+//		assertEquals(el.getText(), expValue);
+//		CommandHelpers.printSteps(PropsCommands.assertText, desc);
 	}
+
+	public static void assertText(WebElement el, String expValue, String desc){
+        assertEquals(el.getText(), expValue);
+        CommandHelpers.printSteps(PropsCommands.assertText, desc);
+    }
 	
 	public static void click(WebDriver d, String attrType, String attrValue, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
-		el.click();
-		CommandHelpers.printSteps(PropsCommands.click, desc);
+		click(el, desc);
+//		el.click();
+//		CommandHelpers.printSteps(PropsCommands.click, desc);
 	}
 
 	public static void click(WebElement el, String desc){
@@ -137,9 +144,10 @@ public class Commands {
 	
 	public static void enterText(WebDriver d, String attrType, String attrValue, String thisString, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
-		el.clear();
-		el.sendKeys(thisString);
-		CommandHelpers.printSteps(PropsCommands.enterText, desc);
+		enterText(el, thisString, desc);
+//		el.clear();
+//		el.sendKeys(thisString);
+//		CommandHelpers.printSteps(PropsCommands.enterText, desc);
 	}
 
 	public static void enterText(WebElement el, String thisString, String desc){
@@ -150,8 +158,9 @@ public class Commands {
 	
 	public static void fileUpload(WebDriver d, String attrType, String attrValue, String fileDir, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
-		el.sendKeys(fileDir);
-		CommandHelpers.printSteps(PropsCommands.fileUpload, desc);
+		fileUpload(el, fileDir, desc);
+//		el.sendKeys(fileDir);
+//		CommandHelpers.printSteps(PropsCommands.fileUpload, desc);
 	}
 
 	public static void fileUpload(WebElement el, String fileDir, String desc){
