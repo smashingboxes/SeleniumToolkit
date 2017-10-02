@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -15,6 +16,19 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Commands {
+
+	public static void assertClick(WebDriver d, String attrType, String attrValue, String func, Boolean check, String desc){
+		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
+		assertClick(el, func, check, desc);
+	}
+
+	public static void assertClick(WebElement el, String func, Boolean check, String desc){
+		if ((!el.getAttribute("class").contains("checked") && check) || (el.getAttribute("class").contains("checked") && !check)){
+			el.click();
+		}
+
+		CommandHelpers.printSteps(func, desc);
+	}
 
 	public static void assertInTable(WebDriver d, String attrType, String attrValue, String uniqueCol, HashMap<String, String> hm, Boolean click, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue).findElement(By.xpath("/tbody/"));
@@ -67,30 +81,7 @@ public class Commands {
 	
 	public static void assertInList(WebDriver d, String attrType, String attrValue, String itemValue, String tagName, Boolean click, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
-		List<WebElement> elItems = el.findElements(By.tagName(tagName));
-		Boolean foundRow = false;
-		
-		//Loop through items in list
-		for (int i=0; i<elItems.size(); i++){
-			
-			if (elItems.get(i).getText().equals(itemValue)){
-				foundRow = true;
-				
-				if (!click){
-					assertEquals(elItems.get(i).isSelected(), true);
-					CommandHelpers.printSteps(PropsCommands.assertText, desc);
-				} else {
-					elItems.get(i).click();
-					CommandHelpers.printSteps(PropsCommands.click, desc);
-				}
-				
-				break;
-			}
-		}
-		
-		if (!foundRow){
-			fail("Cannot find " + itemValue + " in the list");
-		}
+		assertInList(el, itemValue, tagName, click, desc);
 	}
 
     public static void assertInList(WebElement el, String itemValue, String tagName, Boolean click, String desc){
@@ -108,8 +99,6 @@ public class Commands {
                     CommandHelpers.printSteps(PropsCommands.assertText, desc);
                 } else {
                     click(elItems.get(i), desc);
-//                    elItems.get(i).click();
-//                    CommandHelpers.printSteps(PropsCommands.click, desc);
                 }
 
                 break;
@@ -189,6 +178,11 @@ public class Commands {
 	public static void fileUpload(WebElement el, String fileDir, String desc){
 		el.sendKeys(fileDir);
 		CommandHelpers.printSteps(PropsCommands.fileUpload, desc);
+	}
+
+	public static void scrollToEl(WebDriver d, WebElement el){
+		JavascriptExecutor jse = (JavascriptExecutor)d;
+		jse.executeScript("arguments[0].scrollIntoView()", el);
 	}
 	
 	public static void selectOption(WebDriver d, String attrType, String attrValue, String getBy, String thisString, Integer thisIndex, String desc){
