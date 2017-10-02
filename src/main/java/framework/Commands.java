@@ -180,6 +180,23 @@ public class Commands {
 		CommandHelpers.printSteps(PropsCommands.fileUpload, desc);
 	}
 
+	public static void uploadInputHidden(WebDriver d, String attrType, String attrValue, String thisString, String desc){
+		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
+		uploadInputHidden(d, el, thisString, desc);
+	}
+
+	public static void uploadInputHidden(WebDriver d, WebElement el, String thisString, String desc){
+		((JavascriptExecutor) d).executeScript("arguments[0].removeAttribute('style','style')", el);
+		enterText(el, thisString, desc);
+	}
+
+	public static void uploadLoop(WebElement el, List<String> upStrings){
+		for (String thisString : upStrings){
+			el.sendKeys(thisString);
+			waitForSecs(2000);
+		}
+	}
+
 	public static void scrollToEl(WebDriver d, WebElement el){
 		JavascriptExecutor jse = (JavascriptExecutor)d;
 		jse.executeScript("arguments[0].scrollIntoView()", el);
