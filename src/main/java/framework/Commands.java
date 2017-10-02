@@ -92,6 +92,34 @@ public class Commands {
 			fail("Cannot find " + itemValue + " in the list");
 		}
 	}
+
+    public static void assertInList(WebElement el, String itemValue, String tagName, Boolean click, String desc){
+        List<WebElement> elItems = el.findElements(By.tagName(tagName));
+        Boolean foundRow = false;
+
+        //Loop through items in list
+        for (int i=0; i<elItems.size(); i++){
+
+            if (elItems.get(i).getText().equals(itemValue)){
+                foundRow = true;
+
+                if (!click){
+                    assertEquals(elItems.get(i).isSelected(), true);
+                    CommandHelpers.printSteps(PropsCommands.assertText, desc);
+                } else {
+                    click(elItems.get(i), desc);
+//                    elItems.get(i).click();
+//                    CommandHelpers.printSteps(PropsCommands.click, desc);
+                }
+
+                break;
+            }
+        }
+
+        if (!foundRow){
+            fail("Cannot find " + itemValue + " in the list");
+        }
+    }
 	
 	public static void assertRadio(WebDriver d, String attrType, String attrValue, String expValue, Boolean click, String desc){
 		List<WebElement> el = CommandHelpers.getElementsBy(d, null, attrType, attrValue);
@@ -113,8 +141,6 @@ public class Commands {
 	public static void assertText(WebDriver d, String attrType, String attrValue, String expValue, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
 		assertText(el, expValue, desc);
-//		assertEquals(el.getText(), expValue);
-//		CommandHelpers.printSteps(PropsCommands.assertText, desc);
 	}
 
 	public static void assertText(WebElement el, String expValue, String desc){
@@ -125,8 +151,6 @@ public class Commands {
 	public static void click(WebDriver d, String attrType, String attrValue, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
 		click(el, desc);
-//		el.click();
-//		CommandHelpers.printSteps(PropsCommands.click, desc);
 	}
 
 	public static void click(WebElement el, String desc){
@@ -137,10 +161,6 @@ public class Commands {
 	public static void clickOffSet(WebDriver d, String attrType, String attrValue, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
 		clickOffSet(d, el, desc);
-//		int width = el.getSize().getWidth();
-//		Actions act = new Actions(d);
-//		act.moveToElement(el).moveByOffset((width/2)-2, 0).click().perform();
-//		CommandHelpers.printSteps(PropsCommands.clickOffset, desc);
 	}
 
 	public static void clickOffSet(WebDriver d, WebElement el, String desc){
@@ -153,9 +173,6 @@ public class Commands {
 	public static void enterText(WebDriver d, String attrType, String attrValue, String thisString, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
 		enterText(el, thisString, desc);
-//		el.clear();
-//		el.sendKeys(thisString);
-//		CommandHelpers.printSteps(PropsCommands.enterText, desc);
 	}
 
 	public static void enterText(WebElement el, String thisString, String desc){
@@ -167,8 +184,6 @@ public class Commands {
 	public static void fileUpload(WebDriver d, String attrType, String attrValue, String fileDir, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
 		fileUpload(el, fileDir, desc);
-//		el.sendKeys(fileDir);
-//		CommandHelpers.printSteps(PropsCommands.fileUpload, desc);
 	}
 
 	public static void fileUpload(WebElement el, String fileDir, String desc){
