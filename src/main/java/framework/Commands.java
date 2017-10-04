@@ -79,11 +79,6 @@ public class Commands {
 		}
 	}
 	
-//	public static void assertInList(WebDriver d, String attrType, String attrValue, String itemValue, String tagName, Boolean click, String desc){
-//		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
-//		assertInList(el, itemValue, tagName, click, desc);
-//	}
-
 	public static void assertInList(List<WebElement> elItems, String itemValue, Boolean click, String desc){
 		Boolean foundRow = false;
 
@@ -110,32 +105,6 @@ public class Commands {
 		}
 	}
 
-//    public static void assertInList(WebElement el, String itemValue, String tagName, Boolean click, String desc){
-//        List<WebElement> elItems = el.findElements(By.tagName(tagName));
-//        Boolean foundRow = false;
-//
-//        //Loop through items in list
-//        for (int i=0; i<elItems.size(); i++){
-//
-//            if (elItems.get(i).getText().equals(itemValue)){
-//                foundRow = true;
-//
-//                if (!click){
-//                    assertEquals(elItems.get(i).isSelected(), true);
-//                    CommandHelpers.printSteps(PropsCommands.assertText, desc);
-//                } else {
-//                    click(elItems.get(i), desc);
-//                }
-//
-//                break;
-//            }
-//        }
-//
-//        if (!foundRow){
-//            fail("Cannot find " + itemValue + " in the list");
-//        }
-//    }
-	
 	public static void assertRadio(WebDriver d, String attrType, String attrValue, String expValue, Boolean click, String desc){
 		List<WebElement> el = CommandHelpers.getElementsBy(d, null, attrType, attrValue);
 		for (int i=0; i<el.size(); i++){
