@@ -175,14 +175,23 @@ public class Commands {
 		CommandHelpers.printSteps(PropsCommands.fileUpload, desc);
 	}
 
+	public static void showHiddenInput(WebDriver d, WebElement el){
+		((JavascriptExecutor) d).executeScript("arguments[0].removeAttribute('style','style')", el);
+	}
+
 	public static void uploadInputHidden(WebDriver d, String attrType, String attrValue, String thisString, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
 		uploadInputHidden(d, el, thisString, desc);
 	}
 
 	public static void uploadInputHidden(WebDriver d, WebElement el, String thisString, String desc){
-		((JavascriptExecutor) d).executeScript("arguments[0].removeAttribute('style','style')", el);
+		showHiddenInput(d, el);
 		enterText(el, thisString, desc);
+	}
+
+	public static void uploadInputHiddenLoop(WebDriver d, WebElement el, List<String> upStrings){
+		showHiddenInput(d, el);
+		uploadLoop(el, upStrings);
 	}
 
 	public static void uploadLoop(WebElement el, List<String> upStrings){
