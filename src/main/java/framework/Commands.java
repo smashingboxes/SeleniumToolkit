@@ -202,6 +202,18 @@ public class Commands {
 		CommandHelpers.getSelectOptionBy(d, el, getBy, thisString, thisIndex);
 		CommandHelpers.printSteps(PropsCommands.selectOption, desc);
 	}
+
+	public static void waitForAssert(WebElement el, String thisString){
+        Integer i = 0;
+        do{
+            if (!el.getText().contains(thisString)) {
+                Commands.waitForSecs(1000);
+                i++;
+            } else {
+                break;
+            }
+        } while (i < 10);
+    }
 	
 	public static void waitForEl(WebDriver d, String attrType, String attrValue){
 		String desc = "Waiting for next element to be visible";
