@@ -48,18 +48,6 @@ public class CommandHelpers {
 		}
 	}
 	
-	public static By getVisibleElementBy(WebDriver d, String attrType, String attrValue){
-		switch(attrType){
-			case "id": return By.id(attrValue);
-			case "name": return By.name(attrValue);
-			case "cssSelector": return By.cssSelector(attrValue);
-			case "xpath": return By.xpath(attrValue);
-			case "linkText": return By.linkText(attrValue);
-			case "className": return By.className(attrValue);
-			default: return null;
-		}
-	}
-	
 	public static void getSelectOptionBy(WebDriver d, WebElement el, String getBy, String thisString, Integer attrIndex){
 		Select select = new Select(el);
 		switch(getBy){

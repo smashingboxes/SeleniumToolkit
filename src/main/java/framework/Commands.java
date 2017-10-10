@@ -17,11 +17,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Commands {
 
-	public static void assertClick(WebDriver d, String attrType, String attrValue, String func, Boolean check, String desc){
-		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
-		assertClick(el, func, check, desc);
-	}
-
 	public static void assertClick(WebElement el, String func, Boolean check, String desc){
 		if ((!el.getAttribute("class").contains("checked") && check) || (el.getAttribute("class").contains("checked") && !check)){
 			el.click();
@@ -122,31 +117,16 @@ public class Commands {
 		}
 	}
 	
-	public static void assertText(WebDriver d, String attrType, String attrValue, String expValue, String desc){
-		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
-		assertText(el, expValue, desc);
-	}
-
 	public static void assertText(WebElement el, String expValue, String desc){
         assertEquals(el.getText(), expValue);
         CommandHelpers.printSteps(PropsCommands.assertText, desc);
     }
 	
-	public static void click(WebDriver d, String attrType, String attrValue, String desc){
-		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
-		click(el, desc);
-	}
-
 	public static void click(WebElement el, String desc){
 		el.click();
 		CommandHelpers.printSteps(PropsCommands.click, desc);
 	}
 	
-	public static void clickOffSet(WebDriver d, String attrType, String attrValue, String desc){
-		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
-		clickOffSet(d, el, desc);
-	}
-
 	public static void clickOffSet(WebDriver d, WebElement el, String desc){
 		int width = el.getSize().getWidth();
 		Actions act = new Actions(d);
@@ -154,22 +134,12 @@ public class Commands {
 		CommandHelpers.printSteps(PropsCommands.clickOffset, desc);
 	}
 	
-	public static void enterText(WebDriver d, String attrType, String attrValue, String thisString, String desc){
-		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
-		enterText(el, thisString, desc);
-	}
-
 	public static void enterText(WebElement el, String thisString, String desc){
 		el.clear();
 		el.sendKeys(thisString);
 		CommandHelpers.printSteps(PropsCommands.enterText, desc);
 	}
 	
-	public static void fileUpload(WebDriver d, String attrType, String attrValue, String fileDir, String desc){
-		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
-		fileUpload(el, fileDir, desc);
-	}
-
 	public static void fileUpload(WebElement el, String fileDir, String desc){
 		el.sendKeys(fileDir);
 		CommandHelpers.printSteps(PropsCommands.fileUpload, desc);
@@ -177,11 +147,6 @@ public class Commands {
 
 	public static void showHiddenInput(WebDriver d, WebElement el){
 		((JavascriptExecutor) d).executeScript("arguments[0].removeAttribute('style','style')", el);
-	}
-
-	public static void uploadInputHidden(WebDriver d, String attrType, String attrValue, String thisString, String desc){
-		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
-		uploadInputHidden(d, el, thisString, desc);
 	}
 
 	public static void uploadInputHidden(WebDriver d, WebElement el, String thisString, String desc){
@@ -224,13 +189,6 @@ public class Commands {
         } while (i < 10);
     }
 	
-	public static void waitForEl(WebDriver d, String attrType, String attrValue){
-		String desc = "Waiting for next element to be visible";
-		WebDriverWait wait = new WebDriverWait(d, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(CommandHelpers.getVisibleElementBy(d, attrType, attrValue)));
-		CommandHelpers.printSteps(PropsCommands.waitForEl, desc);
-	}
-
 	public static void waitForEl(WebDriver d, WebElement el){
 		String desc = "Waiting for next element to be visible";
 		WebDriverWait wait = new WebDriverWait(d, 10);
