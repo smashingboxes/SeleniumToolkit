@@ -169,6 +169,11 @@ public class Commands {
 		JavascriptExecutor jse = (JavascriptExecutor)d;
 		jse.executeScript("arguments[0].scrollIntoView()", el);
 	}
+
+	public static void scrollToTopOfPage(WebDriver d){
+		JavascriptExecutor jse = (JavascriptExecutor)d;
+		jse.executeScript("scroll(0, 0);");
+	}
 	
 	public static void selectOption(WebDriver d, String attrType, String attrValue, String getBy, String thisString, Integer thisIndex, String desc){
 		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
