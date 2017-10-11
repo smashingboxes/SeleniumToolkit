@@ -127,10 +127,9 @@ public class Commands {
 		CommandHelpers.printSteps(PropsCommands.click, desc);
 	}
 	
-	public static void clickOffSet(WebDriver d, WebElement el, String desc){
-		int width = el.getSize().getWidth();
+	public static void clickOffSet(WebDriver d, WebElement el, Integer xOffset, Integer yOffset, String desc){
 		Actions act = new Actions(d);
-		act.moveToElement(el).moveByOffset((width/2)-2, 0).click().perform();
+		act.moveToElement(el).moveByOffset(xOffset, yOffset).click().perform();
 		CommandHelpers.printSteps(PropsCommands.clickOffset, desc);
 	}
 	
