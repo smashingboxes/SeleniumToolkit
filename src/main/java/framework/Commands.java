@@ -181,6 +181,14 @@ public class Commands {
 		CommandHelpers.printSteps(PropsCommands.selectOption, desc);
 	}
 
+	public static void switchToIFrame(WebDriver d, WebElement iFrame, Boolean onIframe){
+		if (onIframe){
+			d.switchTo().frame(iFrame);
+		} else {
+			d.switchTo().defaultContent();
+		}
+	}
+
 	public static void waitForAssert(WebElement el, String thisString){
         Integer i = 0;
         do{
