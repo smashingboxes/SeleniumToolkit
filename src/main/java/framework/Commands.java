@@ -240,4 +240,16 @@ public class Commands {
 			}
 		} while (i < 10);
 	}
+
+	public static void waitForNotURL(WebDriver d, String urlNotContain){
+		Integer i = 0;
+		do{
+			if (d.getCurrentUrl().contains(urlNotContain)) {
+				Commands.waitForSecs(1000);
+				i++;
+			} else {
+				break;
+			}
+		} while (i < 10);
+	}
 }
