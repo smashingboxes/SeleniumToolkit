@@ -21,6 +21,9 @@ dependencies {
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     api 'org.apache.commons:commons-math3:3.6.1'
 
+    compile 'com.saucelabs:sauce_testng:2.1.21'
+    compile group: 'org.openqa.selenium', name: 'selenium-rc', version: '1.0-20081010.060147'
+
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:21.0'
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.41.0'

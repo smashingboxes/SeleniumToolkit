@@ -31,7 +31,7 @@ public class ByLinkText {
 	@Test
 	public static void test(){
 //		Commands.waitForEl(d, PropsCommands.cssSelector, cssNewsList);
-		Commands.click(d, PropsCommands.linkText, linkTextString, "This Works");
+//		Commands.click(d, PropsCommands.linkText, linkTextString, "This Works");
 //		d.findElement(By.cssSelector(cssDropdown));
 //		Commands.selectOption(d, PropsCommands.cssSelector, cssDropdown, PropsCommands.visibleText, "Value 3", null, null);
 //		String[] tagNames = {"article"};

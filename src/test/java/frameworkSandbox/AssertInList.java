@@ -28,11 +28,11 @@ public class AssertInList {
 	
 	@Test
 	public static void test(){
-		Commands.waitForEl(d, PropsCommands.cssSelector, cssNewsList);
+//		Commands.waitForEl(d, PropsCommands.cssSelector, cssNewsList);
 		
 //		d.findElement(By.cssSelector(cssDropdown));
 //		Commands.selectOption(d, PropsCommands.cssSelector, cssDropdown, PropsCommands.visibleText, "Value 3", null, null);
 		String tagNames = "article";
-		Commands.assertInList(d, PropsCommands.cssSelector, cssNewsList, "Thousands leave NC island after power loss", tagNames, true, null);
+//		Commands.assertInList(d, PropsCommands.cssSelector, cssNewsList, "Thousands leave NC island after power loss", tagNames, true, null);
 	}
 }
