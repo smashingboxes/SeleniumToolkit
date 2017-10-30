@@ -167,7 +167,7 @@ public class Commands {
 		CommandHelpers.printSteps(PropsCommands.fileUpload, desc);
 	}
 
-	public static void initElements(WebDriver d, List<Class> classList){
+	public static void initElements(WebDriver d, Class[] classList){
 		for (Class thisC : classList){
 			PageFactory.initElements(d, thisC);
 		}
