@@ -12,8 +12,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class Commands {
 
@@ -23,6 +25,27 @@ public class Commands {
 		}
 
 		CommandHelpers.printSteps(func, desc);
+	}
+
+	public static void assertInTable(WebDriver d, WebElement elTable, String uniqueVal, Boolean click){
+		List<WebElement> elTableRows = elTable.findElements(By.tagName("tbody")).get(0).findElements(By.tagName("tr"));
+		Boolean foundRow = false;
+
+		for (WebElement thisRow : elTableRows){
+			if (thisRow.getText().contains(uniqueVal)){
+				foundRow = true;
+
+				if (click){
+					thisRow.click();
+				}
+
+				break;
+			}
+		}
+
+		if (!foundRow){
+			Assert.fail(uniqueVal + " was not found in the table.");
+		}
 	}
 
 	public static void assertInTable(WebDriver d, String attrType, String attrValue, String uniqueCol, HashMap<String, String> hm, Boolean click, String desc){
@@ -142,6 +165,12 @@ public class Commands {
 	public static void fileUpload(WebElement el, String fileDir, String desc){
 		el.sendKeys(fileDir);
 		CommandHelpers.printSteps(PropsCommands.fileUpload, desc);
+	}
+
+	public static void initElements(WebDriver d, List<Class> classList){
+		for (Class thisC : classList){
+			PageFactory.initElements(d, thisC);
+		}
 	}
 
 	public static void showHiddenInput(WebDriver d, WebElement el){
