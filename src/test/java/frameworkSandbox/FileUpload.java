@@ -16,6 +16,7 @@ public class FileUpload {
 	@BeforeTest
 	public static void beforeTest(){
 		d = Drivers.chromeDriver(null, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
+		d.manage().window().maximize();
 	}
 	
 	@Test
