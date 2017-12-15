@@ -13,8 +13,46 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import static org.testng.Assert.fail;
+
 public class Drivers {
-	
+
+	public static WebDriver checkSauceLabs(String platform, String browser, String appUrl, File f, Boolean runSL){
+		WebDriver d = runSauceLabs(browser, platform, appUrl, f, runSL);
+
+		if (d.equals(null)){
+			fail("The WebDriver is null. Please check code for Drivers.");
+		}
+
+		d.manage().window().maximize();
+
+		return d;
+	}
+
+	private static WebDriver runSauceLabs(String browser, String platform, String appAddress, File f, Boolean runSL){
+		WebDriver d = null;
+
+		if (runSL){
+			d = Drivers.sauceLabsConfig(f, browser, platform, appAddress);
+
+			if (d.equals(null)){
+				switch(browser){
+					case "firefox": return firefoxDriver(d, appAddress);
+					case "chrome": return chromeDriver(d, appAddress);
+					default: return d;
+				}
+			}
+		} else {
+			switch(browser){
+				case "firefox": return firefoxDriver(d, appAddress);
+				case "chrome": return chromeDriver(d, appAddress);
+				default: return d;
+			}
+		}
+
+		return d;
+	}
+
 	//SauceLabs Config for RemoteWebDriver
 	public static WebDriver sauceLabsConfig(File f, String browser, String platform, String appAddress){
 		String[] kv = readFile(f);
