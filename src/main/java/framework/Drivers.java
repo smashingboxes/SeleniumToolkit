@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
@@ -56,12 +57,13 @@ public class Drivers {
 	//SauceLabs Config for RemoteWebDriver
 	public static WebDriver sauceLabsConfig(File f, String browser, String platform, String appAddress){
 		String[] kv = readFile(f);
-		WebDriver d = null;
-		
+		RemoteWebDriver d = null;
+
 		try{
 			if (!kv.equals(null)){
 				final String URL = "https://" + kv[0] + ":" + kv[1] + "@ondemand.saucelabs.com:443/wd/hub";
 				d = new RemoteWebDriver(new URL(URL), setCaps(browser, platform));
+				d.setFileDetector(new LocalFileDetector());
 				d.get(appAddress);
 				System.out.println("title of page is: " + d.getTitle());
 			}
@@ -147,7 +149,7 @@ public class Drivers {
 	//Also, there is a known issue with geckodriver
 	public static WebDriver firefoxDriver(WebDriver d, String app){
 		//Configure to use GeckoDriver
-		System.setProperty("webdriver.gecko.driver", "webDrivers/geckodriver");
+		System.setProperty("webdriver.gecko.driver", "webDrivers/geckodriver0_19_1");
 		DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 		capabilities.setCapability("marionette", true);
 		
