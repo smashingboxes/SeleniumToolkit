@@ -1,8 +1,6 @@
 package frameworkSandbox;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -18,8 +16,8 @@ public class FileUpload {
 	@BeforeTest
 	public static void beforeTest(){
 		File file = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
-		d = Drivers.checkSauceLabs("Windows 10", "chrome", "http://sl-test.herokuapp.com/guinea_pig/file_upload", file, true);
-//		d = Drivers.chromeDriver(null, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
+		d = Drivers.checkSauceLabs("Windows 10", "chrome", "http://sl-test.herokuapp.com/guinea_pig/file_upload", file, false);
+//		d = Drivers.firefoxDriver(null, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
 		d.manage().window().maximize();
 	}
 	
@@ -30,5 +28,12 @@ public class FileUpload {
         d.findElement(By.id("submit")).click();
         d.findElement(By.tagName("img"));
         Assert.assertEquals("057_original_print.jpg (image/jpeg)", d.findElement(By.tagName("p")).getText());
+
+
+        int p = d.findElement(By.tagName("p")).getLocation().x;
+
+		JavascriptExecutor js = ((JavascriptExecutor) d);
+		js.executeScript("window.scrollBy(" + p + 200 + ", 200)");
+
     }
 }

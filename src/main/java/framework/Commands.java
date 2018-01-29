@@ -194,6 +194,11 @@ public class Commands {
 		}
 	}
 
+	public static void scrollByPosition(WebDriver d, WebElement el, int xPos, int yPos){
+		JavascriptExecutor js = ((JavascriptExecutor) d);
+		js.executeScript("window.scrollBy(" + el.getLocation().x + xPos + ", " + el.getLocation().y + yPos + ")");
+	}
+
 	public static void scrollToEl(WebDriver d, WebElement el){
 		JavascriptExecutor jse = (JavascriptExecutor)d;
 		jse.executeScript("arguments[0].scrollIntoView()", el);

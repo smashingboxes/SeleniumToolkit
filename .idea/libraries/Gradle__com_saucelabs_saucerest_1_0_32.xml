@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.saucelabs:saucerest:1.0.32">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.saucelabs/saucerest/1.0.32/c42618258de6adb6c34c55e96182f1b38f383a26/saucerest-1.0.32.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.saucelabs/saucerest/1.0.32/799f284d10d7b7e41b18ad3d7dc0cdeecfc157cf/saucerest-1.0.32-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
