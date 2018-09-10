@@ -26,7 +26,8 @@ public class ClassName {
 	
 	@BeforeTest
 	public static void beforeTest(){
-		d = Drivers.chromeDriver(null, thisURL2);
+//		d = Drivers.chromeDriver(null, thisURL2);
+		d = Drivers.chromeDriver(thisURL2);
 	}
 	
 	@Test

@@ -14,7 +14,8 @@ public class BrowserTest {
 
     @BeforeTest
     public static void beforeTest(){
-        d = Drivers.safariDriver(d, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
+        d = Drivers.safariDriver("http://sl-test.herokuapp.com/guinea_pig/file_upload");
+//        d = Drivers.safariDriver(d, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
 //        d = Drivers.firefoxDriver(d, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
 //        d = Drivers.chromeDriver(null, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
         d.manage().window().maximize();

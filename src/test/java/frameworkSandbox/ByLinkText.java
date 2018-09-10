@@ -25,8 +25,11 @@ public class ByLinkText {
 	
 	@BeforeTest
 	public static void beforeTest(){
-		d = Drivers.chromeDriver(null, thisURL1);
+		d = Drivers.chromeDriver(thisURL1);
 	}
+//	public static void beforeTest(){
+//		d = Drivers.chromeDriver(null, thisURL1);
+//	}
 	
 	@Test
 	public static void test(){
