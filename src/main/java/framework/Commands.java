@@ -14,6 +14,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -218,10 +219,9 @@ public class Commands {
 		JavascriptExecutor js = ((JavascriptExecutor) d);
 		js.executeScript("window.scrollTo(document.body.scrollWidth, 0)");
 	}
-	
-	public static void selectOption(WebDriver d, String attrType, String attrValue, String getBy, String thisString, Integer thisIndex, String desc){
-		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue);
-		CommandHelpers.getSelectOptionBy(d, el, getBy, thisString, thisIndex);
+
+	public static void selectOption(Select el, String thisString, String desc){
+		el.selectByVisibleText(thisString);
 		CommandHelpers.printSteps(PropsCommands.selectOption, desc);
 	}
 
