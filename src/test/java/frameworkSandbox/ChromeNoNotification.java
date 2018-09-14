@@ -1,0 +1,145 @@
+package frameworkSandbox;
+
+import framework.Commands;
+import framework.Drivers;
+import framework.PropsSystem;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import java.io.File;
+
+public class ChromeNoNotification {
+
+    public static WebDriver d;
+
+//    public static WebDriver chromeDriver(String app){
+////		ChromeOptions options = new ChromeOptions();
+////		options.addArguments("--disable-notifications");
+////		options.addArguments("--start-maximized");
+////		options.addArguments("--disable-web-security");
+////		options.addArguments("--no-proxy-server");
+////
+////		Map<String, Object> prefs = new HashMap<String, Object>();
+////		prefs.put("credentials_enable_service", false);
+////		prefs.put("profile.password_manager_enabled", false);
+////		prefs.put("profile.default_content_setting_values.notifications", 2);
+////
+////		options.setExperimentalOption("prefs", prefs);
+//
+//        System.setProperty("webdriver.chrome.driver", "webDrivers/chromedriver242");
+////		WebDriver d = new ChromeDriver(options);
+//        WebDriver d = new ChromeDriver();
+//        d.get(app);
+//        return d;
+//    }
+
+
+    @BeforeTest
+    public static void beforeTest(){
+//        d = Drivers.safariDriver("https://www.newegg.com/");
+//        d = Drivers.safariDriver(d, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
+//        d = Drivers.firefoxDriver(d, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
+//        d = Drivers.chromeDriver("http://sl-test.herokuapp.com/guinea_pig/file_upload");
+        File f = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
+        d = Drivers.sauceLabsConfig(f, PropsSystem.chrome, "Windows 10", "https://portal.orangecaregroup.com/users/sign_in");
+        d.manage().window().maximize();
+        PageFactory.initElements(d, ChromeNoNotification.class);
+    }
+
+    @Test
+    public void testSauce() throws Exception {
+//        Commands.waitForSecs(5000);
+//        Commands.waitForURL(d, "newegg");
+
+//        WebElement elMainDrop = d.findElement(By.id("haQuickSearchStore"));
+//        Select mainDrop = new Select(elMainDrop);
+
+//        WebElement elTrendingNow = d.findElement(By.className("trend-keys-title"));
+//
+//        Commands.selectOption(mainDrop, "Gaming", "Click this");
+//        Commands.assertTextContains(elTrendingNow, "TRENDING", "Assert this");
+        waitForUrl();
+        waitForEmail();
+        enterEmail(email);
+        enterPass("password1!");
+        clickLogin();
+
+        waitForUrl();
+        waitForHeader();
+        assertHeader(role);
+
+//        d!!.navigate().refresh()
+//        Commands.waitForSecs(5000)
+
+        clickDashboard();
+
+
+    }
+
+
+    String email = "testing+1@smashingboxes.com";
+    String role = "Employee One Smashing Boxes";
+
+
+
+    @FindBy(id = "user_email")
+    public static WebElement elEmail;
+
+    public static void enterEmail(String textInput){
+        String desc = "Enter $textInput in the email text field";
+        Commands.enterText(elEmail, textInput, desc);
+    }
+
+    @FindBy(id = "user_password")
+    public static WebElement elPass;
+
+    public static void enterPass(String textInput){
+        String desc = "Enter $textInput in the email text field";
+        Commands.enterText(elPass, textInput, desc);
+    }
+
+    @FindBy(name = "commit")
+    public static WebElement elLogin;
+
+    public static void clickLogin(){
+        String desc = "Click the Login button";
+        Commands.click(elLogin, desc);
+    }
+
+    //Wait Calls
+    public static void waitForUrl() {
+        Commands.waitForURL(d, "orangecaregroup");
+    }
+
+    public static void waitForEmail() {
+        Commands.waitForEl(d, elEmail);
+    }
+
+    @FindBy(tagName = "h1")
+    public static WebElement elHeader;
+
+    public static void assertHeader(String textInput){
+        String desc = "Assert that $textInput is found in header";
+        Commands.assertTextContains(elHeader, textInput, desc);
+    }
+
+    //Wait calls
+    public static void waitForHeader() {
+        Commands.waitForEl(d, elHeader);
+    }
+
+    @FindBy(id = "menu-header-navigation")
+    public static WebElement menu;
+
+    public static void clickDashboard(){
+        String desc = "Click on Dashboard";
+        Commands.assertInList(menu.findElements(By.tagName("li")), "Dashboard", true, desc);
+    }
+}

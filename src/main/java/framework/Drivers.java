@@ -5,9 +5,12 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -132,7 +135,7 @@ public class Drivers {
 
 	//Chrome WebDriver
 	public static WebDriver chromeDriver(String app){
-		System.setProperty("webdriver.chrome.driver", "webDrivers/chromedriver233");
+		System.setProperty("webdriver.chrome.driver", "webDrivers/chromedriver242");
 		WebDriver d = new ChromeDriver();
 		d.get(app);
 		return d;

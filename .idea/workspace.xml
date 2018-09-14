@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f61b1bd-fb00-4ecb-bd9c-b3abbc8f7ebc" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/frameworkSandbox/ChromeNoNotification.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/framework/Commands.java" afterPath="$PROJECT_DIR$/src/main/java/framework/Commands.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/framework/PropsCommands.java" afterPath="$PROJECT_DIR$/src/main/java/framework/PropsCommands.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/frameworkSandbox/SelectDropdown.java" afterPath="$PROJECT_DIR$/src/test/java/frameworkSandbox/SelectDropdown.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/framework/Drivers.java" afterPath="$PROJECT_DIR$/src/main/java/framework/Drivers.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_Questionnaire/POM_Q_Step4_ServiceArea.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_Questionnaire/POM_Q_Step4_ServiceArea.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_CompletePhotogQuestionnaire.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_CompletePhotogQuestionnaire.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_SignUpPhotog.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_SignUpPhotog.java" />
@@ -36,11 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Commands.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Commands.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/framework/Commands.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="159" column="5" lean-forward="true" selection-start-line="159" selection-start-column="5" selection-end-line="159" selection-end-column="5" />
+            <state relative-caret-position="393">
+              <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
               <folding>
                 <element signature="e#1937#1945#0" expanded="true" />
               </folding>
@@ -68,13 +67,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Drivers.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Drivers.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/framework/Drivers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="36" column="19" lean-forward="false" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+            <state relative-caret-position="157">
+              <caret line="146" column="77" lean-forward="false" selection-start-line="146" selection-start-column="77" selection-end-line="146" selection-end-column="77" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3901#3917#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,8 +93,8 @@
       <file leaf-file-name="SelectDropdown.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/SelectDropdown.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="41" column="30" lean-forward="true" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+            <state relative-caret-position="301">
+              <caret line="42" column="5" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="42" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,12 +102,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileUpload.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/FileUpload.java">
+      <file leaf-file-name="ChromeNoNotification.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/ChromeNoNotification.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-              <folding />
+            <state relative-caret-position="215">
+              <caret line="46" column="26" lean-forward="true" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2914#2915#0" expanded="true" />
+                <element signature="e#2971#2972#0" expanded="true" />
+                <element signature="e#3012#3013#0" expanded="true" />
+                <element signature="e#3058#3059#0" expanded="true" />
+                <element signature="e#3378#3379#0" expanded="true" />
+                <element signature="e#3425#3426#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -147,6 +155,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin File" />
         <option value="Class" />
       </list>
     </option>
@@ -492,7 +501,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_LoginLogout/POM_Login.java" />
         <option value="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/helpers/ServiceAreas.java" />
         <option value="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_Questionnaire/POM_Q_Step4_ServiceArea.java" />
         <option value="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/helpers/Search.java" />
@@ -533,7 +541,6 @@
         <option value="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_CompleteAgentProfile.java" />
         <option value="$PROJECT_DIR$/../../../workspace/Stilio/build.gradle" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/framework/Drivers.java" />
         <option value="$PROJECT_DIR$/src/test/java/frameworkSandbox/BrowserTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/frameworkSandbox/ClassName.java" />
         <option value="$PROJECT_DIR$/src/test/java/frameworkSandbox/FileUpload.java" />
@@ -543,10 +550,12 @@
         <option value="$PROJECT_DIR$/src/main/java/framework/PropsCommands.java" />
         <option value="$PROJECT_DIR$/src/test/java/frameworkSandbox/SelectDropdown.java" />
         <option value="$PROJECT_DIR$/src/main/java/framework/Commands.java" />
+        <option value="$PROJECT_DIR$/src/test/java/frameworkSandbox/ChromeNoNotification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/framework/Drivers.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="773" />
@@ -664,6 +673,11 @@
             </path>
             <path>
               <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeleniumFramework2beta" type="462c0819:PsiDirectoryNode" />
+              <item name="webDrivers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -704,7 +718,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.SelectDropdown">
+  <component name="RunManager" selected="TestNG.ChromeNoNotification">
     <configuration name="BrowserTest (1)" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -737,25 +751,25 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="BrowserTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ChromeNoNotification" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="frameworkSandbox.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="SeleniumFramework2beta" />
+      <module name="SeleniumToolkit_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="frameworkSandbox" />
-      <option name="MAIN_CLASS_NAME" value="frameworkSandbox.BrowserTest" />
+      <option name="MAIN_CLASS_NAME" value="frameworkSandbox.ChromeNoNotification" />
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="OUTPUT_DIRECTORY" />
       <option name="ANNOTATION_TYPE" />
       <option name="ENV_VARIABLES" />
@@ -948,18 +962,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="TestNG.FileUpload" />
-      <item index="1" class="java.lang.String" itemvalue="TestNG.BrowserTest" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.FileUpload (1)" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.BrowserTest (1)" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.SelectDropdown" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG.FileUpload (1)" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.BrowserTest (1)" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.SelectDropdown" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.ChromeNoNotification" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.SelectDropdown" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.BrowserTest (1)" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.FileUpload (1)" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.FileUpload" />
-        <item index="4" class="java.lang.String" itemvalue="TestNG.BrowserTest" />
+        <item index="0" class="java.lang.String" itemvalue="TestNG.ChromeNoNotification" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.SelectDropdown" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.BrowserTest (1)" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.FileUpload (1)" />
+        <item index="4" class="java.lang.String" itemvalue="TestNG.FileUpload" />
       </list>
     </recent_temporary>
   </component>
@@ -1314,29 +1328,26 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SelectDropdown - 2018.09.13 at 15h 33m 40s.xml">
-      <configuration name="SelectDropdown" configurationId="TestNG" />
+    <history-entry file="ChromeNoNotification - 2018.09.14 at 14h 25m 04s.xml">
+      <configuration name="ChromeNoNotification" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SelectDropdown - 2018.09.13 at 15h 34m 36s.xml">
-      <configuration name="SelectDropdown" configurationId="TestNG" />
+    <history-entry file="ChromeNoNotification - 2018.09.14 at 14h 29m 13s.xml">
+      <configuration name="ChromeNoNotification" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SelectDropdown - 2018.09.13 at 15h 37m 13s.xml">
-      <configuration name="SelectDropdown" configurationId="TestNG" />
+    <history-entry file="ChromeNoNotification - 2018.09.14 at 14h 33m 05s.xml">
+      <configuration name="ChromeNoNotification" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SelectDropdown - 2018.09.13 at 15h 37m 40s.xml">
-      <configuration name="SelectDropdown" configurationId="TestNG" />
+    <history-entry file="ChromeNoNotification - 2018.09.14 at 14h 51m 04s.xml">
+      <configuration name="ChromeNoNotification" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SelectDropdown - 2018.09.13 at 15h 38m 09s.xml">
-      <configuration name="SelectDropdown" configurationId="TestNG" />
+    <history-entry file="ChromeNoNotification - 2018.09.14 at 15h 01m 06s.xml">
+      <configuration name="ChromeNoNotification" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SelectDropdown - 2018.09.13 at 15h 38m 49s.xml">
-      <configuration name="SelectDropdown" configurationId="TestNG" />
+    <history-entry file="ChromeNoNotification - 2018.09.14 at 15h 07m 48s.xml">
+      <configuration name="ChromeNoNotification" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SelectDropdown - 2018.09.13 at 15h 40m 52s.xml">
-      <configuration name="SelectDropdown" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SelectDropdown - 2018.09.13 at 15h 44m 46s.xml">
-      <configuration name="SelectDropdown" configurationId="TestNG" />
+    <history-entry file="ChromeNoNotification - 2018.09.14 at 15h 10m 37s.xml">
+      <configuration name="ChromeNoNotification" configurationId="TestNG" />
     </history-entry>
     <history-entry file="SelectDropdown - 2018.09.14 at 10h 08m 03s.xml">
       <configuration name="SelectDropdown" configurationId="TestNG" />
@@ -1344,9 +1355,12 @@
     <history-entry file="SelectDropdown - 2018.09.14 at 10h 10m 33s.xml">
       <configuration name="SelectDropdown" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="SelectDropdown - 2018.09.14 at 14h 23m 56s.xml">
+      <configuration name="SelectDropdown" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="773" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1442,20 +1456,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/components/BankingInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tData/TD_CompleteQuestionnaire.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/components/UserInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1768,16 +1768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/framework/Drivers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="36" column="19" lean-forward="false" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/BrowserTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1794,22 +1784,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/ChromeNoNotification.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/SelectDropdown.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="41" column="30" lean-forward="true" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+        <state relative-caret-position="301">
+          <caret line="42" column="5" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="42" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/ChromeNoNotification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="46" column="26" lean-forward="true" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2914#2915#0" expanded="true" />
+            <element signature="e#2971#2972#0" expanded="true" />
+            <element signature="e#3012#3013#0" expanded="true" />
+            <element signature="e#3058#3059#0" expanded="true" />
+            <element signature="e#3378#3379#0" expanded="true" />
+            <element signature="e#3425#3426#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/framework/Commands.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="159" column="5" lean-forward="true" selection-start-line="159" selection-start-column="5" selection-end-line="159" selection-end-column="5" />
+        <state relative-caret-position="393">
+          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding>
             <element signature="e#1937#1945#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/framework/Drivers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="146" column="77" lean-forward="false" selection-start-line="146" selection-start-column="77" selection-end-line="146" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3901#3917#0" expanded="true" />
           </folding>
         </state>
       </provider>
