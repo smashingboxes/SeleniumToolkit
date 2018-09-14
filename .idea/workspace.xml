@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f61b1bd-fb00-4ecb-bd9c-b3abbc8f7ebc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/frameworkSandbox/SelectDropdown.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/framework/Commands.java" afterPath="$PROJECT_DIR$/src/main/java/framework/Commands.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/framework/PropsCommands.java" afterPath="$PROJECT_DIR$/src/main/java/framework/PropsCommands.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/frameworkSandbox/SelectDropdown.java" afterPath="$PROJECT_DIR$/src/test/java/frameworkSandbox/SelectDropdown.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_Questionnaire/POM_Q_Step4_ServiceArea.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_Questionnaire/POM_Q_Step4_ServiceArea.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_CompletePhotogQuestionnaire.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_CompletePhotogQuestionnaire.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_SignUpPhotog.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_SignUpPhotog.java" />
@@ -37,9 +39,11 @@
       <file leaf-file-name="Commands.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/framework/Commands.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="221" column="4" lean-forward="false" selection-start-line="221" selection-start-column="4" selection-end-line="221" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="170">
+              <caret line="159" column="5" lean-forward="true" selection-start-line="159" selection-start-column="5" selection-end-line="159" selection-end-column="5" />
+              <folding>
+                <element signature="e#1937#1945#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,8 +51,8 @@
       <file leaf-file-name="PropsCommands.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/framework/PropsCommands.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="10" column="42" lean-forward="false" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+            <state relative-caret-position="-71">
+              <caret line="13" column="39" lean-forward="true" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -67,7 +71,7 @@
       <file leaf-file-name="Drivers.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/framework/Drivers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
+            <state relative-caret-position="315">
               <caret line="36" column="19" lean-forward="false" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -89,8 +93,8 @@
       <file leaf-file-name="SelectDropdown.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/SelectDropdown.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="275">
+              <caret line="41" column="30" lean-forward="true" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,7 +115,7 @@
       <file leaf-file-name="AssertInList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/AssertInList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
+            <state relative-caret-position="270">
               <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
               <folding />
             </state>
@@ -488,7 +492,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/modules/UserProfileInfo.java" />
         <option value="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_LoginLogout/POM_Login.java" />
         <option value="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/helpers/ServiceAreas.java" />
         <option value="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_Questionnaire/POM_Q_Step4_ServiceArea.java" />
@@ -537,6 +540,7 @@
         <option value="$PROJECT_DIR$/src/test/java/frameworkSandbox/AssertInList.java" />
         <option value="$PROJECT_DIR$/src/test/java/frameworkSandbox/ByLinkText.java" />
         <option value="$PROJECT_DIR$/src/test/java/frameworkSandbox/FindByAnnotation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/framework/PropsCommands.java" />
         <option value="$PROJECT_DIR$/src/test/java/frameworkSandbox/SelectDropdown.java" />
         <option value="$PROJECT_DIR$/src/main/java/framework/Commands.java" />
       </list>
@@ -581,6 +585,29 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SeleniumFramework2beta" type="58d84e3e:PackageViewProjectNode" />
+              <item name="AutomationSandbox" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="SeleniumFramework2beta" type="58d84e3e:PackageViewProjectNode" />
+              <item name="AutomationSandbox" type="616d4139:PackageViewModuleNode" />
+              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
+            </path>
+            <path>
+              <item name="SeleniumFramework2beta" type="58d84e3e:PackageViewProjectNode" />
+              <item name="SeleniumFramework2beta" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -638,29 +665,6 @@
             <path>
               <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SeleniumFramework2beta" type="58d84e3e:PackageViewProjectNode" />
-              <item name="AutomationSandbox" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="SeleniumFramework2beta" type="58d84e3e:PackageViewProjectNode" />
-              <item name="AutomationSandbox" type="616d4139:PackageViewModuleNode" />
-              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
-            </path>
-            <path>
-              <item name="SeleniumFramework2beta" type="58d84e3e:PackageViewProjectNode" />
-              <item name="SeleniumFramework2beta" type="616d4139:PackageViewModuleNode" />
             </path>
           </expand>
           <select />
@@ -1310,12 +1314,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SelectDropdown - 2018.09.13 at 15h 32m 52s.xml">
-      <configuration name="SelectDropdown" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SelectDropdown - 2018.09.13 at 15h 33m 11s.xml">
-      <configuration name="SelectDropdown" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="SelectDropdown - 2018.09.13 at 15h 33m 40s.xml">
       <configuration name="SelectDropdown" configurationId="TestNG" />
     </history-entry>
@@ -1340,6 +1338,12 @@
     <history-entry file="SelectDropdown - 2018.09.13 at 15h 44m 46s.xml">
       <configuration name="SelectDropdown" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="SelectDropdown - 2018.09.14 at 10h 08m 03s.xml">
+      <configuration name="SelectDropdown" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SelectDropdown - 2018.09.14 at 10h 10m 33s.xml">
+      <configuration name="SelectDropdown" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="0" />
@@ -1355,7 +1359,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3195435" sideWeight="0.48854166" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17974323" sideWeight="0.48697916" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2981455" sideWeight="0.48697916" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24609375" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
@@ -1667,7 +1671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="34" column="39" lean-forward="false" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1675,7 +1678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="77" lean-forward="false" selection-start-line="6" selection-start-column="77" selection-end-line="6" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1691,7 +1693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1737,7 +1738,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/AssertInList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
+        <state relative-caret-position="270">
           <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
           <folding />
         </state>
@@ -1759,14 +1760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/framework/PropsCommands.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="10" column="42" lean-forward="false" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/framework/PropsSystem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1777,7 +1770,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/framework/Drivers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
+        <state relative-caret-position="315">
           <caret line="36" column="19" lean-forward="false" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1793,10 +1786,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/framework/PropsCommands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-71">
+          <caret line="13" column="39" lean-forward="true" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/SelectDropdown.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="275">
+          <caret line="41" column="30" lean-forward="true" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1805,9 +1806,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/framework/Commands.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="221" column="4" lean-forward="false" selection-start-line="221" selection-start-column="4" selection-end-line="221" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="170">
+          <caret line="159" column="5" lean-forward="true" selection-start-line="159" selection-start-column="5" selection-end-line="159" selection-end-column="5" />
+          <folding>
+            <element signature="e#1937#1945#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

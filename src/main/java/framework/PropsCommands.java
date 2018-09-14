@@ -3,35 +3,36 @@ package framework;
 public interface PropsCommands {
 
 	//Attribute types
-	public String id = "id";
-	public String name = "name";
-	public String cssSelector = "cssSelector";
-	public String xpath = "xpath";
-	public String linkText = "linkText";
-	public String className = "className";
+	String id = "id";
+	String name = "name";
+	String cssSelector = "cssSelector";
+	String xpath = "xpath";
+	String linkText = "linkText";
+	String className = "className";
 	
 	//Select getBy types
-	public String visibleText = "visibleText";
-	public String value = "value";
-	public String index = "index";
+	String visibleText = "visibleText";
+	String value = "value";
+	String index = "index";
 	
 	//Command types
-	public String click = "click";
-	public String enterText = "enterText";
-	public String assertText = "assertText";
-	public String assertInList = "assertInList";
-	public String clickOffset = "clickOffset";
-	public String fileUpload = "fileUpload";
-	public String selectOption = "selectOption";
-	public String waitForSecs = "waitForSecs";
-	public String waitForEl = "waitForEl";
+	String click = "click";
+	String enterText = "enterText";
+	String assertText = "assertText";
+	String assertTextContains = "assertTextContains";
+	String assertInList = "assertInList";
+	String clickOffset = "clickOffset";
+	String fileUpload = "fileUpload";
+	String selectOption = "selectOption";
+	String waitForSecs = "waitForSecs";
+	String waitForEl = "waitForEl";
 	
 	//Get Elements types
-	public String li = "/li";
-	public String th = "/th";
-	public String td = "/td";
-	public String tr = "/tr";
-	public String trth = "/tr[0]/th";
-	public String trtd = "/tr/td";
-	public String div = "div";
+	String li = "/li";
+	String th = "/th";
+	String td = "/td";
+	String tr = "/tr";
+	String trth = "/tr[0]/th";
+	String trtd = "/tr/td";
+	String div = "div";
 }

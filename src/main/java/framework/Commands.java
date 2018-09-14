@@ -1,6 +1,7 @@
 package framework;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.fail;
 
 import java.util.ArrayList;
@@ -145,6 +146,13 @@ public class Commands {
         assertEquals(el.getText(), expValue);
         CommandHelpers.printSteps(PropsCommands.assertText, desc);
     }
+
+    public static void assertTextContains(WebElement el, String expValue, String desc){
+		if (!el.getText().contains(expValue)){
+			assertFalse(true, "[" + el.getText() + "] doesn't contain the text [" + expValue + "].");
+		}
+		CommandHelpers.printSteps(PropsCommands.assertTextContains, desc);
+	}
 	
 	public static void click(WebElement el, String desc){
 		el.click();
