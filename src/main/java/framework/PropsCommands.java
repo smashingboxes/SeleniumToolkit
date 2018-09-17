@@ -23,6 +23,7 @@ public interface PropsCommands {
 	String assertInList = "assertInList";
 	String clickOffset = "clickOffset";
 	String fileUpload = "fileUpload";
+	String hoverOver = "hoverOver";
 	String selectOption = "selectOption";
 	String waitForSecs = "waitForSecs";
 	String waitForEl = "waitForEl";

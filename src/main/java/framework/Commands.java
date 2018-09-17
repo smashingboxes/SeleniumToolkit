@@ -176,6 +176,12 @@ public class Commands {
 		CommandHelpers.printSteps(PropsCommands.fileUpload, desc);
 	}
 
+	public static void hoverOver(WebDriver d, WebElement el, String desc){
+		Actions action = new Actions(d);
+		action.moveToElement(el).build().perform();
+		CommandHelpers.printSteps(PropsCommands.hoverOver, desc);
+	}
+
 	public static void initElements(WebDriver d, Class[] classList){
 		for (Class thisC : classList){
 			PageFactory.initElements(d, thisC);

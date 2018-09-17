@@ -14,6 +14,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ChromeNoNotification {
 
@@ -74,11 +76,13 @@ public class ChromeNoNotification {
         waitForUrl();
         waitForHeader();
         assertHeader(role);
+        clickProfile();
+        clickProfileLink();
 
 //        d!!.navigate().refresh()
 //        Commands.waitForSecs(5000)
 
-        clickDashboard();
+//        clickDashboard();
 
 
     }
@@ -141,5 +145,22 @@ public class ChromeNoNotification {
     public static void clickDashboard(){
         String desc = "Click on Dashboard";
         Commands.assertInList(menu.findElements(By.tagName("li")), "Dashboard", true, desc);
+    }
+
+    @FindBy(className = "menu-item-has-children")
+    public static List<WebElement> profileIcon = null;
+
+    public static void clickProfile(){
+        String desc = "Click on Profile icon";
+        Commands.hoverOver(d, profileIcon.get(0), desc);
+//        Commands.click(profileIcon.get(0), desc);
+    }
+
+    @FindBy(linkText = "PROFILE")
+    public static WebElement profile = null;
+
+    public static void clickProfileLink(){
+        String desc = "Click on Profile link";
+        Commands.click(profile, desc);
     }
 }
