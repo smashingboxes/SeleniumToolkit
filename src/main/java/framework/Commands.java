@@ -239,6 +239,11 @@ public class Commands {
 		CommandHelpers.printSteps(PropsCommands.selectOption, desc);
 	}
 
+	public static void selectOption(WebElement el, String thisString, String desc){
+		new Select(el).selectByVisibleText(thisString);
+		CommandHelpers.printSteps(PropsCommands.selectOption, desc);
+	}
+
 	public static void switchToIFrame(WebDriver d, WebElement iFrame, Boolean onIframe){
 		if (onIframe){
 			d.switchTo().frame(iFrame);

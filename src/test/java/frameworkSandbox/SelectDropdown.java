@@ -34,11 +34,12 @@ public class SelectDropdown {
         Commands.waitForURL(d, "newegg");
 
         WebElement elMainDrop = d.findElement(By.id("haQuickSearchStore"));
-        Select mainDrop = new Select(elMainDrop);
+        Select elMainDropSel = new Select(d.findElement(By.id("haQuickSearchStore")));
+//        Select mainDrop = new Select(elMainDrop);
 
         WebElement elTrendingNow = d.findElement(By.className("trend-keys-title"));
 
-        Commands.selectOption(mainDrop, "Gaming", "Click this");
+        Commands.selectOption(elMainDrop, "Gaming", "Click this");
         Commands.assertTextContains(elTrendingNow, "TRENDING", "Assert this");
     }
 }
