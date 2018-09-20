@@ -20,6 +20,7 @@ public interface PropsCommands {
 	String enterText = "enterText";
 	String assertText = "assertText";
 	String assertTextContains = "assertTextContains";
+	String assertTextContainsLoop = "assertTextContainsLoop";
 	String assertInList = "assertInList";
 	String clickOffset = "clickOffset";
 	String fileUpload = "fileUpload";

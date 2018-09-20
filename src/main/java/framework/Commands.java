@@ -153,6 +153,18 @@ public class Commands {
 		}
 		CommandHelpers.printSteps(PropsCommands.assertTextContains, desc);
 	}
+
+	public static void assertTextContainsLoop(List<WebElement> elList, String expValue, String desc){
+		Boolean flag = false;
+    	for (WebElement listItem : elList){
+			if (listItem.getText().contains(expValue)) {flag = true;}
+		}
+
+		if (!flag){
+    		assertFalse(true, "Cannot find " + expValue + " in the list");
+		}
+		CommandHelpers.printSteps(PropsCommands.assertTextContainsLoop, desc);
+	}
 	
 	public static void click(WebElement el, String desc){
 		el.click();
