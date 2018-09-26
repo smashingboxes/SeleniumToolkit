@@ -32,7 +32,7 @@ public class AssertTextContainsLoop {
     @Test
     public static void test(){
         waitPageLoad();
-        Commands.assertTextContainsLoop(nav, "Prev", "");
+        Commands.assertNotInList(nav, "Prev", "");
     }
 
     @FindBy(className = "comicNav")

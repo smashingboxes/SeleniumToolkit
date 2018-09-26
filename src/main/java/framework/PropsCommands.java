@@ -22,6 +22,7 @@ public interface PropsCommands {
 	String assertTextContains = "assertTextContains";
 	String assertTextContainsLoop = "assertTextContainsLoop";
 	String assertInList = "assertInList";
+	String assertNotInList = "assertNotInList";
 	String clickOffset = "clickOffset";
 	String fileUpload = "fileUpload";
 	String hoverOver = "hoverOver";

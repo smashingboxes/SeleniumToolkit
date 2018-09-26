@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f61b1bd-fb00-4ecb-bd9c-b3abbc8f7ebc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/frameworkSandbox/AssertTextContainsLoop.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/framework/Commands.class" afterPath="$PROJECT_DIR$/out/production/classes/framework/Commands.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/frameworkSandbox/AssertNotInList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/framework/Commands.java" afterPath="$PROJECT_DIR$/src/main/java/framework/Commands.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/framework/PropsCommands.java" afterPath="$PROJECT_DIR$/src/main/java/framework/PropsCommands.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/frameworkSandbox/AssertTextContainsLoop.java" afterPath="$PROJECT_DIR$/src/test/java/frameworkSandbox/AssertTextContainsLoop.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_Questionnaire/POM_Q_Step1_Equipment.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_Questionnaire/POM_Q_Step1_Equipment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_Questionnaire/POM_Q_Step4_ServiceArea.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_Questionnaire/POM_Q_Step4_ServiceArea.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_CompletePhotogQuestionnaire.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_CompletePhotogQuestionnaire.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_SignUpPhotog.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_SignUpPhotog.java" />
@@ -37,35 +38,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Commands.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Commands.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/framework/Commands.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="159" column="54" lean-forward="false" selection-start-line="159" selection-start-column="54" selection-end-line="159" selection-end-column="54" />
+            <state relative-caret-position="302">
+              <caret line="108" column="16" lean-forward="true" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AssertNotInList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/AssertNotInList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
               <folding>
-                <element signature="e#1937#1945#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AssertTextContainsLoop.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CommandHelpers.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/framework/CommandHelpers.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AssertTextContainsLoop.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/AssertTextContainsLoop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="34" column="57" lean-forward="true" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
+            <state relative-caret-position="195">
+              <caret line="34" column="33" lean-forward="false" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1732#1733#0" expanded="true" />
-                <element signature="e#1781#1782#0" expanded="true" />
-                <element signature="e#1901#1902#0" expanded="true" />
-                <element signature="e#1948#1949#0" expanded="true" />
-                <element signature="e#2056#2057#0" expanded="true" />
-                <element signature="e#2102#2103#0" expanded="true" />
-                <element signature="e#2219#2220#0" expanded="true" />
-                <element signature="e#2261#2262#0" expanded="true" />
-                <element signature="e#2399#2400#0" expanded="true" />
-                <element signature="e#2453#2454#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,18 +85,8 @@
       <file leaf-file-name="PropsCommands.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/framework/PropsCommands.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="22" column="61" lean-forward="false" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PropsSystem.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/framework/PropsSystem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+            <state relative-caret-position="231">
+              <caret line="24" column="47" lean-forward="false" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -94,8 +95,8 @@
       <file leaf-file-name="Drivers.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/framework/Drivers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="140" column="17" lean-forward="false" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
+            <state relative-caret-position="209">
+              <caret line="69" column="59" lean-forward="false" selection-start-line="69" selection-start-column="59" selection-end-line="69" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -103,20 +104,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BrowserTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/BrowserTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="30" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SelectDropdown.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/SelectDropdown.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
+            <state relative-caret-position="285">
               <caret line="30" column="9" lean-forward="false" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -128,8 +119,8 @@
       <file leaf-file-name="ChromeNoNotification.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/ChromeNoNotification.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="55" column="5" lean-forward="true" selection-start-line="45" selection-start-column="4" selection-end-line="55" selection-end-column="5" />
+            <state relative-caret-position="600">
+              <caret line="55" column="5" lean-forward="false" selection-start-line="45" selection-start-column="4" selection-end-line="55" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3932#3933#0" expanded="true" />
@@ -146,21 +137,11 @@
       <file leaf-file-name="HoverOver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/HoverOver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="78" lean-forward="false" selection-start-line="21" selection-start-column="78" selection-end-line="21" selection-end-column="78" />
+            <state relative-caret-position="182">
+              <caret line="31" column="41" lean-forward="true" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FindByAnnotation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/FindByAnnotation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -516,7 +497,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/helpers/Search.java" />
         <option value="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_Search/POM_Search.java" />
         <option value="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_Profile/POM_Profile.java" />
         <option value="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tData/TD_Search.java" />
@@ -565,8 +545,9 @@
         <option value="$PROJECT_DIR$/src/test/java/frameworkSandbox/HoverOver.java" />
         <option value="$PROJECT_DIR$/src/test/java/frameworkSandbox/SelectDropdown.java" />
         <option value="$PROJECT_DIR$/src/main/java/framework/PropsCommands.java" />
-        <option value="$PROJECT_DIR$/src/main/java/framework/Commands.java" />
+        <option value="$PROJECT_DIR$/src/test/java/frameworkSandbox/AssertNotInList.java" />
         <option value="$PROJECT_DIR$/src/test/java/frameworkSandbox/AssertTextContainsLoop.java" />
+        <option value="$PROJECT_DIR$/src/main/java/framework/Commands.java" />
       </list>
     </option>
   </component>
@@ -609,6 +590,69 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeleniumFramework2beta" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeleniumFramework2beta" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeleniumFramework2beta" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeleniumFramework2beta" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeleniumFramework2beta" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeleniumFramework2beta" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeleniumFramework2beta" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeleniumFramework2beta" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="frameworkSandbox" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -629,76 +673,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeleniumFramework2beta" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeleniumFramework2beta" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeleniumFramework2beta" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeleniumFramework2beta" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeleniumFramework2beta" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeleniumFramework2beta" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeleniumFramework2beta" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeleniumFramework2beta" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="frameworkSandbox" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeleniumFramework2beta" type="462c0819:PsiDirectoryNode" />
-              <item name="webDrivers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -733,8 +709,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.AssertTextContainsLoop">
-    <configuration name="AssertTextContainsLoop" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.AssertNotInList">
+    <configuration name="AssertNotInList" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="frameworkSandbox.*" />
@@ -746,7 +722,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="frameworkSandbox" />
-      <option name="MAIN_CLASS_NAME" value="frameworkSandbox.AssertTextContainsLoop" />
+      <option name="MAIN_CLASS_NAME" value="frameworkSandbox.AssertNotInList" />
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
@@ -766,7 +742,7 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="BrowserTest (1)" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="AssertTextContainsLoop" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="frameworkSandbox.*" />
@@ -778,7 +754,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="frameworkSandbox" />
-      <option name="MAIN_CLASS_NAME" value="frameworkSandbox.BrowserTest" />
+      <option name="MAIN_CLASS_NAME" value="frameworkSandbox.AssertTextContainsLoop" />
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
@@ -976,19 +952,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="TestNG.BrowserTest (1)" />
-      <item index="1" class="java.lang.String" itemvalue="TestNG.SelectDropdown" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.ChromeNoNotification" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.HoverOver" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.AssertTextContainsLoop" />
+      <item index="0" class="java.lang.String" itemvalue="TestNG.SelectDropdown" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG.ChromeNoNotification" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.HoverOver" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.AssertTextContainsLoop" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.AssertNotInList" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.AssertTextContainsLoop" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.SelectDropdown" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.HoverOver" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.ChromeNoNotification" />
-        <item index="4" class="java.lang.String" itemvalue="TestNG.BrowserTest (1)" />
+        <item index="0" class="java.lang.String" itemvalue="TestNG.AssertNotInList" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.AssertTextContainsLoop" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.SelectDropdown" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.HoverOver" />
+        <item index="4" class="java.lang.String" itemvalue="TestNG.ChromeNoNotification" />
       </list>
     </recent_temporary>
   </component>
@@ -1343,20 +1319,20 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AssertTextContainsLoop - 2018.09.20 at 13h 58m 30s.xml">
-      <configuration name="AssertTextContainsLoop" configurationId="TestNG" />
+    <history-entry file="AssertNotInList - 2018.09.26 at 10h 40m 27s.xml">
+      <configuration name="AssertNotInList" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AssertTextContainsLoop - 2018.09.20 at 14h 02m 05s.xml">
-      <configuration name="AssertTextContainsLoop" configurationId="TestNG" />
+    <history-entry file="AssertNotInList - 2018.09.26 at 10h 42m 50s.xml">
+      <configuration name="AssertNotInList" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="ChromeNoNotification - 2018.09.14 at 14h 51m 04s.xml">
-      <configuration name="ChromeNoNotification" configurationId="TestNG" />
+    <history-entry file="AssertNotInList - 2018.09.26 at 10h 43m 39s.xml">
+      <configuration name="AssertNotInList" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="ChromeNoNotification - 2018.09.14 at 15h 01m 06s.xml">
-      <configuration name="ChromeNoNotification" configurationId="TestNG" />
+    <history-entry file="AssertNotInList - 2018.09.26 at 10h 45m 57s.xml">
+      <configuration name="AssertNotInList" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="ChromeNoNotification - 2018.09.14 at 15h 07m 48s.xml">
-      <configuration name="ChromeNoNotification" configurationId="TestNG" />
+    <history-entry file="AssertNotInList - 2018.09.26 at 10h 46m 44s.xml">
+      <configuration name="AssertNotInList" configurationId="TestNG" />
     </history-entry>
     <history-entry file="ChromeNoNotification - 2018.09.14 at 15h 10m 37s.xml">
       <configuration name="ChromeNoNotification" configurationId="TestNG" />
@@ -1386,9 +1362,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23398058" sideWeight="0.51145834" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3195435" sideWeight="0.48854166" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3195435" sideWeight="0.48854166" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2981455" sideWeight="0.48697916" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2981455" sideWeight="0.48697916" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24609375" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
@@ -1471,13 +1447,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_LogIn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="22" column="55" lean-forward="false" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_SearchPhotogs.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -1690,19 +1659,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/framework/CommandHelpers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="9" column="28" lean-forward="false" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1710,7 +1670,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1726,14 +1685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/AssertInList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1770,24 +1721,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/ChromeNoNotification.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/framework/Drivers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="140" column="17" lean-forward="false" selection-start-line="140" selection-start-column="17" selection-end-line="140" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/ChromeNoNotification.kt" />
     <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/POM_FindByAnnotation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1796,19 +1730,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/HoverOver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="78" lean-forward="false" selection-start-line="21" selection-start-column="78" selection-end-line="21" selection-end-column="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/SelectDropdown.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
+        <state relative-caret-position="285">
           <caret line="30" column="9" lean-forward="false" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1816,18 +1740,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/framework/PropsCommands.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="22" column="61" lean-forward="false" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/ChromeNoNotification.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="55" column="5" lean-forward="true" selection-start-line="45" selection-start-column="4" selection-end-line="55" selection-end-column="5" />
+        <state relative-caret-position="600">
+          <caret line="55" column="5" lean-forward="false" selection-start-line="45" selection-start-column="4" selection-end-line="55" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3932#3933#0" expanded="true" />
@@ -1840,33 +1756,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/framework/Commands.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/framework/Drivers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="159" column="54" lean-forward="false" selection-start-line="159" selection-start-column="54" selection-end-line="159" selection-end-column="54" />
+        <state relative-caret-position="209">
+          <caret line="69" column="59" lean-forward="false" selection-start-line="69" selection-start-column="59" selection-end-line="69" selection-end-column="59" />
           <folding>
-            <element signature="e#1937#1945#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/framework/CommandHelpers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/framework/PropsCommands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="24" column="47" lean-forward="false" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/AssertInList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+          <folding>
+            <element signature="e#1003#1004#0" expanded="true" />
+            <element signature="e#1044#1045#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/HoverOver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="31" column="41" lean-forward="true" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/AssertNotInList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/AssertTextContainsLoop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="34" column="57" lean-forward="true" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
+        <state relative-caret-position="195">
+          <caret line="34" column="33" lean-forward="false" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
-            <element signature="e#1781#1782#0" expanded="true" />
-            <element signature="e#1901#1902#0" expanded="true" />
-            <element signature="e#1948#1949#0" expanded="true" />
-            <element signature="e#2056#2057#0" expanded="true" />
-            <element signature="e#2102#2103#0" expanded="true" />
-            <element signature="e#2219#2220#0" expanded="true" />
-            <element signature="e#2261#2262#0" expanded="true" />
-            <element signature="e#2399#2400#0" expanded="true" />
-            <element signature="e#2453#2454#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/framework/Commands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="108" column="16" lean-forward="true" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -29,74 +30,19 @@ public class Commands {
 		CommandHelpers.printSteps(func, desc);
 	}
 
-	public static void assertInTable(WebDriver d, WebElement elTable, String uniqueVal, Boolean click){
+	public static void assertInTable(WebElement elTable, String uniqueVal, Boolean click){
 		List<WebElement> elTableRows = elTable.findElements(By.tagName("tbody")).get(0).findElements(By.tagName("tr"));
 		Boolean foundRow = false;
 
 		for (WebElement thisRow : elTableRows){
 			if (thisRow.getText().contains(uniqueVal)){
 				foundRow = true;
-
-				if (click){
-					thisRow.click();
-				}
-
+				if (click){ thisRow.click(); }
 				break;
 			}
 		}
 
-		if (!foundRow){
-			Assert.fail(uniqueVal + " was not found in the table.");
-		}
-	}
-
-	public static void assertInTable(WebDriver d, String attrType, String attrValue, String uniqueCol, HashMap<String, String> hm, Boolean click, String desc){
-		WebElement el = CommandHelpers.getElementBy(d, attrType, attrValue).findElement(By.xpath("/tbody/"));
-		List<WebElement> elHeaders = CommandHelpers.getElementsBy(null, el, PropsCommands.xpath, PropsCommands.trth);  //tr[0]/th level (WebElement list of headers)
-		List<String> listHeaders = new ArrayList<String>();
-		Integer iUniqueCol = -1;
-		
-		//Get unique column index and create a String list of headers
-		for (int i=0; i<elHeaders.size(); i++){
-			listHeaders.add(elHeaders.get(i).getText());
-			if (iUniqueCol.equals(-1) && elHeaders.get(i).getText() == uniqueCol){
-				iUniqueCol = i;
-			}
-		}
-		
-		//If there are headers and if there is a unique column index
-		if (listHeaders != null && iUniqueCol != -1){
-			List<WebElement> elRows = CommandHelpers.getElementsBy(null, el, PropsCommands.xpath, PropsCommands.tr);  //tr level (List of rows)
-			Boolean foundRow = false;
-			//Loop through all table rows except header row
-			for (int i=1; i<elRows.size(); i++){
-				List<WebElement> elCells = CommandHelpers.getElementsBy(null, elRows.get(i), PropsCommands.xpath, PropsCommands.td);
-				//If cell text equals the expected value for that specific column
-				if (elCells.get(iUniqueCol).getText() == hm.get(uniqueCol)){
-					foundRow = false;
-					//Loop through cells to assert row values against expected values
-					for (int ii=0; ii<listHeaders.size(); ii++){
-						if (elCells.get(ii).getText() == hm.get(listHeaders.get(ii))){
-							foundRow = true;
-						} else {
-							foundRow = false;
-							break;
-						}
-					}
-					//If all values in row match all expected values and if clicking on the row
-					if (foundRow && click){
-						elRows.get(i).click();
-						break;
-					}
-				}
-				
-				//If at the last row and expected row is not found, then fail
-				//Will need to be revisited for pagination with no search feature
-				if (i == elRows.size() - 1 && !foundRow){
-					fail("Cannot find expected row");
-				}
-			}
-		}
+		if (!foundRow){ fail(uniqueVal + " was not found in the table."); }
 	}
 	
 	public static void assertInList(List<WebElement> elItems, String itemValue, Boolean click, String desc){
@@ -120,21 +66,35 @@ public class Commands {
 			}
 		}
 
-		if (!foundRow){
-			fail("Cannot find " + itemValue + " in the list");
+		if (!foundRow){ fail("Cannot find " + itemValue + " in the list"); }
+	}
+
+	public static void assertNotInList(List<WebElement> elItems, String itemValue, String desc){
+		Boolean flag = false;
+
+		for (WebElement thisItem : elItems){
+			if (thisItem.getText().contains(itemValue)){
+				flag = true;
+				break;
+			}
+		}
+
+		if (flag){
+			fail("Found " + itemValue + " in the list");
+		} else {
+			CommandHelpers.printSteps(PropsCommands.assertNotInList, desc);
 		}
 	}
 
-	public static void assertRadio(WebDriver d, String attrType, String attrValue, String expValue, Boolean click, String desc){
-		List<WebElement> el = CommandHelpers.getElementsBy(d, null, attrType, attrValue);
-		for (int i=0; i<el.size(); i++){
-			if (el.get(i).getAttribute("value").equalsIgnoreCase(expValue)){
+	public static void assertRadio(List<WebElement> elItems, String expValue, Boolean click, String desc){
+		for (WebElement el : elItems){
+			if (el.getAttribute("value").equalsIgnoreCase(expValue)){
 				if (!click){  //if asserting selected value
-					assertEquals(el.get(i).isSelected(), true);
+					assertEquals(el.isSelected(), true);
 					CommandHelpers.printSteps(PropsCommands.assertText, desc);
 					break;
 				} else {  //else if clicking on an option
-					el.get(i).click();
+					el.click();
 					CommandHelpers.printSteps(PropsCommands.click, desc);
 					break;
 				}
@@ -142,7 +102,7 @@ public class Commands {
 		}
 	}
 	
-	public static void assertText(WebElement el, String expValue, String desc){
+	public static void assertTextEquals(WebElement el, String expValue, String desc){
         assertEquals(el.getText(), expValue);
         CommandHelpers.printSteps(PropsCommands.assertText, desc);
     }
@@ -152,18 +112,6 @@ public class Commands {
 			assertFalse(true, "[" + el.getText() + "] doesn't contain the text [" + expValue + "].");
 		}
 		CommandHelpers.printSteps(PropsCommands.assertTextContains, desc);
-	}
-
-	public static void assertTextContainsLoop(List<WebElement> elList, String expValue, String desc){
-		Boolean flag = false;
-    	for (WebElement listItem : elList){
-			if (listItem.getText().contains(expValue)) {flag = true;}
-		}
-
-		if (!flag){
-    		assertFalse(true, "Cannot find " + expValue + " in the list");
-		}
-		CommandHelpers.printSteps(PropsCommands.assertTextContainsLoop, desc);
 	}
 	
 	public static void click(WebElement el, String desc){
