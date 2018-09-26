@@ -4,11 +4,8 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.fail;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +15,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 public class Commands {
 
@@ -56,7 +52,7 @@ public class Commands {
 
 				if (!click){
 					assertEquals(elItems.get(i).isSelected(), true);
-					CommandHelpers.printSteps(PropsCommands.assertText, desc);
+					CommandHelpers.printSteps(PropsCommands.assertInList, desc);
 				} else {
 					elItems.get(i).click();
 					CommandHelpers.printSteps(PropsCommands.click, desc);
