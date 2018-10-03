@@ -8,7 +8,10 @@ import java.net.URL;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -38,15 +41,17 @@ public class Drivers {
 
 			if (d.equals(null)){
 				switch(browser){
-					case "firefox": return firefoxDriver(appAddress);
-					case "chrome": return chromeDriver(appAddress);
+					case PropsSystem.firefox: return firefoxDriver(appAddress);
+					case PropsSystem.chrome: return chromeDriver(appAddress);
+					case PropsSystem.safari: return safariDriver(appAddress);
 					default: return d;
 				}
 			}
 		} else {
 			switch(browser){
-				case "firefox": return firefoxDriver(appAddress);
-				case "chrome": return chromeDriver(appAddress);
+				case PropsSystem.firefox: return firefoxDriver(appAddress);
+				case PropsSystem.chrome: return chromeDriver(appAddress);
+				case PropsSystem.safari: return safariDriver(appAddress);
 				default: return d;
 			}
 		}
@@ -109,7 +114,7 @@ public class Drivers {
 		DesiredCapabilities caps;
 		
 		switch (browser){
-			case "firefox": 
+			case PropsSystem.firefox:
 				caps = DesiredCapabilities.firefox();
 				caps.setCapability("version", "52.0");
 				
@@ -117,7 +122,7 @@ public class Drivers {
 					case "Windows 10": caps.setCapability("platform", platform); return caps;
 					default: return null;
 				}
-			case "chrome":
+			case PropsSystem.chrome:
 				caps = DesiredCapabilities.chrome();
 				caps.setCapability("version", "58");
 				
@@ -132,7 +137,9 @@ public class Drivers {
 	//Chrome WebDriver
 	public static WebDriver chromeDriver(String app){
 		System.setProperty("webdriver.chrome.driver", "webDrivers/chromedriver242");
-		WebDriver d = new ChromeDriver();
+		ChromeOptions co = new ChromeOptions();
+		co.setAcceptInsecureCerts(true);
+		WebDriver d = new ChromeDriver(co);
 		d.get(app);
 		return d;
 	}
@@ -144,7 +151,7 @@ public class Drivers {
 		d.get(app);
 		return d;
 	}
-	
+
 	//Firefox WebDriver - need to run on compatible FF version
 	//Also, there is a known issue with geckodriver
 	public static WebDriver firefoxDriver(String app){
@@ -152,8 +159,14 @@ public class Drivers {
 		System.setProperty("webdriver.gecko.driver", "webDrivers/geckodriver0_19_1");
 		DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 		capabilities.setCapability("marionette", true);
+
+		FirefoxProfile profile = new FirefoxProfile();
+		profile.setAcceptUntrustedCertificates(true);
+
+		FirefoxOptions fo = new FirefoxOptions();
+		fo.setProfile(profile);
 		
-		WebDriver d = new FirefoxDriver();
+		WebDriver d = new FirefoxDriver(fo);
 		d.get(app);
 		return d;
 	}
