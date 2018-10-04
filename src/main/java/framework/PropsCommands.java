@@ -8,6 +8,7 @@ public interface PropsCommands {
 	String assertText = "assertText";
 	String assertTextContains = "assertTextContains";
 	String assertInList = "assertInList";
+	String assertPageSource = "assertPageSource";
 	String assertNotInList = "assertNotInList";
 	String clickOffset = "clickOffset";
 	String fileUpload = "fileUpload";
