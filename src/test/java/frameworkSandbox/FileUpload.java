@@ -26,7 +26,7 @@ public class FileUpload {
 	
 	@Test
 	public void testSauce() throws Exception {
-		Commands.assertPageSource(d, "test page", "assert this page source");
+		Commands.assertPageSource(d.getPageSource(), "test page", "assert this page source");
 		System.out.println(d.getPageSource());
 
 //        WebElement upload = d.findElement(By.id("myfile"));

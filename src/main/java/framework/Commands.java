@@ -65,8 +65,8 @@ public class Commands {
 		if (!foundRow){ fail("Cannot find " + itemValue + " in the list"); }
 	}
 
-	public static void assertPageSource(WebDriver d, String expValue, String desc){
-		if (!d.getPageSource().contains(expValue)){
+	public static void assertPageSource(String source, String expValue, String desc){
+		if (!source.contains(expValue)){
 			assertFalse(true, "[" + expValue + "] is not found in page source.");
 		}
 		CommandHelpers.printSteps(PropsCommands.assertPageSource, desc);
