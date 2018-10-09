@@ -19,7 +19,7 @@ public class FileUpload {
 //		File file = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
 //		d = Drivers.checkSauceLabs("Windows 10", "chrome", "http://sl-test.herokuapp.com/guinea_pig/file_upload", file, false);
 //		d = Drivers.firefoxDriver(null, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
-		d = Drivers.chromeDriver("http://sl-test.herokuapp.com/guinea_pig/file_upload");
+		d = Drivers.firefoxDriver("http://sl-test.herokuapp.com/guinea_pig/file_upload");
 //		d = Drivers.safariDriver(null, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
 		d.manage().window().maximize();
 	}

@@ -6,10 +6,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -138,9 +138,9 @@ public class Drivers {
 
 	//Chrome WebDriver
 	public static WebDriver chromeDriver(String app){
-		System.setProperty("webdriver.chrome.driver", "webDrivers/chromedriver242");
 		ChromeOptions co = new ChromeOptions();
 		co.setAcceptInsecureCerts(true);
+		WebDriverManager.chromedriver().setup();
 		WebDriver d = new ChromeDriver(co);
 		d.get(app);
 		return d;
@@ -154,11 +154,8 @@ public class Drivers {
 		return d;
 	}
 
-	//Firefox WebDriver - need to run on compatible FF version
-	//Also, there is a known issue with geckodriver
+	//Firefox WebDriver
 	public static WebDriver firefoxDriver(String app){
-		//Configure to use GeckoDriver
-		System.setProperty("webdriver.gecko.driver", "webDrivers/geckodriver0_19_1");
 		DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 		capabilities.setCapability("marionette", true);
 
@@ -167,6 +164,8 @@ public class Drivers {
 
 		FirefoxOptions fo = new FirefoxOptions();
 		fo.setProfile(profile);
+
+		WebDriverManager.firefoxdriver().setup();
 		
 		WebDriver d = new FirefoxDriver(fo);
 		d.get(app);
