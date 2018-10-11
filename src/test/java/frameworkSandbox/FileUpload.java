@@ -16,10 +16,11 @@ public class FileUpload {
 	
 	@BeforeTest
 	public static void beforeTest(){
-//		File file = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
+		File file = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
+		d = Drivers.checkSL("Windows 10", "firefox", "http://sl-test.herokuapp.com/guinea_pig/file_upload", file, true);
 //		d = Drivers.checkSauceLabs("Windows 10", "chrome", "http://sl-test.herokuapp.com/guinea_pig/file_upload", file, false);
 //		d = Drivers.firefoxDriver(null, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
-		d = Drivers.firefoxDriver("http://sl-test.herokuapp.com/guinea_pig/file_upload");
+//		d = Drivers.firefoxDriver("http://sl-test.herokuapp.com/guinea_pig/file_upload");
 //		d = Drivers.safariDriver(null, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
 		d.manage().window().maximize();
 	}

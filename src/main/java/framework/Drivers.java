@@ -23,42 +23,17 @@ import static org.testng.Assert.fail;
 
 public class Drivers {
 
-	public static WebDriver checkSauceLabs(String platform, String browser, String appUrl, File f, Boolean runSL){
-		WebDriver d = runSauceLabs(browser, platform, appUrl, f, runSL);
-
-		if (d.equals(null)){
-			fail("The WebDriver is null. Please check code for Drivers.");
-		}
-
-		d.manage().window().maximize();
-
-		return d;
-	}
-
-	private static WebDriver runSauceLabs(String browser, String platform, String appAddress, File f, Boolean runSL){
-		WebDriver d = null;
-
+	public static WebDriver checkSL(String platform, String browser, String appUrl, File f, Boolean runSL){
 		if (runSL){
-			d = Drivers.sauceLabsConfig(f, browser, platform, appAddress);
-
-			if (d.equals(null)){
-				switch(browser){
-					case PropsSystem.firefox: return firefoxDriver(appAddress);
-					case PropsSystem.chrome: return chromeDriver(appAddress);
-					case PropsSystem.safari: return safariDriver(appAddress);
-					default: return d;
-				}
-			}
+			return Drivers.sauceLabsConfig(f, browser, platform, appUrl);
 		} else {
 			switch(browser){
-				case PropsSystem.firefox: return firefoxDriver(appAddress);
-				case PropsSystem.chrome: return chromeDriver(appAddress);
-				case PropsSystem.safari: return safariDriver(appAddress);
-				default: return d;
+				case PropsSystem.firefox: return firefoxDriver(appUrl);
+				case PropsSystem.chrome: return chromeDriver(appUrl);
+				case PropsSystem.safari: return safariDriver(appUrl);
+				default: return chromeDriver(appUrl);
 			}
 		}
-
-		return d;
 	}
 
 	//SauceLabs Config for RemoteWebDriver

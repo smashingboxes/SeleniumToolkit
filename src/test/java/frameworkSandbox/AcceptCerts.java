@@ -24,7 +24,7 @@ public class AcceptCerts {
 //        d = Drivers.safariDriver(d, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
 //        d = Drivers.firefoxDriver(d, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
 //        d = Drivers.chromeDriver(null, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
-        d = Drivers.checkSauceLabs("Windows 10", PropsSystem.chrome, app, file, false);
+        d = Drivers.checkSL("Windows 10", PropsSystem.chrome, app, file, true);
         d.manage().window().maximize();
     }
 
