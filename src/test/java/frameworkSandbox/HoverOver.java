@@ -19,9 +19,13 @@ public class HoverOver {
 
     @BeforeTest
     public static void beforeTest(){
-        File f = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
-        d = Drivers.sauceLabsConfig(f, PropsSystem.chrome, "Windows 10", "https://www.amazon.com/");
-        d.manage().window().maximize();
+//        File f = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
+//        d = Drivers.sauceLabsConfig(f, PropsSystem.chrome, "Windows 10", "https://www.amazon.com/");
+//        d.manage().window().maximize();
+
+        File file = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
+        d = Drivers.checkSL("Windows 10", "chrome",
+                "https://www.amazon.com/", file, false, true);
         PageFactory.initElements(d, HoverOver.class);
     }
 
@@ -31,6 +35,8 @@ public class HoverOver {
 //        Commands.waitForURL(d, "newegg");
         Commands.waitForURL(d, "amazon");
         hoverDepartments();
+        clickSignIn();
+        waitForPageLoad();
     }
 
     @FindBy(className = "nav-line-2")
@@ -38,6 +44,23 @@ public class HoverOver {
 
     public static void hoverDepartments(){
         String desc = "Hover over departments";
-        Commands.hoverOver(d, headerOpts.get(6), desc);
+        Commands.hoverOver(d, headerOpts.get(2), desc);
+    }
+
+    @FindBy(className = "nav-action-inner")
+    public static List<WebElement> actions;
+
+    public static void clickSignIn(){
+        String desc = "Click on sign in";
+        Commands.click(actions.get(0), desc);
+    }
+
+    @FindBy(name = "email")
+    public static WebElement email;
+
+    public static void waitForPageLoad(){
+        String desc = "Wait for page load";
+        Commands.waitForURL(d, "signin");
+        Commands.waitForEl(d, email);
     }
 }

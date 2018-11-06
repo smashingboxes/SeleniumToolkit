@@ -14,7 +14,7 @@ public class FindByAnnotation {
 
     @BeforeTest
     public void beforeTest(){
-        d = Drivers.chromeDriver("http://sl-test.herokuapp.com/guinea_pig/file_upload");
+        d = Drivers.chromeDriver("http://sl-test.herokuapp.com/guinea_pig/file_upload", false);
 //        d = Drivers.chromeDriver(null, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
         PageFactory.initElements(d, this);
         PageFactory.initElements(d, POM_FindByAnnotation.class);

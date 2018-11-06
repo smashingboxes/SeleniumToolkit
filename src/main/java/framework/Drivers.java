@@ -23,15 +23,16 @@ import static org.testng.Assert.fail;
 
 public class Drivers {
 
-	public static WebDriver checkSL(String platform, String browser, String appUrl, File f, Boolean runSL){
+	public static WebDriver checkSL(String platform, String browser, String appUrl, File f,
+									Boolean runSL, Boolean headless){
 		if (runSL){
 			return Drivers.sauceLabsConfig(f, browser, platform, appUrl);
 		} else {
 			switch(browser){
 				case PropsSystem.firefox: return firefoxDriver(appUrl);
-				case PropsSystem.chrome: return chromeDriver(appUrl);
+				case PropsSystem.chrome: return chromeDriver(appUrl, headless);
 				case PropsSystem.safari: return safariDriver(appUrl);
-				default: return chromeDriver(appUrl);
+				default: return chromeDriver(appUrl, headless);
 			}
 		}
 	}
@@ -112,9 +113,14 @@ public class Drivers {
 	}
 
 	//Chrome WebDriver
-	public static WebDriver chromeDriver(String app){
+	public static WebDriver chromeDriver(String app, Boolean headless){
 		ChromeOptions co = new ChromeOptions();
 		co.setAcceptInsecureCerts(true);
+
+		if(headless){
+			co.addArguments("--headless");
+		}
+
 		WebDriverManager.chromedriver().setup();
 		WebDriver d = new ChromeDriver(co);
 		d.get(app);

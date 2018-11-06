@@ -23,7 +23,7 @@ public class AssertInList {
 	
 	@BeforeTest
 	public static void beforeTest(){
-		d = Drivers.chromeDriver(thisURL3);
+		d = Drivers.chromeDriver(thisURL3, false);
 	}
 //	public static void beforeTest(){
 //		d = Drivers.chromeDriver(null, thisURL3);
