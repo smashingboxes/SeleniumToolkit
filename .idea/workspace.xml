@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f61b1bd-fb00-4ecb-bd9c-b3abbc8f7ebc" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/classes/frameworkSandbox/PractiTestConnection.class" afterPath="$PROJECT_DIR$/out/test/classes/frameworkSandbox/PractiTestConnection.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/frameworkSandbox/PractiTestConnection.java" afterPath="$PROJECT_DIR$/src/test/java/frameworkSandbox/PractiTestConnection.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_Questionnaire/POM_Q_Step4_ServiceArea.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_Questionnaire/POM_Q_Step4_ServiceArea.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tData/TD_UserData.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tData/TD_UserData.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_CompletePhotogQuestionnaire.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_CompletePhotogQuestionnaire.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_SignUpPhotog.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_SignUpPhotog.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tSuites/TS_LoadAllUsers.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tSuites/TS_LoadAllUsers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -58,17 +60,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Drivers.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Drivers.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/framework/Drivers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1294">
+            <state relative-caret-position="-1451">
               <caret line="36" column="9" lean-forward="false" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
               <folding>
-                <marker date="1542820148721" expanded="true" signature="3503:3540" ph="//..." />
-                <marker date="1542820148721" expanded="true" signature="3503:3569" ph="{...}" />
-                <marker date="1542820148721" expanded="true" signature="3668:3794" ph="{...}" />
-                <marker date="1542820148721" expanded="true" signature="3867:4271" ph="{...}" />
+                <element signature="e#1905#1934#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PractiTestConnection.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/PractiTestConnection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1515">
+              <caret line="110" column="7" lean-forward="true" selection-start-line="57" selection-start-column="69" selection-end-line="110" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -492,7 +501,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tData/TD_Search.java" />
         <option value="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_SearchPhotogs.java" />
         <option value="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tData/TD_QuizAnswers.java" />
         <option value="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_Questionnaire/POM_Q_Step4_Availability.java" />
@@ -543,6 +551,7 @@
         <option value="$PROJECT_DIR$/src/test/java/frameworkSandbox/ClassName.java" />
         <option value="$PROJECT_DIR$/src/test/java/frameworkSandbox/FindByAnnotation.java" />
         <option value="$PROJECT_DIR$/src/test/java/frameworkSandbox/FileUpload.java" />
+        <option value="$PROJECT_DIR$/src/test/java/frameworkSandbox/PractiTestConnection.java" />
       </list>
     </option>
   </component>
@@ -700,7 +709,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.FileUpload">
+  <component name="RunManager" selected="Application.PractiTestConnection">
     <configuration name="AcceptCerts" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -746,38 +755,6 @@
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="frameworkSandbox" />
       <option name="MAIN_CLASS_NAME" value="frameworkSandbox.AssertNotInList" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration name="AssertTextContainsLoop" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="frameworkSandbox.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="SeleniumToolkit_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="frameworkSandbox" />
-      <option name="MAIN_CLASS_NAME" value="frameworkSandbox.AssertTextContainsLoop" />
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
@@ -861,6 +838,25 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration name="PractiTestConnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="frameworkSandbox.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="frameworkSandbox.PractiTestConnection" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="SeleniumToolkit_test" />
+      <envs />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -943,19 +939,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="TestNG.AssertTextContainsLoop" />
-      <item index="1" class="java.lang.String" itemvalue="TestNG.AssertNotInList" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.AcceptCerts" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.FileUpload" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.HoverOver" />
+      <item index="0" class="java.lang.String" itemvalue="TestNG.AssertNotInList" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG.AcceptCerts" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.FileUpload" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.HoverOver" />
+      <item index="4" class="java.lang.String" itemvalue="Application.PractiTestConnection" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.FileUpload" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.HoverOver" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.AcceptCerts" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.AssertNotInList" />
-        <item index="4" class="java.lang.String" itemvalue="TestNG.AssertTextContainsLoop" />
+        <item index="0" class="java.lang.String" itemvalue="Application.PractiTestConnection" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.FileUpload" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.HoverOver" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.AcceptCerts" />
+        <item index="4" class="java.lang.String" itemvalue="TestNG.AssertNotInList" />
       </list>
     </recent_temporary>
   </component>
@@ -1310,13 +1306,13 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FileUpload - 2018.10.11 at 14h 37m 50s.xml">
-      <configuration name="FileUpload" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="FileUpload - 2018.11.05 at 10h 54m 56s.xml">
       <configuration name="FileUpload" configurationId="TestNG" />
     </history-entry>
     <history-entry file="FileUpload - 2018.11.06 at 11h 04m 54s.xml">
+      <configuration name="FileUpload" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="FileUpload - 2018.11.21 at 12h 25m 16s.xml">
       <configuration name="FileUpload" configurationId="TestNG" />
     </history-entry>
     <history-entry file="HoverOver - 2018.11.05 at 13h 38m 21s.xml">
@@ -1343,6 +1339,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1352,9 +1349,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23398058" sideWeight="0.51145834" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20425531" sideWeight="0.48854166" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16028368" sideWeight="0.48854166" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29787233" sideWeight="0.48697916" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29787233" sideWeight="0.48697916" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1296875" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
@@ -1458,7 +1455,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_AgentDashboard/POM_AgentDashboardLeftNav.java" />
     <entry file="file://$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_SignUpPhotog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1814,14 +1810,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/framework/Drivers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1294">
+        <state relative-caret-position="-1451">
           <caret line="36" column="9" lean-forward="false" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
           <folding>
-            <marker date="1542820148721" expanded="true" signature="3503:3540" ph="//..." />
-            <marker date="1542820148721" expanded="true" signature="3503:3569" ph="{...}" />
-            <marker date="1542820148721" expanded="true" signature="3668:3794" ph="{...}" />
-            <marker date="1542820148721" expanded="true" signature="3867:4271" ph="{...}" />
+            <element signature="e#1905#1934#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/PractiTestConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1515">
+          <caret line="110" column="7" lean-forward="true" selection-start-line="57" selection-start-column="69" selection-end-line="110" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
