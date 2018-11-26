@@ -21,75 +21,17 @@ public class PractiTestConnection {
     static byte[] encoding = Base64.encodeBase64((DEVELOPER_EMAIL + ":" + API_TOKEN).getBytes());
     static String instanceId = "";
 
-    public final static void main(String[] args) throws Exception {
-
-        HttpClient httpclient = new DefaultHttpClient();
-
-        try {
-            HttpGet request = getRequest(URI_USERS);
-            // Create a response handler
-            HttpResponse response = httpclient.execute(request);
-            int statusCode = response.getStatusLine().getStatusCode();
-            HttpEntity entity = response.getEntity();
-            String responseBody = EntityUtils.toString(entity);
-            String prettyResponse = toPrettyFormat(responseBody);
-            if (statusCode == 200) {
-                System.out.println("SUCCESS: " + prettyResponse);
-            } else {
-                System.out.println("ERROR: " + statusCode + ": " + prettyResponse);
-            }
-        } catch (Throwable e) {
-            e.printStackTrace();
-        }
-
-        System.out.println("----------------------------------------");
-
-        // When HttpClient instance is no longer needed,
-        // shut down the connection manager to ensure
-        // immediate deallocation of all system resources
-        httpclient.getConnectionManager().shutdown();
-    }
-
-//    ======================================
-
-
 //    public final static void main(String[] args) throws Exception {
 //
 //        HttpClient httpclient = new DefaultHttpClient();
 //
 //        try {
+//            HttpGet request = getRequest(URI_USERS);
 //            // Create a response handler
-//            //Creating the instance
-//            HttpPost request = createInstance();
 //            HttpResponse response = httpclient.execute(request);
 //            int statusCode = response.getStatusLine().getStatusCode();
 //            HttpEntity entity = response.getEntity();
 //            String responseBody = EntityUtils.toString(entity);
-//
-//
-//            instanceId = getInstanceId(responseBody);
-//
-//
-//            String prettyResponse = toPrettyFormat(responseBody);
-//            if (statusCode == 200) {
-//                System.out.println("SUCCESS: " + prettyResponse);
-//            } else {
-//                System.out.println("ERROR: " + statusCode + ": " + prettyResponse);
-//            }
-//        } catch (Throwable e) {
-//            e.printStackTrace();
-//        }
-//
-//
-//        try {
-//            // Create a response handler
-//            //Run the test
-//            HttpPost request = runTest(instanceId);
-//            HttpResponse response = httpclient.execute(request);
-//            int statusCode = response.getStatusLine().getStatusCode();
-//            HttpEntity entity = response.getEntity();
-//            String responseBody = EntityUtils.toString(entity);
-//
 //            String prettyResponse = toPrettyFormat(responseBody);
 //            if (statusCode == 200) {
 //                System.out.println("SUCCESS: " + prettyResponse);
@@ -107,6 +49,65 @@ public class PractiTestConnection {
 //        // immediate deallocation of all system resources
 //        httpclient.getConnectionManager().shutdown();
 //    }
+
+//    ======================================
+
+
+    public final static void main(String[] args) throws Exception {
+
+        HttpClient httpclient = new DefaultHttpClient();
+
+        try {
+            // Create a response handler
+            //Creating the instance
+            HttpPost request = createInstance();
+            HttpResponse response = httpclient.execute(request);
+            int statusCode = response.getStatusLine().getStatusCode();
+            HttpEntity entity = response.getEntity();
+            String responseBody = EntityUtils.toString(entity);
+
+
+            instanceId = getInstanceId(responseBody);
+            System.out.println(instanceId);
+
+
+            String prettyResponse = toPrettyFormat(responseBody);
+            if (statusCode == 200) {
+                System.out.println("SUCCESS: " + prettyResponse);
+            } else {
+                System.out.println("ERROR: " + statusCode + ": " + prettyResponse);
+            }
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+
+
+        try {
+            // Create a response handler
+            //Run the test
+            HttpPost request = runTest(instanceId);
+            HttpResponse response = httpclient.execute(request);
+            int statusCode = response.getStatusLine().getStatusCode();
+            HttpEntity entity = response.getEntity();
+            String responseBody = EntityUtils.toString(entity);
+
+            String prettyResponse = toPrettyFormat(responseBody);
+            if (statusCode == 200) {
+                System.out.println("SUCCESS: " + prettyResponse);
+            } else {
+                System.out.println("ERROR: " + statusCode + ": " + prettyResponse);
+            }
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("----------------------------------------");
+
+        // When HttpClient instance is no longer needed,
+        // shut down the connection manager to ensure
+        // immediate deallocation of all system resources
+        httpclient.getConnectionManager().shutdown();
+    }
 
     //    ======================================
 

@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 
+import gateways.GatewayConfig;
+import gateways.GatewayProps;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
@@ -39,7 +41,8 @@ public class Drivers {
 
 	//SauceLabs Config for RemoteWebDriver
 	public static WebDriver sauceLabsConfig(File f, String browser, String platform, String appAddress){
-		String[] kv = readFile(f);
+//		String[] kv = readFile(f);
+		String[] kv = GatewayConfig.readFile(f, GatewayProps.sauceLabs);
 		RemoteWebDriver d = null;
 
 		try{
