@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f61b1bd-fb00-4ecb-bd9c-b3abbc8f7ebc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/frameworkSandbox/PractiTestConnection.java" afterPath="$PROJECT_DIR$/src/test/java/frameworkSandbox/PractiTestConnection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_Questionnaire/POM_Q_Step4_ServiceArea.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_Questionnaire/POM_Q_Step4_ServiceArea.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tSuites/TS_LoadAllUsers.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tSuites/TS_LoadAllUsers.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_CompletePhotogQuestionnaire.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_CompletePhotogQuestionnaire.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_Questionnaire/POM_Q_Step4_ServiceArea.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/pom_Questionnaire/POM_Q_Step4_ServiceArea.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_SignUpPhotog.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tCases/TC_SignUpPhotog.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tData/TD_UserData.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tData/TD_UserData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tSuites/TS_LoadAllUsers.java" afterPath="$PROJECT_DIR$/../../../workspace/Stilio/src/main/java/tSuites/TS_LoadAllUsers.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -49,21 +47,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Commands.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/framework/Commands.java">
+      <file leaf-file-name="Drivers.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/framework/Drivers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3270">
-              <caret line="232" column="0" lean-forward="false" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="149">
+              <caret line="41" column="34" lean-forward="false" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
+              <folding>
+                <marker date="1543263976288" expanded="true" signature="1459:1901" ph="{...}" />
+                <marker date="1543263976288" expanded="true" signature="1905:1934" ph="/resource/" />
+                <marker date="1543263976288" expanded="true" signature="1976:2571" ph="{...}" />
+                <marker date="1543263976288" expanded="true" signature="2650:3236" ph="{...}" />
+                <marker date="1543263976288" expanded="true" signature="3325:3569" ph="{...}" />
+                <marker date="1543263976288" expanded="true" signature="3668:3794" ph="{...}" />
+                <marker date="1543263976288" expanded="true" signature="3867:4271" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Drivers.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/framework/Drivers.java">
+      <file leaf-file-name="FileUpload.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/FileUpload.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="60" column="28" lean-forward="false" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+              <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -72,71 +78,28 @@
       <file leaf-file-name="PractiTestConnection.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/PractiTestConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+            <state relative-caret-position="152">
+              <caret line="130" column="142" lean-forward="false" selection-start-line="130" selection-start-column="38" selection-end-line="130" selection-end-column="142" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="29" column="52" lean-forward="false" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AcceptCerts.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/AcceptCerts.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="27" column="39" lean-forward="false" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="POM_FindByAnnotation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/POM_FindByAnnotation.java">
+      <file leaf-file-name="PropsSystem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/framework/PropsSystem.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+              <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FindByAnnotation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/FindByAnnotation.java">
+      <file leaf-file-name="PropsCommands.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/framework/PropsCommands.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AssertInList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/AssertInList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="25" column="48" lean-forward="false" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
-              <folding>
-                <element signature="e#1003#1004#0" expanded="true" />
-                <element signature="e#1051#1052#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SelectDropdown.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/SelectDropdown.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="30" column="9" lean-forward="false" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+            <state relative-caret-position="135">
+              <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -616,29 +579,29 @@
           <expand>
             <path>
               <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeleniumFramework2beta" type="462c0819:PsiDirectoryNode" />
+              <item name="SeleniumFramework2beta" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeleniumFramework2beta" type="462c0819:PsiDirectoryNode" />
+              <item name="SeleniumFramework2beta" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeleniumFramework2beta" type="462c0819:PsiDirectoryNode" />
+              <item name="SeleniumFramework2beta" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeleniumFramework2beta" type="462c0819:PsiDirectoryNode" />
+              <item name="SeleniumFramework2beta" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeleniumFramework2beta" type="462c0819:PsiDirectoryNode" />
+              <item name="SeleniumFramework2beta" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -646,20 +609,20 @@
             </path>
             <path>
               <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeleniumFramework2beta" type="462c0819:PsiDirectoryNode" />
+              <item name="SeleniumFramework2beta" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeleniumFramework2beta" type="462c0819:PsiDirectoryNode" />
+              <item name="SeleniumFramework2beta" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SeleniumFramework2beta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeleniumFramework2beta" type="462c0819:PsiDirectoryNode" />
+              <item name="SeleniumFramework2beta" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -1337,6 +1300,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32524964" sideWeight="0.496875" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1347,21 +1311,41 @@
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2981455" sideWeight="0.48697916" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24609375" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2109375" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16484375" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2109375" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23398058" sideWeight="0.51145834" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32524964" sideWeight="0.496875" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3195435" sideWeight="0.48854166" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2981455" sideWeight="0.48697916" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24609375" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291262" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2109375" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1634,8 +1618,9 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/ChromeNoNotification.kt" />
     <entry file="file://$PROJECT_DIR$/src/main/java/framework/PropsSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        <state relative-caret-position="105">
+          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1649,7 +1634,8 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/framework/PropsCommands.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1664,7 +1650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="29" column="52" lean-forward="false" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1672,7 +1657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3270">
           <caret line="232" column="0" lean-forward="false" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1716,7 +1700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1739,10 +1722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="25" column="48" lean-forward="false" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
-          <folding>
-            <element signature="e#1003#1004#0" expanded="true" />
-            <element signature="e#1051#1052#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1765,30 +1744,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/FileUpload.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        <state relative-caret-position="150">
+          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="81" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/framework/Drivers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="60" column="28" lean-forward="false" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="149">
+          <caret line="41" column="34" lean-forward="false" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
+          <folding>
+            <marker date="1543263976288" expanded="true" signature="1459:1901" ph="{...}" />
+            <marker date="1543263976288" expanded="true" signature="1905:1934" ph="/resource/" />
+            <marker date="1543263976288" expanded="true" signature="1976:2571" ph="{...}" />
+            <marker date="1543263976288" expanded="true" signature="2650:3236" ph="{...}" />
+            <marker date="1543263976288" expanded="true" signature="3325:3569" ph="{...}" />
+            <marker date="1543263976288" expanded="true" signature="3668:3794" ph="{...}" />
+            <marker date="1543263976288" expanded="true" signature="3867:4271" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/frameworkSandbox/PractiTestConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        <state relative-caret-position="152">
+          <caret line="130" column="142" lean-forward="false" selection-start-line="130" selection-start-column="38" selection-end-line="130" selection-end-column="142" />
           <folding />
         </state>
       </provider>
