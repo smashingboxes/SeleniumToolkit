@@ -38,7 +38,7 @@ public class GatewayConfig {
                         } else if (line[0].equals("practiTestAccessKey")){
                             kv[1] = line[1];
                         } break;
-                    default: System.out.println("this doesn't work"); break;
+                    default: throw new NullPointerException();
                 }
             }
         } catch (IOException e) {

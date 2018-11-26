@@ -2,6 +2,6 @@ package gateways;
 
 public interface GatewayProps {
 
-    public String sauceLabs = "sauceLabs";
-    public String practiTest = "practiTest";
+    String sauceLabs = "sauceLabs";
+    String practiTest = "practiTest";
 }

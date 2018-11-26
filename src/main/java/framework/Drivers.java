@@ -41,7 +41,6 @@ public class Drivers {
 
 	//SauceLabs Config for RemoteWebDriver
 	public static WebDriver sauceLabsConfig(File f, String browser, String platform, String appAddress){
-//		String[] kv = readFile(f);
 		String[] kv = GatewayConfig.readFile(f, GatewayProps.sauceLabs);
 		RemoteWebDriver d = null;
 
