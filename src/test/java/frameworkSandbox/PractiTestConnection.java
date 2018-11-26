@@ -29,9 +29,7 @@ public class PractiTestConnection {
             HttpGet request = getRequest(URI_USERS);
             // Create a response handler
             HttpResponse response = httpclient.execute(request);
-//            HttpResponse response = httpclient.execute(postRequest);
             int statusCode = response.getStatusLine().getStatusCode();
-//            int statusCode = response.getStatusLine().getStatusCode();
             HttpEntity entity = response.getEntity();
             String responseBody = EntityUtils.toString(entity);
             String prettyResponse = toPrettyFormat(responseBody);
@@ -129,7 +127,6 @@ public class PractiTestConnection {
 
     //Create instance
     public static HttpPost createInstance() throws Exception {
-//        String json_str = "{\"data\": { \"type\": \"instances\", \"attributes\": {\"set-id\": 413400, \"test-id\": 1734823, \"instance-id\": 12831635, \"exit-code\": 0, \"automated-execution-output\": \"THIS IS MY OUTPUT\" }}} ";
 //        String json_str_steps = "{\"data\": {\"type\": \"instances\", \"attributes\": {\"set-id\": 413400, \"test-id\": 1734823, \"instance-id\": 12831635}, \"steps\": {\"data\": [{\"name\": \"step one\", \"expected-results\": \"result\", \"status\": \"FAILED\"}, {\"name\": \"step two\", \"expected-results\": \"result2\", \"status\": \"PASSED\"}] }}}";
         String json_str_newInstance = "{\"data\": { \"type\": \"instances\", \"attributes\": {\"test-id\": 1734823, \"set-id\": 413400}  } }";
 
@@ -139,7 +136,6 @@ public class PractiTestConnection {
     public static HttpPost runTest(String instanceID) throws Exception {
         String json_str = "{\"data\": { \"type\": \"instances\", \"attributes\": {\"set-id\": 413400, \"test-id\": 1734823, \"instance-id\": " + instanceID + ", \"exit-code\": 0, \"automated-execution-output\": \"THIS IS MY OUTPUT\" }}} ";
 //        String json_str_steps = "{\"data\": {\"type\": \"instances\", \"attributes\": {\"set-id\": 413400, \"test-id\": 1734823, \"instance-id\": 12831635}, \"steps\": {\"data\": [{\"name\": \"step one\", \"expected-results\": \"result\", \"status\": \"FAILED\"}, {\"name\": \"step two\", \"expected-results\": \"result2\", \"status\": \"PASSED\"}] }}}";
-//        String json_str_newInstance = "{\"data\": { \"type\": \"instances\", \"attributes\": {\"test-id\": 1734823, \"set-id\": 413400}  } }";
 
         return postRequest(URI_RUNS, json_str);
     }
