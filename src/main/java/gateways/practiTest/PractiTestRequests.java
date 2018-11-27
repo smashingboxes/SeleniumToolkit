@@ -1,6 +1,6 @@
 package gateways.practiTest;
 
-import gateways.GatewayConfig;
+import gateways.GatewayUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -27,7 +27,7 @@ public class PractiTestRequests {
             HttpEntity entity = response.getEntity();
             String responseBody = EntityUtils.toString(entity);
             instanceId = PractiTestJSONUtils.getInstanceId(responseBody);
-            String prettyResponse = GatewayConfig.toPrettyFormat(responseBody);
+            String prettyResponse = GatewayUtils.toPrettyFormat(responseBody);
             if (statusCode == 200) {
                 System.out.println("SUCCESS: " + prettyResponse);
             } else {
@@ -47,7 +47,7 @@ public class PractiTestRequests {
             HttpEntity entity = response.getEntity();
             String responseBody = EntityUtils.toString(entity);
 
-            String prettyResponse = GatewayConfig.toPrettyFormat(responseBody);
+            String prettyResponse = GatewayUtils.toPrettyFormat(responseBody);
             if (statusCode == 200) {
                 System.out.println("SUCCESS: " + prettyResponse);
             } else {

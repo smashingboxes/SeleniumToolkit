@@ -2,7 +2,6 @@ package frameworkSandbox;
 
 import framework.Commands;
 import framework.Drivers;
-import framework.PropsSystem;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,7 +23,7 @@ public class HoverOver {
 //        d.manage().window().maximize();
 
         File file = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
-        d = Drivers.checkSL("Windows 10", "chrome",
+        d = Drivers.driverInit("Windows 10", "chrome",
                 "https://www.amazon.com/", file, false, true);
         PageFactory.initElements(d, HoverOver.class);
     }

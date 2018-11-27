@@ -2,7 +2,6 @@ package frameworkSandbox;
 
 import framework.Commands;
 import org.openqa.selenium.*;
-import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -17,8 +16,8 @@ public class FileUpload {
 	@BeforeTest
 	public static void beforeTest(){
 		File file = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
-		d = Drivers.checkSL("Windows 10", "chrome",
-				"http://sl-test.herokuapp.com/guinea_pig/file_upload", file, false, true);
+		d = Drivers.driverInit("Windows 10", "chrome",
+				"http://sl-test.herokuapp.com/guinea_pig/file_upload", file, true, true);
 //		d = Drivers.checkSauceLabs("Windows 10", "chrome", "http://sl-test.herokuapp.com/guinea_pig/file_upload", file, false);
 //		d = Drivers.firefoxDriver(null, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
 //		d = Drivers.firefoxDriver("http://sl-test.herokuapp.com/guinea_pig/file_upload");

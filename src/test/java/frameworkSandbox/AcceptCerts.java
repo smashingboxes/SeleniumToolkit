@@ -2,15 +2,11 @@ package frameworkSandbox;
 
 import framework.Drivers;
 import framework.PropsSystem;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.File;
-import java.sql.Driver;
 
 public class AcceptCerts {
 
@@ -24,7 +20,7 @@ public class AcceptCerts {
 //        d = Drivers.safariDriver(d, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
 //        d = Drivers.firefoxDriver(d, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
 //        d = Drivers.chromeDriver(null, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
-        d = Drivers.checkSL("Windows 10", PropsSystem.chrome, app, file, true, false);
+        d = Drivers.driverInit("Windows 10", PropsSystem.chrome, app, file, true, false);
         d.manage().window().maximize();
     }
 

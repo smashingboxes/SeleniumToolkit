@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class GatewayConfig {
+public class GatewayUtils {
 
     @SuppressWarnings("resource")
     public static String[] readFile(File f, String gatewayApp){

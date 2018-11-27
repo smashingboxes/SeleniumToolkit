@@ -3,7 +3,7 @@ package gateways.practiTest;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import gateways.GatewayConfig;
+import gateways.GatewayUtils;
 import gateways.GatewayProps;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.client.methods.HttpPost;
@@ -14,7 +14,7 @@ import java.io.File;
 public class PractiTestJSONUtils {
 
     public static byte[] getEncoding(File f){
-        String[] kv = GatewayConfig.readFile(f, GatewayProps.practiTest);
+        String[] kv = GatewayUtils.readFile(f, GatewayProps.practiTest);
         return Base64.encodeBase64((kv[0] + ":" + kv[1]).getBytes());
     }
 

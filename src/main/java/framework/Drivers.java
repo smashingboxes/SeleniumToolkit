@@ -1,15 +1,9 @@
 package framework;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.net.URL;
 
-import gateways.GatewayConfig;
-import gateways.GatewayProps;
+import gateways.sauceLabs.SauceLabsUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -17,18 +11,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.LocalFileDetector;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
-
-import static org.testng.Assert.fail;
 
 public class Drivers {
 
-	public static WebDriver checkSL(String platform, String browser, String appUrl, File f,
-									Boolean runSL, Boolean headless){
+	public static WebDriver driverInit(String platform, String browser, String appUrl, File f,
+									   Boolean runSL, Boolean headless){
 		if (runSL){
-			return Drivers.sauceLabsConfig(f, browser, platform, appUrl);
+			return SauceLabsUtils.sauceLabsConfig(f, browser, platform, appUrl);
 		} else {
 			switch(browser){
 				case PropsSystem.firefox: return firefoxDriver(appUrl);
@@ -39,58 +29,7 @@ public class Drivers {
 		}
 	}
 
-	//SauceLabs Config for RemoteWebDriver
-	public static WebDriver sauceLabsConfig(File f, String browser, String platform, String appAddress){
-		String[] kv = GatewayConfig.readFile(f, GatewayProps.sauceLabs);
-		RemoteWebDriver d = null;
-
-		try{
-			if (!kv.equals(null)){
-				final String URL = "https://" + kv[0] + ":" + kv[1] + "@ondemand.saucelabs.com:443/wd/hub";
-				d = new RemoteWebDriver(new URL(URL), setCaps(browser, platform));
-				d.setFileDetector(new LocalFileDetector());
-				d.get(appAddress);
-				System.out.println("title of page is: " + d.getTitle());
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		return d;
-	}
-	
-	@SuppressWarnings("resource")
-	private static String[] readFile(File f){
-		String[] kv = new String[2];
-		
-		try {
-			BufferedReader br = new BufferedReader(new FileReader(f));  
-			String readLine = "";
-
-	        System.out.println("Reading file using Buffered Reader");
-
-			while ((readLine = br.readLine()) != null) {
-				String[] line = readLine.split("=");
-				
-				if(line[0].equals("username")){
-					kv[0] = line[1];
-				} else if (line[0].equals("accessKey")){
-					kv[1] = line[1];
-				}
-			} 
-			
-		} catch (IOException e) {
-				e.printStackTrace();
-		}
-		
-		if (!kv[0].equals(null) && !kv[1].equals(null)){
-			return kv;
-		} else {
-			return null;
-		}
-	}
-	
-	private static DesiredCapabilities setCaps(String browser, String platform){
+	public static DesiredCapabilities setCaps(String browser, String platform){
 		DesiredCapabilities caps;
 		
 		switch (browser){
