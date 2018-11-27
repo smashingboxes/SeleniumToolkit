@@ -12,7 +12,7 @@ import java.io.File;
 
 public class PractiTestRequests {
 
-    public static void executeTestRun(File f, String projectId, String testSetId, String testId) throws Exception {
+    public static void executeTestRun(File f, String projectId, String testSetId, String testId, String runDuration) throws Exception {
 
         HttpClient httpclient = new DefaultHttpClient();
         byte[] encoding = PractiTestJSONUtils.getEncoding(f);
@@ -21,7 +21,7 @@ public class PractiTestRequests {
         try {
             // Create a response handler
             //Creating the instance
-            HttpPost request = PractiTestJSONUtils.createInstance(projectId, testSetId, testId, encoding);
+            HttpPost request = PractiTestJSONUtils.createInstance(encoding, projectId, testSetId, testId);
             HttpResponse response = httpclient.execute(request);
             int statusCode = response.getStatusLine().getStatusCode();
             HttpEntity entity = response.getEntity();
@@ -41,7 +41,7 @@ public class PractiTestRequests {
         try {
             // Create a response handler
             //Run the test
-            HttpPost request = PractiTestJSONUtils.runTest(projectId, instanceId, testSetId, testId, encoding);
+            HttpPost request = PractiTestJSONUtils.runTest(encoding, projectId, instanceId, testSetId, testId, runDuration);
             HttpResponse response = httpclient.execute(request);
             int statusCode = response.getStatusLine().getStatusCode();
             HttpEntity entity = response.getEntity();

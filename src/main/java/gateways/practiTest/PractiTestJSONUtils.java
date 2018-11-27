@@ -18,15 +18,15 @@ public class PractiTestJSONUtils {
         return Base64.encodeBase64((kv[0] + ":" + kv[1]).getBytes());
     }
 
-    public static HttpPost createInstance(String projectId, String testSetId, String testId, byte[] encoding) throws Exception {
+    public static HttpPost createInstance(byte[] encoding, String projectId, String testSetId, String testId) throws Exception {
         String json_str = "{\"data\": { \"type\": \"instances\", \"attributes\": {\"test-id\": " +
                 testId + ", \"set-id\": " + testSetId + "}  } }";
         return postRequest(uriInstance(projectId), json_str, encoding);
     }
 
-    public static HttpPost runTest(String projectId, String instanceID, String testSetId, String testId, byte[] encoding) throws Exception {
-        String json_str = "{\"data\": { \"type\": \"instances\", \"attributes\": {\"set-id\": " + testSetId + ", " +
-                "\"test-id\": " + testId + ", \"instance-id\": " + instanceID + ", \"exit-code\": 0, " +
+    public static HttpPost runTest(byte[] encoding, String projectId, String instanceID, String testSetId, String testId, String runDuration) throws Exception {
+        String json_str = "{\"data\": { \"type\": \"instances\", \"attributes\": {\"set-id\": \"" + testSetId + "\", " +
+                "\"test-id\": \"" + testId + "\", \"run-duration\": \"" + runDuration + "\", \"instance-id\": " + instanceID + ", \"exit-code\": 0, " +
                 "\"automated-execution-output\": \"THIS IS MY OUTPUT\" }}} ";
         return postRequest(uriRun(projectId), json_str, encoding);
     }
