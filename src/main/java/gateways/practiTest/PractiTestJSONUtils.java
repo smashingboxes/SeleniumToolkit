@@ -24,10 +24,27 @@ public class PractiTestJSONUtils {
         return postRequest(uriInstance(projectId), json_str, encoding);
     }
 
+//    public static HttpPost runTest(byte[] encoding, String projectId, String instanceID, String testSetId, String testId, String runDuration) throws Exception {
+//        String json_str = "{\"data\": { \"type\": \"instances\", \"attributes\": {\"set-id\": \"" + testSetId + "\", " +
+//                "\"test-id\": \"" + testId + "\", \"run-duration\": \"" + runDuration + "\", \"instance-id\": " + instanceID + ", \"exit-code\": 0, " +
+//                "\"automated-execution-output\": \"THIS IS MY OUTPUT\" }}} ";
+//        return postRequest(uriRun(projectId), json_str, encoding);
+//    }
+
     public static HttpPost runTest(byte[] encoding, String projectId, String instanceID, String testSetId, String testId, String runDuration) throws Exception {
         String json_str = "{\"data\": { \"type\": \"instances\", \"attributes\": {\"set-id\": \"" + testSetId + "\", " +
                 "\"test-id\": \"" + testId + "\", \"run-duration\": \"" + runDuration + "\", \"instance-id\": " + instanceID + ", \"exit-code\": 0, " +
-                "\"automated-execution-output\": \"THIS IS MY OUTPUT\" }}} ";
+                "\"automated-execution-output\": \"THIS IS MY OUTPUT\" }, \"steps\": {\"data\": [";
+
+        for (int i = 0; i < GatewayUtils.stepsOutput.size(); i++){
+            if (i != 0){
+                json_str += ", ";
+            }
+
+            json_str += "{\"name\": \"" + GatewayUtils.stepsOutput.get(i) + "\", \"status\": \"PASSED\"}";
+        }
+
+        json_str += "] }}} ";
         return postRequest(uriRun(projectId), json_str, encoding);
     }
 

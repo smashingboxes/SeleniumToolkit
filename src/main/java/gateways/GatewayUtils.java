@@ -9,8 +9,12 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GatewayUtils {
+
+    public static List<String> stepsOutput = new ArrayList();
 
     @SuppressWarnings("resource")
     public static String[] readFile(File f, String gatewayApp){
