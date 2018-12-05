@@ -65,4 +65,46 @@ public class GatewayUtils {
 
         return prettyJson;
     }
+
+    public static String convertMillis(Long millis){
+        Long seconds;
+        Long minutes;
+        Long hours;
+
+        seconds = millis / 1000;
+        minutes = seconds / 60;
+        seconds = seconds % 60;
+        hours = minutes / 60;
+        minutes = minutes % 60;
+
+        return adjustPartial(hours) + ":" + adjustPartial(minutes) + ":" + adjustPartial(seconds);
+    }
+
+    private static String adjustPartial(Long partialTime){
+        if (partialTime < 10){
+            return "0" + partialTime;
+        } else {
+            return partialTime.toString();
+        }
+    }
+
+//    private fun adjustPartial(partialTime: Long) : String{
+//        when (partialTime < 10){
+//            true -> return "0$partialTime"
+//            false -> return partialTime.toString()
+//        }
+//    }
+
+//    fun convertMillis(millis: Long) : String {
+//        var seconds: Long
+//        var minutes: Long
+//        val hours: Long
+//                seconds = millis / 1000
+//        minutes = seconds / 60
+//        seconds = seconds % 60
+//        hours = minutes / 60
+//        minutes = minutes % 60
+//
+//        return "${adjustPartial(hours)}:${adjustPartial(minutes)}:${adjustPartial(seconds)}"
+//    }
 }

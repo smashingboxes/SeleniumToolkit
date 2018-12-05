@@ -2,9 +2,14 @@ package frameworkSandbox;
 
 import framework.CommandHelpers;
 import gateways.practiTest.PractiTestRequests;
+import org.testng.IClass;
+import org.testng.ITestContext;
+import org.testng.ITestNGMethod;
+import org.testng.ITestResult;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.util.Set;
 
 public class PractiTestIntegration {
 
@@ -19,6 +24,7 @@ public class PractiTestIntegration {
         CommandHelpers.printSteps("actionOne", "Step One");
         CommandHelpers.printSteps("actionTwo", "Step Two");
         CommandHelpers.printSteps("actionThree", "Step Three");
-        PractiTestRequests.executeTestRun(file, projectId, testSetId, testId, runDuration);
+
+//        PractiTestRequests.executeTestRun(file, projectId, testSetId, testId, r);
     }
 }

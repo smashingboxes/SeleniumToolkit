@@ -31,21 +31,37 @@ public class PractiTestJSONUtils {
 //        return postRequest(uriRun(projectId), json_str, encoding);
 //    }
 
-    public static HttpPost runTest(byte[] encoding, String projectId, String instanceID, String testSetId, String testId, String runDuration) throws Exception {
+    public static HttpPost runTest(byte[] encoding, String projectId, String instanceID, String testSetId, String testId, String runDuration, String message, Integer exitCode) throws Exception {
         String json_str = "{\"data\": { \"type\": \"instances\", \"attributes\": {\"set-id\": \"" + testSetId + "\", " +
-                "\"test-id\": \"" + testId + "\", \"run-duration\": \"" + runDuration + "\", \"instance-id\": " + instanceID + ", \"exit-code\": 0, " +
-                "\"automated-execution-output\": \"THIS IS MY OUTPUT\" }, \"steps\": {\"data\": [";
+                "\"test-id\": \"" + testId + "\", \"run-duration\": \"" + runDuration + "\", \"instance-id\": " + instanceID + ", \"exit-code\": \"" + exitCode + "\", " +
+                "\"automated-execution-output\": \"" + automationOutput(message) + "\" }, \"steps\": {\"data\": [";
 
         for (int i = 0; i < GatewayUtils.stepsOutput.size(); i++){
             if (i != 0){
                 json_str += ", ";
             }
 
-            json_str += "{\"name\": \"" + GatewayUtils.stepsOutput.get(i) + "\", \"status\": \"PASSED\"}";
+            json_str += "{\"name\": \"" + GatewayUtils.stepsOutput.get(i) + "\", \"status\": \"" + stepStatus(message) + "\"}";
         }
 
         json_str += "] }}} ";
         return postRequest(uriRun(projectId), json_str, encoding);
+    }
+
+    private static String automationOutput(String message){
+        if (message.equals(null)){
+            return "";
+        } else {
+            return message;
+        }
+    }
+
+    private static String stepStatus(String message){
+        if (message.equals(null)){
+            return "PASSED";
+        } else {
+            return "FAILED";
+        }
     }
 
     public static HttpPost postRequest(String uri, String json_str, byte[] encoding) throws Exception{

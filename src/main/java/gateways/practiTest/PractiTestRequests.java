@@ -7,12 +7,14 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
+import org.testng.ITestResult;
 
 import java.io.File;
 
 public class PractiTestRequests {
 
-    public static void executeTestRun(File f, String projectId, String testSetId, String testId, String runDuration) throws Exception {
+//    public static void executeTestRun(File f, String projectId, String testSetId, String testId, String runDuration) throws Exception {
+    public static void executeTestRun(File f, String projectId, String testSetId, String testId, ITestResult result) throws Exception {
 
         HttpClient httpclient = new DefaultHttpClient();
         byte[] encoding = PractiTestJSONUtils.getEncoding(f);
@@ -41,7 +43,9 @@ public class PractiTestRequests {
         try {
             // Create a response handler
             //Run the test
-            HttpPost request = PractiTestJSONUtils.runTest(encoding, projectId, instanceId, testSetId, testId, runDuration);
+            HttpPost request = PractiTestJSONUtils.runTest(encoding, projectId, instanceId, testSetId, testId,
+                    GatewayUtils.convertMillis(result.getEndMillis() - result.getStartMillis()), result.getThrowable().getMessage(),
+                    result.getStatus());
             HttpResponse response = httpclient.execute(request);
             int statusCode = response.getStatusLine().getStatusCode();
             HttpEntity entity = response.getEntity();

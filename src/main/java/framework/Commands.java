@@ -19,11 +19,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Commands {
 
 	public static void assertClick(WebElement el, String func, Boolean check, String desc){
+		CommandHelpers.printSteps(func, desc);
 		if ((!el.getAttribute("class").contains("checked") && check) || (el.getAttribute("class").contains("checked") && !check)){
 			el.click();
 		}
-
-		CommandHelpers.printSteps(func, desc);
 	}
 
 	public static void assertInTable(WebElement elTable, String uniqueVal, Boolean click){
@@ -51,11 +50,11 @@ public class Commands {
 				foundRow = true;
 
 				if (!click){
-					assertEquals(elItems.get(i).isSelected(), true);
 					CommandHelpers.printSteps(PropsCommands.assertInList, desc);
+					assertEquals(elItems.get(i).isSelected(), true);
 				} else {
-					elItems.get(i).click();
 					CommandHelpers.printSteps(PropsCommands.click, desc);
+					elItems.get(i).click();
 				}
 
 				break;
@@ -66,13 +65,14 @@ public class Commands {
 	}
 
 	public static void assertPageSource(String source, String expValue, String desc){
+		CommandHelpers.printSteps(PropsCommands.assertPageSource, desc);
 		if (!source.contains(expValue)){
 			assertFalse(true, "[" + expValue + "] is not found in page source.");
 		}
-		CommandHelpers.printSteps(PropsCommands.assertPageSource, desc);
 	}
 
 	public static void assertNotInList(List<WebElement> elItems, String itemValue, String desc){
+		CommandHelpers.printSteps(PropsCommands.assertNotInList, desc);
 		Boolean flag = false;
 
 		for (WebElement thisItem : elItems){
@@ -84,8 +84,6 @@ public class Commands {
 
 		if (flag){
 			fail("Found " + itemValue + " in the list");
-		} else {
-			CommandHelpers.printSteps(PropsCommands.assertNotInList, desc);
 		}
 	}
 
@@ -93,12 +91,12 @@ public class Commands {
 		for (WebElement el : elItems){
 			if (el.getAttribute("value").equalsIgnoreCase(expValue)){
 				if (!click){  //if asserting selected value
-					assertEquals(el.isSelected(), true);
 					CommandHelpers.printSteps(PropsCommands.assertText, desc);
+					assertEquals(el.isSelected(), true);
 					break;
 				} else {  //else if clicking on an option
-					el.click();
 					CommandHelpers.printSteps(PropsCommands.click, desc);
+					el.click();
 					break;
 				}
 			}
@@ -106,32 +104,32 @@ public class Commands {
 	}
 	
 	public static void assertTextEquals(WebElement el, String expValue, String desc){
-        assertEquals(el.getText(), expValue);
-        CommandHelpers.printSteps(PropsCommands.assertText, desc);
+		CommandHelpers.printSteps(PropsCommands.assertText, desc);
+		assertEquals(el.getText(), expValue);
     }
 
     public static void assertTextContains(WebElement el, String expValue, String desc){
+		CommandHelpers.printSteps(PropsCommands.assertTextContains, desc);
 		if (!el.getText().contains(expValue)){
 			assertFalse(true, "[" + el.getText() + "] doesn't contain the text [" + expValue + "].");
 		}
-		CommandHelpers.printSteps(PropsCommands.assertTextContains, desc);
 	}
 	
 	public static void click(WebElement el, String desc){
-		el.click();
 		CommandHelpers.printSteps(PropsCommands.click, desc);
+    	el.click();
 	}
 	
 	public static void clickOffSet(WebDriver d, WebElement el, Integer xOffset, Integer yOffset, String desc){
+		CommandHelpers.printSteps(PropsCommands.clickOffset, desc);
 		Actions act = new Actions(d);
 		act.moveToElement(el).moveByOffset(xOffset, yOffset).click().perform();
-		CommandHelpers.printSteps(PropsCommands.clickOffset, desc);
 	}
 	
 	public static void enterText(WebElement el, String thisString, String desc){
+		CommandHelpers.printSteps(PropsCommands.enterText, desc);
 		el.clear();
 		el.sendKeys(thisString);
-		CommandHelpers.printSteps(PropsCommands.enterText, desc);
 	}
 	
 	public static void fileUpload(WebElement el, String fileDir, String desc){
@@ -140,9 +138,9 @@ public class Commands {
 	}
 
 	public static void hoverOver(WebDriver d, WebElement el, String desc){
+		CommandHelpers.printSteps(PropsCommands.hoverOver, desc);
 		Actions action = new Actions(d);
 		action.moveToElement(el).build().perform();
-		CommandHelpers.printSteps(PropsCommands.hoverOver, desc);
 	}
 
 	public static void initElements(WebDriver d, Class[] classList){
@@ -198,13 +196,13 @@ public class Commands {
 	}
 
 	public static void selectOption(Select el, String thisString, String desc){
-		el.selectByVisibleText(thisString);
 		CommandHelpers.printSteps(PropsCommands.selectOption, desc);
+		el.selectByVisibleText(thisString);
 	}
 
 	public static void selectOption(WebElement el, String thisString, String desc){
-		new Select(el).selectByVisibleText(thisString);
 		CommandHelpers.printSteps(PropsCommands.selectOption, desc);
+		new Select(el).selectByVisibleText(thisString);
 	}
 
 	public static void switchToIFrame(WebDriver d, WebElement iFrame, Boolean onIframe){
@@ -229,9 +227,9 @@ public class Commands {
 	
 	public static void waitForEl(WebDriver d, WebElement el){
 		String desc = "Waiting for next element to be visible";
+		CommandHelpers.printSteps(PropsCommands.waitForEl, desc);
 		WebDriverWait wait = new WebDriverWait(d, 10);
 		wait.until(ExpectedConditions.visibilityOf(el));
-		CommandHelpers.printSteps(PropsCommands.waitForEl, desc);
 	}
 	
 	public static void waitForSecs(Integer secs){
