@@ -13,7 +13,6 @@ import java.io.File;
 
 public class PractiTestRequests {
 
-//    public static void executeTestRun(File f, String projectId, String testSetId, String testId, String runDuration) throws Exception {
     public static void executeTestRun(File f, String projectId, String testSetId, String testId, ITestResult result) throws Exception {
 
         HttpClient httpclient = new DefaultHttpClient();

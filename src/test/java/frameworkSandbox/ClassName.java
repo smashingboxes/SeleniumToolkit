@@ -1,13 +1,17 @@
 package frameworkSandbox;
 
+import framework.CommandHelpers;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import framework.Commands;
 import framework.Drivers;
 import framework.PropsCommands;
 
+@Listeners(CheckResultsListener.class)
 public class ClassName {
 
 	public static String thisURL = "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select";
@@ -27,14 +31,17 @@ public class ClassName {
 	@BeforeTest
 	public static void beforeTest(){
 //		d = Drivers.chromeDriver(null, thisURL2);
-		d = Drivers.chromeDriver(thisURL2, false);
+		d = Drivers.chromeDriver(thisURL2, true);
 	}
 	
 	@Test
 	public static void test(){
 //		Commands.waitForEl(d, PropsCommands.cssSelector, cssNewsList);
 //		Commands.click(d, PropsCommands.className, classNamePrice, "This Works");
-//		d.findElement(By.cssSelector(cssDropdown));
+		CommandHelpers.printSteps("actionOne", "Step One");
+		CommandHelpers.printSteps("actionTwo", "Step Two");
+		CommandHelpers.printSteps("actionThree", "Step Three");
+		d.findElement(By.cssSelector(cssDropdown));
 //		Commands.selectOption(d, PropsCommands.cssSelector, cssDropdown, PropsCommands.visibleText, "Value 3", null, null);
 //		String[] tagNames = {"article"};
 //		Commands.assertInList(d, PropsCommands.cssSelector, cssNewsList, "Thousands leave NC island after power loss", tagNames, true, null);

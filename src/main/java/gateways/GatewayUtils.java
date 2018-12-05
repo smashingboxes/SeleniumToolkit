@@ -60,7 +60,7 @@ public class GatewayUtils {
         JsonParser parser = new JsonParser();
         JsonObject json = parser.parse(jsonString).getAsJsonObject();
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        Gson gson = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
         String prettyJson = gson.toJson(json);
 
         return prettyJson;
