@@ -42,9 +42,7 @@ public class PractiTestRequests {
         try {
             // Create a response handler
             //Run the test
-            HttpPost request = PractiTestJSONUtils.runTest(encoding, projectId, instanceId, testSetId, testId,
-                    GatewayUtils.convertMillis(result.getEndMillis() - result.getStartMillis()), result.getThrowable().getMessage(),
-                    result.getStatus());
+            HttpPost request = PractiTestJSONUtils.runTest(encoding, projectId, instanceId, testSetId, testId, result);
             HttpResponse response = httpclient.execute(request);
             int statusCode = response.getStatusLine().getStatusCode();
             HttpEntity entity = response.getEntity();

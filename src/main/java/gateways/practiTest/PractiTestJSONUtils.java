@@ -8,6 +8,7 @@ import gateways.GatewayProps;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
+import org.testng.ITestResult;
 
 import java.io.File;
 
@@ -24,11 +25,12 @@ public class PractiTestJSONUtils {
         return postRequest(uriInstance(projectId), json_str, encoding);
     }
 
-    public static HttpPost runTest(byte[] encoding, String projectId, String instanceID, String testSetId, String testId, String runDuration, String message, Integer exitCode) throws Exception {
+    public static HttpPost runTest(byte[] encoding, String projectId, String instanceID, String testSetId, String testId, ITestResult result) throws Exception{
         String json_str = "{\"data\": { \"type\": \"instances\", \"attributes\": {\"set-id\": " + testSetId + ", " +
-                "\"test-id\": " + testId + ", \"run-duration\": \"" + runDuration + "\", \"instance-id\": " + instanceID + ", \"exit-code\": " + exitCode + ", " +
+                "\"test-id\": " + testId + ", \"run-duration\": \"" +
+                getDuration(result) + "\", \"instance-id\": " + instanceID + ", \"exit-code\": " + result.getStatus() + ", " +
                 "\"automated-execution-output\": \"" +
-                automationOutput(message).replace("\n", " ").replace("\"", "\\\"").substring(0, 255)
+                getMessage(result.getThrowable().getMessage())
                 + "\" }, \"steps\": {\"data\": [";
 
         Integer outputSize = GatewayUtils.stepsOutput.size();
@@ -38,18 +40,19 @@ public class PractiTestJSONUtils {
                 json_str += ", ";
             }
 
-            json_str += "{\"name\": \"" + GatewayUtils.stepsOutput.get(i) + "\", \"status\": \"" + stepStatus(message, i, outputSize) + "\"}";
+            json_str += "{\"name\": \"" + GatewayUtils.stepsOutput.get(i) + "\", \"status\": \"" +
+                    stepStatus(result.getThrowable().getMessage(), i, outputSize) + "\"}";
         }
 
         json_str += "] }}} ";
         return postRequest(uriRun(projectId), json_str, encoding);
     }
 
-    private static String automationOutput(String message){
+    private static String getMessage(String message){
         if (message.equals(null)){
             return "";
         } else {
-            return message;
+            return message.replace("\n", " ").replace("\"", "\\\"").substring(0, 255);
         }
     }
 
@@ -87,6 +90,10 @@ public class PractiTestJSONUtils {
         }
 
         return newInstanceId;
+    }
+
+    public static String getDuration(ITestResult result){
+        return GatewayUtils.convertMillis(result.getEndMillis() - result.getStartMillis());
     }
 
     public static String uriRun(String projectId){
