@@ -87,24 +87,4 @@ public class GatewayUtils {
             return partialTime.toString();
         }
     }
-
-//    private fun adjustPartial(partialTime: Long) : String{
-//        when (partialTime < 10){
-//            true -> return "0$partialTime"
-//            false -> return partialTime.toString()
-//        }
-//    }
-
-//    fun convertMillis(millis: Long) : String {
-//        var seconds: Long
-//        var minutes: Long
-//        val hours: Long
-//                seconds = millis / 1000
-//        minutes = seconds / 60
-//        seconds = seconds % 60
-//        hours = minutes / 60
-//        minutes = minutes % 60
-//
-//        return "${adjustPartial(hours)}:${adjustPartial(minutes)}:${adjustPartial(seconds)}"
-//    }
 }

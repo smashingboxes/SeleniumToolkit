@@ -28,36 +28,41 @@ public class PractiTestJSONUtils {
     public static HttpPost runTest(byte[] encoding, String projectId, String instanceID, String testSetId, String testId, ITestResult result) throws Exception{
         String json_str = "{\"data\": { \"type\": \"instances\", \"attributes\": {\"set-id\": " + testSetId + ", " +
                 "\"test-id\": " + testId + ", \"run-duration\": \"" +
-                getDuration(result) + "\", \"instance-id\": " + instanceID + ", \"exit-code\": " + result.getStatus() + ", " +
+                getDuration(result) + "\", \"instance-id\": " + instanceID + ", \"exit-code\": " + getTestStatus(result.getStatus()) + ", " +
                 "\"automated-execution-output\": \"" +
-                getMessage(result.getThrowable().getMessage())
+                getMessage(result)
                 + "\" }, \"steps\": {\"data\": [";
 
         Integer outputSize = GatewayUtils.stepsOutput.size();
 
         for (int i = 0; i < outputSize; i++){
-            if (i != 0){
-                json_str += ", ";
-            }
+            if (i != 0){ json_str += ", "; }
 
             json_str += "{\"name\": \"" + GatewayUtils.stepsOutput.get(i) + "\", \"status\": \"" +
-                    stepStatus(result.getThrowable().getMessage(), i, outputSize) + "\"}";
+                    stepStatus(result.getStatus(), i, outputSize) + "\"}";
         }
 
         json_str += "] }}} ";
         return postRequest(uriRun(projectId), json_str, encoding);
     }
 
-    private static String getMessage(String message){
-        if (message.equals(null)){
+    private static String getTestStatus(Integer status){
+        if (status == 1){ return "0"; } else { return "1"; }
+    }
+
+    private static String getMessage(ITestResult result){
+        if (result.getStatus() == 1){
             return "";
         } else {
-            return message.replace("\n", " ").replace("\"", "\\\"").substring(0, 255);
+            return result.getThrowable().getMessage()
+                    .replace("\n", " ")
+                    .replace("\"", "\\\"")
+                    .substring(0, 255);
         }
     }
 
-    private static String stepStatus(String message, Integer count, Integer outputSize){
-        if (count == outputSize - 1 && !message.equals(null)){
+    private static String stepStatus(Integer status, Integer count, Integer outputSize){
+        if (count == outputSize - 1 && status != 1){
             return "FAILED";
         } else {
             return "PASSED";

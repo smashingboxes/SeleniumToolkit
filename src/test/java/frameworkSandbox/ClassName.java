@@ -18,7 +18,9 @@ public class ClassName {
 	public static String thisURL1 = "https://amazon.com";
 	public static String thisURL2 = "https://woot.com";
 	public static String thisURL3 = "http://www.cnn.com";
+	public static String thisURL4 = "https://xkcd.com/";
 	public static String cssDropdown = "#wikiArticle > p:nth-child(10) > select";
+	public static String idComic = "comic";
 	public static String cssLeftNavList = "#quick-links";
 	public static String cssTopNavDivList = "#nav-xshop";
 	public static String cssTopNavNavList = "#global-header > div > nav.categories.with-promo";
@@ -31,17 +33,20 @@ public class ClassName {
 	@BeforeTest
 	public static void beforeTest(){
 //		d = Drivers.chromeDriver(null, thisURL2);
-		d = Drivers.chromeDriver(thisURL2, true);
+		d = Drivers.chromeDriver(thisURL4, true);
 	}
 	
 	@Test
 	public static void test(){
 //		Commands.waitForEl(d, PropsCommands.cssSelector, cssNewsList);
 //		Commands.click(d, PropsCommands.className, classNamePrice, "This Works");
+		Commands.waitForURL(d, "xkcd");
+		Commands.waitForSecs(3000);
 		CommandHelpers.printSteps("actionOne", "Step One");
 		CommandHelpers.printSteps("actionTwo", "Step Two");
 		CommandHelpers.printSteps("actionThree", "Step Three");
-		d.findElement(By.cssSelector(cssDropdown));
+//		d.findElement(By.cssSelector(cssDropdown));
+		d.findElement(By.id(idComic));
 //		Commands.selectOption(d, PropsCommands.cssSelector, cssDropdown, PropsCommands.visibleText, "Value 3", null, null);
 //		String[] tagNames = {"article"};
 //		Commands.assertInList(d, PropsCommands.cssSelector, cssNewsList, "Thousands leave NC island after power loss", tagNames, true, null);
