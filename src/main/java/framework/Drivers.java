@@ -21,7 +21,7 @@ public class Drivers {
 			return SauceLabsUtils.sauceLabsConfig(f, browser, platform, appUrl);
 		} else {
 			switch(browser){
-				case PropsSystem.firefox: return firefoxDriver(appUrl);
+				case PropsSystem.firefox: return firefoxDriver(appUrl, headless);
 				case PropsSystem.chrome: return chromeDriver(appUrl, headless);
 				case PropsSystem.safari: return safariDriver(appUrl);
 				default: return chromeDriver(appUrl, headless);
@@ -77,7 +77,7 @@ public class Drivers {
 	}
 
 	//Firefox WebDriver
-	public static WebDriver firefoxDriver(String app){
+	public static WebDriver firefoxDriver(String app, Boolean headless){
 		DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 		capabilities.setCapability("marionette", true);
 
@@ -86,6 +86,10 @@ public class Drivers {
 
 		FirefoxOptions fo = new FirefoxOptions();
 		fo.setProfile(profile);
+
+		if (headless){
+			fo.setHeadless(true);
+		}
 
 		WebDriverManager.firefoxdriver().setup();
 		

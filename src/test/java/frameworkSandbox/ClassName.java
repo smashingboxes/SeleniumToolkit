@@ -33,7 +33,8 @@ public class ClassName {
 	@BeforeTest
 	public static void beforeTest(){
 //		d = Drivers.chromeDriver(null, thisURL2);
-		d = Drivers.chromeDriver(thisURL4, true);
+//		d = Drivers.chromeDriver(thisURL4, true);
+		d = Drivers.firefoxDriver(thisURL4, true);
 	}
 	
 	@Test
