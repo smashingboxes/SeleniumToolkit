@@ -46,39 +46,6 @@ public class PractiTestJSONUtils {
         return postRequest(uriRun(projectId), json_str, encoding);
     }
 
-    private static String getTestStatus(Integer status){
-        if (status == 1){ return "0"; } else { return "1"; }
-    }
-
-    private static String getMessage(ITestResult result){
-        if (result.getStatus() == 1){
-            return "";
-        } else {
-            return result.getThrowable().getMessage()
-                    .replace("\n", " ")
-                    .replace("\"", "\\\"")
-                    .substring(0, 255);
-        }
-    }
-
-    private static String stepStatus(Integer status, Integer count, Integer outputSize){
-        if (count == outputSize - 1 && status != 1){
-            return "FAILED";
-        } else {
-            return "PASSED";
-        }
-    }
-
-    public static HttpPost postRequest(String uri, String json_str, byte[] encoding) throws Exception{
-        HttpPost request = new HttpPost(uri);
-        request.setEntity(new StringEntity(json_str));
-        request.setHeader("Authorization", "Basic " + new String(encoding));
-        request.addHeader("content-type", "application/json");
-
-        System.out.println("executing request " + request.getURI());
-        return request;
-    }
-
     public static String getInstanceId(String responseBody){
         JsonParser parser = new JsonParser();
         JsonElement jsonTree = parser.parse(responseBody);
@@ -97,15 +64,55 @@ public class PractiTestJSONUtils {
         return newInstanceId;
     }
 
-    public static String getDuration(ITestResult result){
+    private static String getTestStatus(Integer status){
+        if (status == 1){ return "0"; } else { return "1"; }
+    }
+
+    private static String getMessage(ITestResult result){
+        if (result.getStatus() == 1){
+            return "";
+        } else {
+            return formatMessage(result.getThrowable().getMessage());
+        }
+    }
+
+    private static String formatMessage(String message){
+        message.replace("\n", " ").replace("\"", "\\\"");
+
+        if (message.length() > 255){
+            message.substring(0, 255);
+        }
+
+        return message;
+    }
+
+    private static String stepStatus(Integer status, Integer count, Integer outputSize){
+        if (count == outputSize - 1 && status != 1){
+            return "FAILED";
+        } else {
+            return "PASSED";
+        }
+    }
+
+    private static HttpPost postRequest(String uri, String json_str, byte[] encoding) throws Exception{
+        HttpPost request = new HttpPost(uri);
+        request.setEntity(new StringEntity(json_str));
+        request.setHeader("Authorization", "Basic " + new String(encoding));
+        request.addHeader("content-type", "application/json");
+
+        System.out.println("executing request " + request.getURI());
+        return request;
+    }
+
+    private static String getDuration(ITestResult result){
         return GatewayUtils.convertMillis(result.getEndMillis() - result.getStartMillis());
     }
 
-    public static String uriRun(String projectId){
+    private static String uriRun(String projectId){
         return "https://api.practitest.com/api/v2/projects/" + projectId + "/runs.json";
     }
 
-    public static String uriInstance(String projectId){
+    private static String uriInstance(String projectId){
         return "https://api.practitest.com/api/v2/projects/" + projectId + "/instances.json";
     }
 }
