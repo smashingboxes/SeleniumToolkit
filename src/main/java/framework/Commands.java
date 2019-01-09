@@ -1,7 +1,6 @@
 package framework;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.fail;
 
 import java.util.List;
@@ -15,18 +14,26 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class Commands {
 
-	public static void assertClick(WebElement el, String func, Boolean check, String desc){
+	/**
+	 * Returns current stuff's value.
+	 *
+	 * @return Current stuff's value.
+	 */
+	public static void assertClick(WebElement element, String func, Boolean check, String desc){
 		CommandHelpers.printSteps(func, desc);
-		if ((!el.getAttribute("class").contains("checked") && check) || (el.getAttribute("class").contains("checked") && !check)){
-			el.click();
+		if ((!element.getAttribute("class").contains("checked") && check)
+				|| (element.getAttribute("class").contains("checked") && !check)){
+			element.click();
 		}
 	}
 
-	public static void assertInTable(WebElement elTable, String uniqueVal, Boolean click){
-		List<WebElement> elTableRows = elTable.findElements(By.tagName("tbody")).get(0).findElements(By.tagName("tr"));
+	public static void assertInTable(WebElement elementTable, String uniqueVal, Boolean click){
+		List<WebElement> elTableRows = elementTable.findElements(By.tagName("tbody"))
+				.get(0).findElements(By.tagName("tr"));
 		Boolean foundRow = false;
 
 		for (WebElement thisRow : elTableRows){
@@ -37,24 +44,24 @@ public class Commands {
 			}
 		}
 
-		if (!foundRow){ fail(uniqueVal + " was not found in the table."); }
+		if (!foundRow){ Assert.fail("[" + uniqueVal + "] was not found in the table.");}
 	}
 	
-	public static void assertInList(List<WebElement> elItems, String itemValue, Boolean click, String desc){
+	public static void assertInList(List<WebElement> elementList, String itemValue, Boolean click, String desc){
 		Boolean foundRow = false;
 
 		//Loop through items in list
-		for (int i=0; i<elItems.size(); i++){
+		for (int i=0; i<elementList.size(); i++){
 
-			if (elItems.get(i).getText().equals(itemValue)){
+			if (elementList.get(i).getText().equals(itemValue)){
 				foundRow = true;
 
 				if (!click){
 					CommandHelpers.printSteps(PropsCommands.assertInList, desc);
-					assertEquals(elItems.get(i).isSelected(), true);
+					assertEquals(elementList.get(i).isSelected(), true);
 				} else {
 					CommandHelpers.printSteps(PropsCommands.click, desc);
-					elItems.get(i).click();
+					elementList.get(i).click();
 				}
 
 				break;
@@ -67,15 +74,15 @@ public class Commands {
 	public static void assertPageSource(String source, String expValue, String desc){
 		CommandHelpers.printSteps(PropsCommands.assertPageSource, desc);
 		if (!source.contains(expValue)){
-			assertFalse(true, "[" + expValue + "] is not found in page source.");
+			Assert.fail("[" + expValue + "] is not found in page source.");
 		}
 	}
 
-	public static void assertNotInList(List<WebElement> elItems, String itemValue, String desc){
+	public static void assertNotInList(List<WebElement> elementList, String itemValue, String desc){
 		CommandHelpers.printSteps(PropsCommands.assertNotInList, desc);
 		Boolean flag = false;
 
-		for (WebElement thisItem : elItems){
+		for (WebElement thisItem : elementList){
 			if (thisItem.getText().contains(itemValue)){
 				flag = true;
 				break;
@@ -83,16 +90,16 @@ public class Commands {
 		}
 
 		if (flag){
-			fail("Found " + itemValue + " in the list");
+			Assert.fail("Found [" + itemValue + "] in the list");
 		}
 	}
 
-	public static void assertRadio(List<WebElement> elItems, String expValue, Boolean click, String desc){
-		for (WebElement el : elItems){
-			if (el.getAttribute("value").equalsIgnoreCase(expValue)){
+	public static void assertRadio(List<WebElement> elementList, String expectedValue, Boolean click, String desc){
+		for (WebElement el : elementList){
+			if (el.getAttribute("value").equalsIgnoreCase(expectedValue)){
 				if (!click){  //if asserting selected value
 					CommandHelpers.printSteps(PropsCommands.assertText, desc);
-					assertEquals(el.isSelected(), true);
+					Assert.assertEquals(el.isSelected(), true);
 					break;
 				} else {  //else if clicking on an option
 					CommandHelpers.printSteps(PropsCommands.click, desc);
@@ -103,120 +110,120 @@ public class Commands {
 		}
 	}
 	
-	public static void assertTextEquals(WebElement el, String expValue, String desc){
+	public static void assertTextEquals(WebElement element, String expectedValue, String desc){
 		CommandHelpers.printSteps(PropsCommands.assertText, desc);
-		assertEquals(el.getText(), expValue);
+		Assert.assertEquals(element.getText(), expectedValue);
     }
 
-    public static void assertTextContains(WebElement el, String expValue, String desc){
+    public static void assertTextContains(WebElement element, String expectedValue, String desc){
 		CommandHelpers.printSteps(PropsCommands.assertTextContains, desc);
-		if (!el.getText().contains(expValue)){
-			assertFalse(true, "[" + el.getText() + "] doesn't contain the text [" + expValue + "].");
+		if (!element.getText().contains(expectedValue)){
+			Assert.fail("[" + element.getText() + "] doesn't contain the text [" + expectedValue + "].");
 		}
 	}
 	
-	public static void click(WebElement el, String desc){
+	public static void click(WebElement element, String desc){
 		CommandHelpers.printSteps(PropsCommands.click, desc);
-    	el.click();
+    	element.click();
 	}
 	
-	public static void clickOffSet(WebDriver d, WebElement el, Integer xOffset, Integer yOffset, String desc){
+	public static void clickOffSet(WebDriver driver, WebElement element, Integer xOffset, Integer yOffset, String desc){
 		CommandHelpers.printSteps(PropsCommands.clickOffset, desc);
-		Actions act = new Actions(d);
-		act.moveToElement(el).moveByOffset(xOffset, yOffset).click().perform();
+		Actions act = new Actions(driver);
+		act.moveToElement(element).moveByOffset(xOffset, yOffset).click().perform();
 	}
 	
-	public static void enterText(WebElement el, String thisString, String desc){
+	public static void enterText(WebElement element, String thisString, String desc){
 		CommandHelpers.printSteps(PropsCommands.enterText, desc);
-		el.clear();
-		el.sendKeys(thisString);
+		element.clear();
+		element.sendKeys(thisString);
 	}
 	
-	public static void fileUpload(WebElement el, String fileDir, String desc){
-		el.sendKeys(fileDir);
+	public static void fileUpload(WebElement element, String fileDir, String desc){
+		element.sendKeys(fileDir);
 		CommandHelpers.printSteps(PropsCommands.fileUpload, desc);
 	}
 
-	public static void hoverOver(WebDriver d, WebElement el, String desc){
+	public static void hoverOver(WebDriver driver, WebElement element, String desc){
 		CommandHelpers.printSteps(PropsCommands.hoverOver, desc);
-		Actions action = new Actions(d);
-		action.moveToElement(el).build().perform();
+		Actions action = new Actions(driver);
+		action.moveToElement(element).build().perform();
 	}
 
-	public static void initElements(WebDriver d, Class[] classList){
-		for (Class thisC : classList){
-			PageFactory.initElements(d, thisC);
+	public static void initElements(WebDriver driver, Class[] classList){
+		for (Class thisClass : classList){
+			PageFactory.initElements(driver, thisClass);
 		}
 	}
 
-	public static void showHiddenInput(WebDriver d, WebElement el){
-		((JavascriptExecutor) d).executeScript("arguments[0].removeAttribute('style','style')", el);
+	public static void showHiddenInput(WebDriver driver, WebElement element){
+		((JavascriptExecutor) driver).executeScript("arguments[0].removeAttribute('style','style')", element);
 	}
 
-	public static void uploadInputHidden(WebDriver d, WebElement el, String thisString, String desc){
-		showHiddenInput(d, el);
-		enterText(el, thisString, desc);
+	public static void uploadInputHidden(WebDriver driver, WebElement element, String thisString, String desc){
+		showHiddenInput(driver, element);
+		enterText(element, thisString, desc);
 	}
 
-	public static void uploadInputHiddenLoop(WebDriver d, WebElement el, List<String> upStrings){
-		showHiddenInput(d, el);
-		uploadLoop(el, upStrings);
+	public static void uploadInputHiddenLoop(WebDriver driver, WebElement element, List<String> upStrings){
+		showHiddenInput(driver, element);
+		uploadLoop(element, upStrings);
 	}
 
-	public static void uploadLoop(WebElement el, List<String> upStrings){
+	public static void uploadLoop(WebElement element, List<String> upStrings){
 		for (String thisString : upStrings){
-			el.sendKeys(thisString);
+			element.sendKeys(thisString);
 			waitForSecs(2000);
 		}
 	}
 
-	public static void scrollByPosition(WebDriver d, WebElement el, int xPos, int yPos){
-		JavascriptExecutor js = ((JavascriptExecutor) d);
-		js.executeScript("window.scrollBy(" + el.getLocation().x + xPos + ", " + el.getLocation().y + yPos + ")");
+	public static void scrollByPosition(WebDriver driver, WebElement element, int xPos, int yPos){
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("window.scrollBy(" + element.getLocation().x + xPos + ", " + element.getLocation().y + yPos + ")");
 	}
 
-	public static void scrollToEl(WebDriver d, WebElement el){
-		JavascriptExecutor jse = (JavascriptExecutor)d;
-		jse.executeScript("arguments[0].scrollIntoView()", el);
+	public static void scrollToEl(WebDriver driver, WebElement element){
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].scrollIntoView()", element);
 	}
 
-	public static void scrollToTopOfPage(WebDriver d){
-		JavascriptExecutor jse = (JavascriptExecutor)d;
+	public static void scrollToTopOfPage(WebDriver driver){
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("scroll(0, 0);");
 	}
 
-	public static void scrollToBottomOfPage(WebDriver d){
-		JavascriptExecutor js = ((JavascriptExecutor) d);
+	public static void scrollToBottomOfPage(WebDriver driver){
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 	}
 
-	public static void scrollToRightOfPage(WebDriver d){
-		JavascriptExecutor js = ((JavascriptExecutor) d);
+	public static void scrollToRightOfPage(WebDriver driver){
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("window.scrollTo(document.body.scrollWidth, 0)");
 	}
 
-	public static void selectOption(Select el, String thisString, String desc){
+	public static void selectOption(Select elementSelect, String thisString, String desc){
 		CommandHelpers.printSteps(PropsCommands.selectOption, desc);
-		el.selectByVisibleText(thisString);
+		elementSelect.selectByVisibleText(thisString);
 	}
 
-	public static void selectOption(WebElement el, String thisString, String desc){
+	public static void selectOption(WebElement element, String thisString, String desc){
 		CommandHelpers.printSteps(PropsCommands.selectOption, desc);
-		new Select(el).selectByVisibleText(thisString);
+		new Select(element).selectByVisibleText(thisString);
 	}
 
-	public static void switchToIFrame(WebDriver d, WebElement iFrame, Boolean onIframe){
+	public static void switchToIFrame(WebDriver driver, WebElement iFrame, Boolean onIframe){
 		if (onIframe){
-			d.switchTo().frame(iFrame);
+			driver.switchTo().frame(iFrame);
 		} else {
-			d.switchTo().defaultContent();
+			driver.switchTo().defaultContent();
 		}
 	}
 
-	public static void waitForAssert(WebElement el, String thisString){
+	public static void waitForAssert(WebElement element, String thisString){
         Integer i = 0;
         do{
-            if (!el.getText().contains(thisString)) {
+            if (!element.getText().contains(thisString)) {
                 Commands.waitForSecs(1000);
                 i++;
             } else {
@@ -225,11 +232,11 @@ public class Commands {
         } while (i < 10);
     }
 	
-	public static void waitForEl(WebDriver d, WebElement el){
+	public static void waitForEl(WebDriver driver, WebElement element){
 		String desc = "Waiting for next element to be visible";
 		CommandHelpers.printSteps(PropsCommands.waitForEl, desc);
-		WebDriverWait wait = new WebDriverWait(d, 10);
-		wait.until(ExpectedConditions.visibilityOf(el));
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 	
 	public static void waitForSecs(Integer secs){
@@ -243,10 +250,10 @@ public class Commands {
 		}
 	}
 
-	public static void waitForURL(WebDriver d, String urlContain){
+	public static void waitForURL(WebDriver driver, String urlContain){
 		Integer i = 0;
 		do{
-			if (!d.getCurrentUrl().contains(urlContain)) {
+			if (!driver.getCurrentUrl().contains(urlContain)) {
 				Commands.waitForSecs(1000);
 				i++;
 			} else {
@@ -255,10 +262,10 @@ public class Commands {
 		} while (i < 10);
 	}
 
-	public static void waitForNotURL(WebDriver d, String urlNotContain){
+	public static void waitForNotURL(WebDriver driver, String urlNotContain){
 		Integer i = 0;
 		do{
-			if (d.getCurrentUrl().contains(urlNotContain)) {
+			if (driver.getCurrentUrl().contains(urlNotContain)) {
 				Commands.waitForSecs(1000);
 				i++;
 			} else {
