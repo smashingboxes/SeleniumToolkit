@@ -164,41 +164,102 @@ public class Commands {
 			}
 		}
 	}
-	
+
+	/**
+	 * Asserts that the given {@param element} text equals the text of the given {@param expectedValue}
+	 *
+	 * @param  element			the web element that is to be asserted
+	 * @param  expectedValue 	the value expected to be found in the web element
+	 * @param  desc 			short description of the action being done
+	 * @return      			void
+	 */
 	public static void assertTextEquals(WebElement element, String expectedValue, String desc){
 		CommandHelpers.printSteps(PropsCommands.assertText, desc);
 		Assert.assertEquals(element.getText(), expectedValue);
     }
 
+	/**
+	 * Asserts that the given {@param element} text contains the text of the given {@param expectedValue}
+	 *
+	 * @param  element			the web element that is to be asserted
+	 * @param  expectedValue 	the value expected to be found in the web element
+	 * @param  desc 			short description of the action being done
+	 * @return      			void
+	 */
     public static void assertTextContains(WebElement element, String expectedValue, String desc){
 		CommandHelpers.printSteps(PropsCommands.assertTextContains, desc);
 		if (!element.getText().contains(expectedValue)){
 			Assert.fail("[" + element.getText() + "] doesn't contain the text [" + expectedValue + "].");
 		}
 	}
-	
+
+	/**
+	 * Clicks on the given {@param element}
+	 *
+	 * @param  element			the web element that is to be asserted
+	 * @param  desc 			short description of the action being done
+	 * @return      			void
+	 */
 	public static void click(WebElement element, String desc){
 		CommandHelpers.printSteps(PropsCommands.click, desc);
     	element.click();
 	}
-	
+
+	/**
+	 * Clicks on the given {@param element} but at the position determined by the given {@param xOffset} and
+	 * {@param yOffset} conditions. When Selenium executes the click action, it clicks in the exact center of the
+	 * specified web element. This method allows for clicking the web element at any position.
+	 *
+	 * @param  driver			the web driver through which the action will take place
+	 * @param  element			the web element that is to be clicked
+	 * @param  xOffset			the number of pixels away from the center of the element on the x-axis where the click
+	 *                          	should take place (positive number is to the right, negative is to the left)
+	 * @param  yOffset			the number of pixels away from the center of the element on the y-axis where the click
+	 *                          	should take place (positive number is above, negative is below)
+	 * @param  desc 			short description of the action being done
+	 * @return      			void
+	 */
 	public static void clickOffSet(WebDriver driver, WebElement element, Integer xOffset, Integer yOffset, String desc){
 		CommandHelpers.printSteps(PropsCommands.clickOffset, desc);
 		Actions act = new Actions(driver);
 		act.moveToElement(element).moveByOffset(xOffset, yOffset).click().perform();
 	}
-	
-	public static void enterText(WebElement element, String thisString, String desc){
+
+	/**
+	 * Enters the given {@param text} into the specified {@param element}
+	 *
+	 * @param  element			the web element that is to have text entered into
+	 * @param  text				the text to be entered into the web element
+	 * @param  desc 			short description of the action being done
+	 * @return      			void
+	 */
+	public static void enterText(WebElement element, String text, String desc){
 		CommandHelpers.printSteps(PropsCommands.enterText, desc);
 		element.clear();
-		element.sendKeys(thisString);
-	}
-	
-	public static void fileUpload(WebElement element, String fileDir, String desc){
-		element.sendKeys(fileDir);
-		CommandHelpers.printSteps(PropsCommands.fileUpload, desc);
+		element.sendKeys(text);
 	}
 
+	/**
+	 * Uploads an individual file based upon the given {@param filePath}
+	 *
+	 * @param  elementUpload	the web element that is to have a file uploaded to
+	 * @param  filePath			the file path of the file that is to be uploaded
+	 * @param  desc 			short description of the action being done
+	 * @return      			void
+	 */
+	public static void fileUpload(WebElement elementUpload, String filePath, String desc){
+		CommandHelpers.printSteps(PropsCommands.fileUpload, desc);
+		elementUpload.sendKeys(filePath);
+	}
+
+	/**
+	 * Perform a mouse hover over a particular {@param element}
+	 *
+	 * @param  driver		the web driver through which the action will take place
+	 * @param  element		the element that will be hovered over
+	 * @param  desc 		short description of the action being done
+	 * @return      		void
+	 */
 	public static void hoverOver(WebDriver driver, WebElement element, String desc){
 		CommandHelpers.printSteps(PropsCommands.hoverOver, desc);
 		Actions action = new Actions(driver);
