@@ -266,37 +266,97 @@ public class Commands {
 		action.moveToElement(element).build().perform();
 	}
 
+	/**
+	 * Initializes web elements identified in the given {@param classList}.
+	 *
+	 * Note: This will probably be removed since this initialization should happen on the project side in the page
+	 * 		object
+	 *
+	 * @param  driver		the web driver through which the action will take place
+	 * @param  classList	the list of classes (page objects) that contain web elements that are to be initialized
+	 * @return      		void
+	 */
 	public static void initElements(WebDriver driver, Class[] classList){
 		for (Class thisClass : classList){
 			PageFactory.initElements(driver, thisClass);
 		}
 	}
 
-	public static void showHiddenInput(WebDriver driver, WebElement element){
-		((JavascriptExecutor) driver).executeScript("arguments[0].removeAttribute('style','style')", element);
+	/**
+	 * Make the specified {@param elementUpload} visible in order for Selenium to upload a file
+	 *
+	 * @param  driver			the web driver through which the action will take place
+	 * @param  elementUpload	the web element that is to have a file uploaded to
+	 * @return      			void
+	 */
+	public static void showHiddenUpload(WebDriver driver, WebElement elementUpload){
+		((JavascriptExecutor) driver).executeScript("arguments[0].removeAttribute('style','style')", elementUpload);
 	}
 
-	public static void uploadInputHidden(WebDriver driver, WebElement element, String thisString, String desc){
-		showHiddenInput(driver, element);
-		enterText(element, thisString, desc);
+	/**
+	 * Ensures that the specified {@param elementUpload} is visible on the page and then uploads the file with the
+	 * given {@param filePath}
+	 *
+	 * @param  driver			the web driver through which the action will take place
+	 * @param  elementUpload	the web element that is to have a file uploaded to
+	 * @param  filePath			the file path of the file that is to be uploaded
+	 * @param  desc 			short description of the action being done
+	 * @return      			void
+	 */
+	public static void uploadInputHidden(WebDriver driver, WebElement elementUpload, String filePath, String desc){
+		showHiddenUpload(driver, elementUpload);
+		fileUpload(elementUpload, filePath, desc);
+//		enterText(element, thisString, desc);
 	}
 
-	public static void uploadInputHiddenLoop(WebDriver driver, WebElement element, List<String> upStrings){
-		showHiddenInput(driver, element);
-		uploadLoop(element, upStrings);
+	/**
+	 * Ensures that the specified {@param elementUpload} is visible on the page and then uploads the files with the
+	 * given {@param filePath}
+	 *
+	 * @param  driver			the web driver through which the action will take place
+	 * @param  elementUpload	the web element that is to have a file uploaded to
+	 * @param  filePaths		the list of paths of the files that are to be uploaded
+	 * @param  desc 			short description of the action being done
+	 * @return      			void
+	 */
+	public static void uploadInputHiddenLoop(WebDriver driver, WebElement elementUpload, List<String> filePaths,
+											 String desc){
+		showHiddenUpload(driver, elementUpload);
+		uploadLoop(elementUpload, filePaths, desc);
 	}
 
-	public static void uploadLoop(WebElement element, List<String> upStrings){
-		for (String thisString : upStrings){
-			element.sendKeys(thisString);
+	/**
+	 * Uploads multiple files with the provided list of {@param filePaths}.
+	 *
+	 * @param  elementUpload	the web element that is to have a file uploaded to
+	 * @param  filePaths		the list of paths of the files that are to be uploaded
+	 * @param  desc 			short description of the action being done
+	 * @return      			void
+	 */
+	public static void uploadLoop(WebElement elementUpload, List<String> filePaths, String desc){
+		for (String thisString : filePaths){
+			fileUpload(elementUpload, thisString, desc);
+//			element.sendKeys(thisString);
 			waitForSecs(2000);
 		}
 	}
 
-	public static void scrollByPosition(WebDriver driver, WebElement element, int xPos, int yPos){
+	/**
+	 * Scrolls the page vertically and horizontally based upon given {@param xPos} and {@param yPos}. These parameters
+	 * are based on the location of a given {@param elemenet}
+	 *
+	 * @param  driver		the web driver through which the action will take place
+	 * @param  element		the web element that is to be clicked
+	 * @param  xScroll		the number of pixels away from the center of the element on the x-axis where the scrolling
+	 *                         should take place (positive number is to the right, negative is to the left)
+	 * @param  yScroll		the number of pixels away from the center of the element on the y-axis where the scrolling
+	 *                         should take place (positive number is above, negative is below)
+	 * @return      		void
+	 */
+	public static void scrollByPosition(WebDriver driver, WebElement element, int xScroll, int yScroll){
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
-		js.executeScript("window.scrollBy(" + element.getLocation().x + xPos + ", "
-				+ element.getLocation().y + yPos + ")");
+		js.executeScript("window.scrollBy(" + element.getLocation().x + xScroll + ", "
+				+ element.getLocation().y + yScroll + ")");
 	}
 
 	public static void scrollToEl(WebDriver driver, WebElement element){
