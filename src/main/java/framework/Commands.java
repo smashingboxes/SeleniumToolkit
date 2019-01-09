@@ -19,9 +19,17 @@ import org.testng.Assert;
 public class Commands {
 
 	/**
-	 * Returns current stuff's value.
+	 * Ensures that the {@param element} is checked regardless if it is already checked or not. If it is already
+	 * checked, then do nothing. If it is not checked, then click on {@param element} to check it.
 	 *
-	 * @return Current stuff's value.
+	 * Note: This isn't typically used and may need to be either removed or refactored in the future
+	 *
+	 * @param  element  the web element that is to be asserted
+	 * @param  func 	TODO: FIGURE OUT WHAT THIS IS
+	 * @param  check 	the intention of the assertion: true if expecting element to be checked, false if expecting
+	 *                     element to not be checked
+	 * @param  desc 	short description of the action being done
+	 * @return      	void
 	 */
 	public static void assertClick(WebElement element, String func, Boolean check, String desc){
 		CommandHelpers.printSteps(func, desc);
@@ -31,6 +39,20 @@ public class Commands {
 		}
 	}
 
+	/**
+	 * Asserts that a given {@param uniqueVal} is found in a row in the given {@param elementTable}.
+	 *
+	 * Note: This method only searches by one {@param uniqueVal}. This may need to be refactored in order to be able to
+	 * 		handle assertions with multiple values on the same row
+	 * Note: May also need to be updated since it doesn't have a description parameter and doesn't print the steps
+	 *
+	 * @param  elementTable		the table web element that is to be asserted
+	 * @param  uniqueVal 		the unique value to be found in the table; this is functionally the unique id or string
+	 *                          	in the table itself
+	 * @param  click 			the intention of the assertion: true if the row should be clicked on, false if the row
+	 *                             should not be clicked on (simply assert that the value is present in the table)
+	 * @return      			void
+	 */
 	public static void assertInTable(WebElement elementTable, String uniqueVal, Boolean click){
 		List<WebElement> elTableRows = elementTable.findElements(By.tagName("tbody"))
 				.get(0).findElements(By.tagName("tr"));
@@ -46,14 +68,24 @@ public class Commands {
 
 		if (!foundRow){ Assert.fail("[" + uniqueVal + "] was not found in the table.");}
 	}
-	
-	public static void assertInList(List<WebElement> elementList, String itemValue, Boolean click, String desc){
+
+	/**
+	 * Asserts that a given {@param listItemValue} is found in the given {@param elementList}
+	 *
+	 * @param  elementList		the list web element that is to be asserted
+	 * @param  listItemValue 	the unique value to be found in the list
+	 * @param  click 			the intention of the assertion: true if the intended list item should be selected,
+	 *                             false if the intended list item should simply be asserted in the list
+	 * @param  desc 			short description of the action being done
+	 * @return      			void
+	 */
+	public static void assertInList(List<WebElement> elementList, String listItemValue, Boolean click, String desc){
 		Boolean foundRow = false;
 
 		//Loop through items in list
 		for (int i=0; i<elementList.size(); i++){
 
-			if (elementList.get(i).getText().equals(itemValue)){
+			if (elementList.get(i).getText().equals(listItemValue)){
 				foundRow = true;
 
 				if (!click){
@@ -68,32 +100,55 @@ public class Commands {
 			}
 		}
 
-		if (!foundRow){ fail("Cannot find " + itemValue + " in the list"); }
+		if (!foundRow){ fail("Cannot find " + listItemValue + " in the list"); }
 	}
 
-	public static void assertPageSource(String source, String expValue, String desc){
+	/**
+	 * Asserts that the {@param expectecValue} is found anywhere in the given page {@param pageSource}. It is basically a
+	 * lazy assert instead of asserting the value at a particular web element. This should be used only when it is
+	 * certain that the value will appear on the page one time.
+	 *
+	 * @param  pageSource		the entire page source
+	 * @param  expectedValue 	the unique value to be found in the page source
+	 * @param  desc 			short description of the action being done
+	 * @return      			void
+	 */
+	public static void assertPageSource(String pageSource, String expectedValue, String desc){
 		CommandHelpers.printSteps(PropsCommands.assertPageSource, desc);
-		if (!source.contains(expValue)){
-			Assert.fail("[" + expValue + "] is not found in page source.");
+		if (!pageSource.contains(expectedValue)){
+			Assert.fail("[" + expectedValue + "] is not found in page pageSource.");
 		}
 	}
 
-	public static void assertNotInList(List<WebElement> elementList, String itemValue, String desc){
+	/**
+	 * Asserts that a given {@param listItemValue} is NOT found in the given {@param elementList}
+	 *
+	 * @param  elementList		the list web element that is to be asserted
+	 * @param  listItemValue 	the unique value to NOT be found in the list
+	 * @param  desc 			short description of the action being done
+	 * @return      			void
+	 */
+	public static void assertNotInList(List<WebElement> elementList, String listItemValue, String desc){
 		CommandHelpers.printSteps(PropsCommands.assertNotInList, desc);
-		Boolean flag = false;
 
 		for (WebElement thisItem : elementList){
-			if (thisItem.getText().contains(itemValue)){
-				flag = true;
+			if (thisItem.getText().contains(listItemValue)){
+				Assert.fail("Found [" + listItemValue + "] in the list");
 				break;
 			}
 		}
-
-		if (flag){
-			Assert.fail("Found [" + itemValue + "] in the list");
-		}
 	}
 
+	/**
+	 * Asserts that the given radio {@param elementList} contains an item with the given {@param expectedValue}
+	 *
+	 * @param  elementList		the list web element that is to be asserted
+	 * @param  expectedValue 	the value to be associated to an item in the list
+	 * @param  click            the intention of the assertion: true if the intended list item should be selected,
+	 *                             false if the intended list item should simply be asserted in the list
+	 * @param  desc 			short description of the action being done
+	 * @return      			void
+	 */
 	public static void assertRadio(List<WebElement> elementList, String expectedValue, Boolean click, String desc){
 		for (WebElement el : elementList){
 			if (el.getAttribute("value").equalsIgnoreCase(expectedValue)){
@@ -179,7 +234,8 @@ public class Commands {
 
 	public static void scrollByPosition(WebDriver driver, WebElement element, int xPos, int yPos){
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
-		js.executeScript("window.scrollBy(" + element.getLocation().x + xPos + ", " + element.getLocation().y + yPos + ")");
+		js.executeScript("window.scrollBy(" + element.getLocation().x + xPos + ", "
+				+ element.getLocation().y + yPos + ")");
 	}
 
 	public static void scrollToEl(WebDriver driver, WebElement element){
