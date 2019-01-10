@@ -16,4 +16,7 @@ public interface PropsCommands {
 	String selectOption = "selectOption";
 	String waitForSecs = "waitForSecs";
 	String waitForEl = "waitForEl";
+	String waitForAssert = "waitForAssert";
+	String waitForURL = "waitForURL";
+	String waitForNotURL = "waitForNotURL";
 }
