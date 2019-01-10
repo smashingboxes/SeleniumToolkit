@@ -1,7 +1,5 @@
 package framework;
 
-import java.io.File;
-
 import gateways.sauceLabs.SauceLabsUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -15,10 +13,10 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class Drivers {
 
-	public static WebDriver driverInit(String platform, String browser, String appUrl, File f,
+	public static WebDriver driverInit(String platform, String browser, String appUrl, String slUser, String slPass,
 									   Boolean runSL, Boolean headless){
 		if (runSL){
-			return SauceLabsUtils.sauceLabsConfig(f, browser, platform, appUrl);
+			return SauceLabsUtils.sauceLabsConfig(slUser, slPass, browser, platform, appUrl);
 		} else {
 			switch(browser){
 				case PropsSystem.firefox: return firefoxDriver(appUrl, headless);
