@@ -3,8 +3,12 @@ package framework;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.fail;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
+import gateways.GatewayUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -31,7 +35,7 @@ public class Commands {
 	 * @param  desc 	short description of the action being done
 	 */
 	public static void assertClick(WebElement element, String func, Boolean check, String desc){
-		CommandHelpers.printSteps(func, desc);
+		printStep(func, desc);
 		if ((!element.getAttribute("class").contains("checked") && check)
 				|| (element.getAttribute("class").contains("checked") && !check)){
 			element.click();
@@ -86,10 +90,10 @@ public class Commands {
 				foundRow = true;
 
 				if (!click){
-					CommandHelpers.printSteps(PropsCommands.assertInList, desc);
+					printStep(PropsCommands.assertInList, desc);
 					assertEquals(elementList.get(i).isSelected(), true);
 				} else {
-					CommandHelpers.printSteps(PropsCommands.click, desc);
+					printStep(PropsCommands.click, desc);
 					elementList.get(i).click();
 				}
 
@@ -110,7 +114,7 @@ public class Commands {
 	 * @param  desc 			short description of the action being done
 	 */
 	public static void assertPageSource(String pageSource, String expectedValue, String desc){
-		CommandHelpers.printSteps(PropsCommands.assertPageSource, desc);
+		printStep(PropsCommands.assertPageSource, desc);
 		if (!pageSource.contains(expectedValue)){
 			Assert.fail("[" + expectedValue + "] is not found in page pageSource.");
 		}
@@ -124,7 +128,7 @@ public class Commands {
 	 * @param  desc 			short description of the action being done
 	 */
 	public static void assertNotInList(List<WebElement> elementList, String listItemValue, String desc){
-		CommandHelpers.printSteps(PropsCommands.assertNotInList, desc);
+		printStep(PropsCommands.assertNotInList, desc);
 
 		for (WebElement thisItem : elementList){
 			if (thisItem.getText().contains(listItemValue)){
@@ -147,11 +151,11 @@ public class Commands {
 		for (WebElement el : elementList){
 			if (el.getAttribute("value").equalsIgnoreCase(expectedValue)){
 				if (!click){  //if asserting selected value
-					CommandHelpers.printSteps(PropsCommands.assertText, desc);
+					printStep(PropsCommands.assertText, desc);
 					Assert.assertEquals(el.isSelected(), true);
 					break;
 				} else {  //else if clicking on an option
-					CommandHelpers.printSteps(PropsCommands.click, desc);
+					printStep(PropsCommands.click, desc);
 					el.click();
 					break;
 				}
@@ -167,7 +171,7 @@ public class Commands {
 	 * @param  desc 			short description of the action being done
 	 */
 	public static void assertTextEquals(WebElement element, String expectedValue, String desc){
-		CommandHelpers.printSteps(PropsCommands.assertText, desc);
+		printStep(PropsCommands.assertText, desc);
 		Assert.assertEquals(element.getText(), expectedValue);
     }
 
@@ -179,7 +183,7 @@ public class Commands {
 	 * @param  desc 			short description of the action being done
 	 */
     public static void assertTextContains(WebElement element, String expectedValue, String desc){
-		CommandHelpers.printSteps(PropsCommands.assertTextContains, desc);
+		printStep(PropsCommands.assertTextContains, desc);
 		if (!element.getText().contains(expectedValue)){
 			Assert.fail("[" + element.getText() + "] doesn't contain the text [" + expectedValue + "].");
 		}
@@ -192,7 +196,7 @@ public class Commands {
 	 * @param  desc 			short description of the action being done
 	 */
 	public static void click(WebElement element, String desc){
-		CommandHelpers.printSteps(PropsCommands.click, desc);
+		printStep(PropsCommands.click, desc);
     	element.click();
 	}
 
@@ -210,7 +214,7 @@ public class Commands {
 	 * @param  desc 			short description of the action being done
 	 */
 	public static void clickOffSet(WebDriver driver, WebElement element, Integer xOffset, Integer yOffset, String desc){
-		CommandHelpers.printSteps(PropsCommands.clickOffset, desc);
+		printStep(PropsCommands.clickOffset, desc);
 		Actions act = new Actions(driver);
 		act.moveToElement(element).moveByOffset(xOffset, yOffset).click().perform();
 	}
@@ -223,7 +227,7 @@ public class Commands {
 	 * @param  desc 			short description of the action being done
 	 */
 	public static void enterText(WebElement element, String text, String desc){
-		CommandHelpers.printSteps(PropsCommands.enterText, desc);
+		printStep(PropsCommands.enterText, desc);
 		element.clear();
 		element.sendKeys(text);
 	}
@@ -236,7 +240,7 @@ public class Commands {
 	 * @param  desc 			short description of the action being done
 	 */
 	public static void fileUpload(WebElement elementUpload, String filePath, String desc){
-		CommandHelpers.printSteps(PropsCommands.fileUpload, desc);
+		printStep(PropsCommands.fileUpload, desc);
 		elementUpload.sendKeys(filePath);
 	}
 
@@ -248,7 +252,7 @@ public class Commands {
 	 * @param  desc 		short description of the action being done
 	 */
 	public static void hoverOver(WebDriver driver, WebElement element, String desc){
-		CommandHelpers.printSteps(PropsCommands.hoverOver, desc);
+		printStep(PropsCommands.hoverOver, desc);
 		Actions action = new Actions(driver);
 		action.moveToElement(element).build().perform();
 	}
@@ -268,6 +272,23 @@ public class Commands {
 		}
 	}
 
+	/**
+	 * Prints out the given steps ({@param action} and {@param desc}) in the console.
+	 *
+	 * Format: 2019/01/10 12:47:32 -- [{@param action}] -- {@param desc}
+	 *
+	 * Also adds each {@param desc} of the step to a list to be used for third-party capturing and reporting
+	 *
+	 * @param  action	the method executed for the step
+	 * @param  desc 	short description of the action being done
+	 */
+	public static void printStep(String action, String desc){
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		String outputStep = dateFormat.format(new Date()) + " -- [" + action + "] -- " + desc;
+		System.out.println(outputStep);
+		GatewayUtils.stepsOutput.add(outputStep.split(" -- ")[2]);
+	}
+	
 	/**
 	 * Make the specified {@param elementUpload} visible in order for Selenium to upload a file
 	 *
@@ -391,7 +412,7 @@ public class Commands {
 	 * @param  desc 			short description of the action being done
 	 */
 	public static void selectOption(Select elementSelect, String text, String desc){
-		CommandHelpers.printSteps(PropsCommands.selectOption, desc);
+		printStep(PropsCommands.selectOption, desc);
 		elementSelect.selectByVisibleText(text);
 	}
 
@@ -443,7 +464,7 @@ public class Commands {
 					Assert.fail("The text [" + text + "] was not found in the element");
 				}
             } else {
-				CommandHelpers.printSteps(PropsCommands.waitForAssert, "Found [" + text + "] in the element");
+				printStep(PropsCommands.waitForAssert, "Found [" + text + "] in the element");
                 break;
             }
         } while (i < 10);
@@ -457,7 +478,7 @@ public class Commands {
 	 */
 	public static void waitForEl(WebDriver driver, WebElement element){
 		String desc = "Waiting for next element to be visible";
-		CommandHelpers.printSteps(PropsCommands.waitForEl, desc);
+		printStep(PropsCommands.waitForEl, desc);
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
@@ -470,7 +491,7 @@ public class Commands {
 	public static void waitForSecs(Integer milliSeconds){
 		try {
 			String desc = "Waiting for " + milliSeconds + " milliseconds";
-			CommandHelpers.printSteps(PropsCommands.waitForSecs, desc);
+			printStep(PropsCommands.waitForSecs, desc);
 			Thread.sleep(milliSeconds);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -496,7 +517,7 @@ public class Commands {
 					Assert.fail("The text [" + text + "] is not found in the URL");
 				}
 			} else {
-				CommandHelpers.printSteps(PropsCommands.waitForURL, "Found [" + text + "] in the URL");
+				printStep(PropsCommands.waitForURL, "Success: Found [" + text + "] in the URL");
 				break;
 			}
 		} while (i < 10);
@@ -520,7 +541,7 @@ public class Commands {
 					Assert.fail("The text [" + text + "] is found in the URL");
 				}
 			} else {
-				CommandHelpers.printSteps(PropsCommands.waitForURL, "Did not find [" + text + "] in the URL");
+				printStep(PropsCommands.waitForNotURL, "Success: Did not find [" + text + "] in the URL");
 				break;
 			}
 		} while (i < 10);

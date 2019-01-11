@@ -1,6 +1,6 @@
 package frameworkSandbox;
 
-import framework.CommandHelpers;
+import framework.Commands;
 import gateways.practiTest.PractiTestRequests;
 import org.testng.IClass;
 import org.testng.ITestContext;
@@ -21,9 +21,9 @@ public class PractiTestIntegration {
     @Test
     public static void beginTest() throws Exception {
         File file = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
-        CommandHelpers.printSteps("actionOne", "Step One");
-        CommandHelpers.printSteps("actionTwo", "Step Two");
-        CommandHelpers.printSteps("actionThree", "Step Three");
+        Commands.printStep("actionOne", "Step One");
+        Commands.printStep("actionTwo", "Step Two");
+        Commands.printStep("actionThree", "Step Three");
 
 //        PractiTestRequests.executeTestRun(file, projectId, testSetId, testId, r);
     }

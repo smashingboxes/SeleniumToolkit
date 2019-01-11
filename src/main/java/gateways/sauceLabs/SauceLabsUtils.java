@@ -1,19 +1,15 @@
 package gateways.sauceLabs;
 
 import framework.Drivers;
-import gateways.GatewayProps;
-import gateways.GatewayUtils;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
 public class SauceLabsUtils {
-
 
     /**
      * SauceLabs Config for RemoteWebDriver
@@ -28,24 +24,24 @@ public class SauceLabsUtils {
      */
     public static WebDriver sauceLabsConfig(String slUser, String slPass, String browser, String platform,
                                             String appAddress) {
-        RemoteWebDriver d = null;
+        RemoteWebDriver driver = null;
 
-        if (!slUser.equals(null)){
+        if (slUser != null){
             Assert.fail("Please provide a SauceLabs username");
-        } else if (!slPass.equals(null)){
+        } else if (slPass != null){
             Assert.fail("Please provide a SauceLabs password");
         } else {
             try {
                 final String URL = "https://" + slUser + ":" + slPass + "@ondemand.saucelabs.com:443/wd/hub";
-                d = new RemoteWebDriver(new URL(URL), Drivers.setCaps(browser, platform));
-                d.setFileDetector(new LocalFileDetector());
-                d.get(appAddress);
-                System.out.println("title of page is: " + d.getTitle());
+                driver = new RemoteWebDriver(new URL(URL), Drivers.setCaps(browser, platform));
+                driver.setFileDetector(new LocalFileDetector());
+                driver.get(appAddress);
+                System.out.println("title of page is: " + driver.getTitle());
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
 
-        return d;
+        return driver;
     }
 }

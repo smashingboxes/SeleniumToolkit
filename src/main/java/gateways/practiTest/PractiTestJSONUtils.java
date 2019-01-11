@@ -1,37 +1,32 @@
 package gateways.practiTest;
 
 import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import gateways.GatewayUtils;
-import gateways.GatewayProps;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.testng.ITestResult;
 
-import java.io.File;
-
 public class PractiTestJSONUtils {
 
-    public static byte[] getEncoding(File f){
-        String[] kv = GatewayUtils.readFile(f, GatewayProps.practiTest);
-        return Base64.encodeBase64((kv[0] + ":" + kv[1]).getBytes());
+    public static byte[] getEncoding(String devEmail, String apiToken){
+        return Base64.encodeBase64((devEmail + ":" + apiToken).getBytes());
     }
 
-    public static HttpPost createInstance(byte[] encoding, String projectId, String testSetId, String testId) throws Exception {
-        String json_str = "{\"data\": { \"type\": \"instances\", \"attributes\": {\"test-id\": " +
-                testId + ", \"set-id\": " + testSetId + "}  } }";
+    public static HttpPost createInstance(byte[] encoding, String projectId, String testSetId, String testId)
+            throws Exception {
+        String json_str = "{\"data\": { \"type\": \"instances\", \"attributes\": {\"test-id\": " + testId +
+                ", \"set-id\": " + testSetId + "}  } }";
         return postRequest(uriInstance(projectId), json_str, encoding);
     }
 
-    public static HttpPost runTest(byte[] encoding, String projectId, String instanceID, String testSetId, String testId, ITestResult result) throws Exception{
+    public static HttpPost runTest(byte[] encoding, String projectId, String instanceID, String testSetId,
+                                   String testId, ITestResult result) throws Exception{
         String json_str = "{\"data\": { \"type\": \"instances\", \"attributes\": {\"set-id\": " + testSetId + ", " +
-                "\"test-id\": " + testId + ", \"run-duration\": \"" +
-                getDuration(result) + "\", \"instance-id\": " + instanceID + ", \"exit-code\": " + getTestStatus(result.getStatus()) + ", " +
-                "\"automated-execution-output\": \"" +
-                getMessage(result)
-                + "\" }, \"steps\": {\"data\": [";
+                "\"test-id\": " + testId + ", \"run-duration\": \"" + getDuration(result) + "\", \"instance-id\": " +
+                instanceID + ", \"exit-code\": " + getTestStatus(result.getStatus()) +
+                ", \"automated-execution-output\": \"" + getMessage(result) + "\" }, \"steps\": {\"data\": [";
 
         Integer outputSize = GatewayUtils.stepsOutput.size();
 
@@ -47,17 +42,14 @@ public class PractiTestJSONUtils {
     }
 
     public static String getInstanceId(String responseBody){
-        JsonParser parser = new JsonParser();
-        JsonElement jsonTree = parser.parse(responseBody);
+        JsonElement jsonTree = new JsonParser().parse(responseBody);
         String newInstanceId = "";
 
         if(jsonTree.isJsonObject()){
-            JsonObject jsonObject = jsonTree.getAsJsonObject();
-            JsonElement data = jsonObject.get("data");
+            JsonElement data = jsonTree.getAsJsonObject().get("data");
 
             if(data.isJsonObject()){
-                JsonObject dataObject = data.getAsJsonObject();
-                newInstanceId = dataObject.get("id").toString();
+                newInstanceId = data.getAsJsonObject().get("id").toString();
             }
         }
 
@@ -80,18 +72,14 @@ public class PractiTestJSONUtils {
         message.replace("\n", " ").replace("\"", "\\\"");
 
         if (message.length() > 255){
-            message.substring(0, 255);
+            message = message.substring(0, 255);
         }
 
         return message;
     }
 
     private static String stepStatus(Integer status, Integer count, Integer outputSize){
-        if (count == outputSize - 1 && status != 1){
-            return "FAILED";
-        } else {
-            return "PASSED";
-        }
+        if (count == outputSize - 1 && status != 1){ return "FAILED"; } else { return "PASSED"; }
     }
 
     private static HttpPost postRequest(String uri, String json_str, byte[] encoding) throws Exception{

@@ -1,6 +1,5 @@
 package frameworkSandbox;
 
-import framework.CommandHelpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
@@ -9,7 +8,6 @@ import org.testng.annotations.Test;
 
 import framework.Commands;
 import framework.Drivers;
-import framework.PropsCommands;
 
 @Listeners(CheckResultsListener.class)
 public class ClassName {
@@ -43,9 +41,9 @@ public class ClassName {
 //		Commands.click(d, PropsCommands.className, classNamePrice, "This Works");
 		Commands.waitForURL(d, "xkcd");
 		Commands.waitForSecs(3000);
-		CommandHelpers.printSteps("actionOne", "Step One");
-		CommandHelpers.printSteps("actionTwo", "Step Two");
-		CommandHelpers.printSteps("actionThree", "Step Three");
+		Commands.printStep("actionOne", "Step One");
+		Commands.printStep("actionTwo", "Step Two");
+		Commands.printStep("actionThree", "Step Three");
 //		d.findElement(By.cssSelector(cssDropdown));
 		d.findElement(By.id(idComic));
 //		Commands.selectOption(d, PropsCommands.cssSelector, cssDropdown, PropsCommands.visibleText, "Value 3", null, null);
