@@ -51,8 +51,7 @@ public class ChromeNoNotification {
 //        d = Drivers.firefoxDriver(d, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
 //        d = Drivers.chromeDriver("http://sl-test.herokuapp.com/guinea_pig/file_upload");
         File f = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
-        d = SauceLabsUtils.sauceLabsConfig(f, PropsSystem.chrome, "Windows 10",
-                "https://portal.orangecaregroup.com/users/sign_in");
+        d = Drivers.driverInit("Windows 10", PropsSystem.chrome, "https://xkcd.com/", null, null, true, false);
         d.manage().window().maximize();
         PageFactory.initElements(d, ChromeNoNotification.class);
     }

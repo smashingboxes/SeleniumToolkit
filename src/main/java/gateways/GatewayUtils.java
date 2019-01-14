@@ -4,11 +4,12 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GatewayUtils {
 
-    public static List<String> stepsOutput;
+    public static List<String> stepsOutput = new ArrayList();
 
     /**
      * Formats the returned {@param jsonString} in a readable format

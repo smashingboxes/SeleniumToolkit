@@ -1,8 +1,8 @@
 package frameworkSandbox;
 
 import framework.Commands;
+import framework.Drivers;
 import framework.PropsSystem;
-import gateways.sauceLabs.SauceLabsUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,7 +21,7 @@ public class AssertNotInList {
     @BeforeTest
     public static void beforeTest(){
         File f = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
-        d = SauceLabsUtils.sauceLabsConfig(f, PropsSystem.chrome, "Windows 10", "https://xkcd.com/");
+        d = Drivers.driverInit("Windows 10", PropsSystem.chrome, "https://xkcd.com/", null, null, true, false);
         d.manage().window().maximize();
         PageFactory.initElements(d, AssertNotInList.class);
     }

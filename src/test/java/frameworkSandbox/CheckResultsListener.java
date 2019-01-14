@@ -31,10 +31,10 @@ public class CheckResultsListener extends TestListenerAdapter {
     }
 
     public static void runTest(ITestResult result) throws Exception {
-        PractiTestRequests.executeTestRun(
-                new File("/Users/darrinwhitley/Documents/workspace/slCreds"),
-                PractiTestIntegration.projectId, PractiTestIntegration.testSetId,
-                PractiTestIntegration.testId, result
-        );
+        File file = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
+        String [] kv = ReadFile.readFile(file, "sauceLabs");
+
+        PractiTestRequests.executeTestRun(kv[0], kv[1], PractiTestIntegration.projectId,
+                PractiTestIntegration.testSetId, PractiTestIntegration.testId, result);
     }
 }
