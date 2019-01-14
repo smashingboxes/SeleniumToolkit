@@ -27,7 +27,8 @@ public class SelectDropdown {
 //        d = Drivers.firefoxDriver(d, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
 //        d = Drivers.chromeDriver("http://sl-test.herokuapp.com/guinea_pig/file_upload");
         File f = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
-        d = Drivers.driverInit("Windows 10", PropsSystem.chrome, "https://www.newegg.com/", null, null, false, false);
+        String [] kv = ReadFile.readFile(f, "sauceLabs");
+        d = Drivers.driverInit("Windows 10", PropsSystem.chrome, "https://www.newegg.com/", kv[0], kv[1], true, false);
         d.manage().window().maximize();
     }
 

@@ -26,9 +26,9 @@ public class SauceLabsUtils {
                                             String appAddress) {
         RemoteWebDriver driver = null;
 
-        if (slUser != null){
+        if (slUser == null){
             Assert.fail("Please provide a SauceLabs username");
-        } else if (slPass != null){
+        } else if (slPass == null){
             Assert.fail("Please provide a SauceLabs password");
         } else {
             try {
