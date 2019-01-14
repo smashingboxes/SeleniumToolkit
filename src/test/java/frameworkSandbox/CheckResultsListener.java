@@ -32,7 +32,7 @@ public class CheckResultsListener extends TestListenerAdapter {
 
     public static void runTest(ITestResult result) throws Exception {
         File file = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
-        String [] kv = ReadFile.readFile(file, "sauceLabs");
+        String [] kv = ReadFile.readFile(file, "practiTest");
 
         PractiTestRequests.executeTestRun(kv[0], kv[1], PractiTestIntegration.projectId,
                 PractiTestIntegration.testSetId, PractiTestIntegration.testId, result);
