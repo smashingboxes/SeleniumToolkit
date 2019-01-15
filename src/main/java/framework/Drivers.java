@@ -33,9 +33,9 @@ public class Drivers {
 			return SauceLabsUtils.sauceLabsConfig(slUser, slPass, browser, platform, appAddress);
 		} else {
 			switch(browser){
-				case PropsSystem.firefox: return firefoxDriver(appAddress, headless);
-				case PropsSystem.chrome: return chromeDriver(appAddress, headless);
-				case PropsSystem.safari: return safariDriver(appAddress);
+				case "firefox": return firefoxDriver(appAddress, headless);
+				case "chrome": return chromeDriver(appAddress, headless);
+				case "safari": return safariDriver(appAddress);
 				default: return chromeDriver(appAddress, headless);
 			}
 		}
@@ -51,7 +51,7 @@ public class Drivers {
 		DesiredCapabilities caps;
 		
 		switch (browser){
-			case PropsSystem.firefox:
+			case "firefox":
 				caps = DesiredCapabilities.firefox();
 				caps.setCapability("version", "52.0");
 				
@@ -59,7 +59,7 @@ public class Drivers {
 					case "Windows 10": caps.setCapability("platform", platform); return caps;
 					default: return null;
 				}
-			case PropsSystem.chrome:
+			case "chrome":
 				caps = DesiredCapabilities.chrome();
 				caps.setCapability("version", "58");
 				

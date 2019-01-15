@@ -40,7 +40,7 @@ public class ClassName {
 //		Commands.waitForEl(d, PropsCommands.cssSelector, cssNewsList);
 //		Commands.click(d, PropsCommands.className, classNamePrice, "This Works");
 		Commands.waitForURL(d, "xkcd");
-		Commands.waitForSecs(3000);
+		Commands.waitForSeconds(3000);
 		Commands.printStep("actionOne", "Step One");
 		Commands.printStep("actionTwo", "Step Two");
 		Commands.printStep("actionThree", "Step Three");

@@ -2,20 +2,15 @@ package frameworkSandbox;
 
 import framework.Commands;
 import framework.Drivers;
-import framework.PropsSystem;
-import gateways.sauceLabs.SauceLabsUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ChromeNoNotification {
@@ -51,7 +46,7 @@ public class ChromeNoNotification {
 //        d = Drivers.firefoxDriver(d, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
 //        d = Drivers.chromeDriver("http://sl-test.herokuapp.com/guinea_pig/file_upload");
         File f = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
-        d = Drivers.driverInit("Windows 10", PropsSystem.chrome, "https://xkcd.com/", null, null, true, false);
+        d = Drivers.driverInit("Windows 10", "chrome", "https://xkcd.com/", null, null, true, false);
         d.manage().window().maximize();
         PageFactory.initElements(d, ChromeNoNotification.class);
     }
@@ -124,7 +119,7 @@ public class ChromeNoNotification {
     }
 
     public static void waitForEmail() {
-        Commands.waitForEl(d, elEmail);
+        Commands.waitForElement(d, elEmail);
     }
 
     @FindBy(tagName = "h1")
@@ -137,7 +132,7 @@ public class ChromeNoNotification {
 
     //Wait calls
     public static void waitForHeader() {
-        Commands.waitForEl(d, elHeader);
+        Commands.waitForElement(d, elHeader);
     }
 
     @FindBy(id = "menu-header-navigation")

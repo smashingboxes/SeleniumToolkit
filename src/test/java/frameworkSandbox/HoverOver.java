@@ -30,7 +30,7 @@ public class HoverOver {
 
     @Test
     public void testSauce() throws Exception {
-        Commands.waitForSecs(5000);
+        Commands.waitForSeconds(5000);
 //        Commands.waitForURL(d, "newegg");
         Commands.waitForURL(d, "amazon");
         hoverAccountLists();
@@ -60,46 +60,6 @@ public class HoverOver {
     public static void waitForPageLoad(){
         String desc = "Wait for page load";
         Commands.waitForURL(d, "signin");
-        Commands.waitForEl(d, email);
+        Commands.waitForElement(d, email);
     }
-
-//    @SuppressWarnings("resource")
-//    public static String[] readFile(File f, String gatewayApp){
-//        String[] kv = new String[2];
-//
-//        try {
-//            BufferedReader br = new BufferedReader(new FileReader(f));
-//            String readLine = "";
-//
-//            System.out.println("Reading file using Buffered Reader");
-//
-//            while ((readLine = br.readLine()) != null) {
-//                String[] line = readLine.split("=");
-//
-//                switch(gatewayApp){
-//                    case "sauceLabs":
-//                        if(line[0].equals("username")){
-//                            kv[0] = line[1];
-//                        } else if (line[0].equals("accessKey")){
-//                            kv[1] = line[1];
-//                        } break;
-//                    case "practiTest":
-//                        if(line[0].equals("practiTestDevEmail")){
-//                            kv[0] = line[1];
-//                        } else if (line[0].equals("practiTestAccessKey")){
-//                            kv[1] = line[1];
-//                        } break;
-//                    default: throw new NullPointerException();
-//                }
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        if (!kv[0].equals(null) && !kv[1].equals(null)){
-//            return kv;
-//        } else {
-//            return null;
-//        }
-//    }
 }
