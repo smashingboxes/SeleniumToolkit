@@ -25,6 +25,33 @@ Dependencies
 * Selenium Jupiter 2.2.0
 * Sauce TestNG 2.1.21
 
-Alright, here is the meat of the SeleniumToolkit:
+#Toolkit Commands
 
 The Commands.java class contains the bulk of the commands that can be used in the Toolkit. Typically, each command requires a WebElement object and a short Description string. The Selenium action would be done on the WebElement object and the short Description would be used for the console printout to identify which steps have been executed.
+
+Basic example:
+Your testing code would look like this:
+```
+//Method 1 for getting the WebElement object (The Selenium Way)
+WebElement btnSubmit = driver.findElement(By.id("submit"));
+
+//OR
+
+//Method 2 for getting the WebElement object (The TestNG Way)
+@FindBy(id = "submit)
+public static WebElement btnSubmit = null;
+
+//THEN
+
+//Click on a Submit button
+Commands.click(btnSubmit, "Clicking on the Submit button");   
+```
+
+The SeleniumToolkit method for handling the "click" function:
+```
+//The SeleniumToolkit command:
+public static void click(WebElement element, String desc){
+  printStep("click", desc);     //Printing the step in the console
+  element.click();              //Executing the Selenium command on the WebElement
+}
+```
