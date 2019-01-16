@@ -29,13 +29,12 @@ public class Commands {
 	 * Note: This isn't typically used and may need to be either removed or refactored in the future
 	 *
 	 * @param  element  the web element that is to be asserted
-	 * @param  func 	TODO: FIGURE OUT WHAT THIS IS
 	 * @param  check 	the intention of the assertion: true if expecting element to be checked, false if expecting
 	 *                     element to not be checked
 	 * @param  desc 	short description of the action being done
 	 */
-	public static void assertClick(WebElement element, String func, Boolean check, String desc){
-		printStep(func, desc);
+	public static void assertClick(WebElement element, Boolean check, String desc){
+		printStep("assertClick", desc);
 		if ((!element.getAttribute("class").contains("checked") && check)
 				|| (element.getAttribute("class").contains("checked") && !check)){
 			element.click();
@@ -47,7 +46,6 @@ public class Commands {
 	 *
 	 * Note: This method only searches by one {@param uniqueVal}. This may need to be refactored in order to be able to
 	 * 		handle assertions with multiple values on the same row
-	 * Note: May also need to be updated since it doesn't have a description parameter and doesn't print the steps
 	 *
 	 * @param  elementTable		the table web element that is to be asserted
 	 * @param  uniqueVal 		the unique value to be found in the table; this is functionally the unique id or string
@@ -59,16 +57,18 @@ public class Commands {
 		List<WebElement> elTableRows = elementTable.findElements(By.tagName("tbody"))
 				.get(0).findElements(By.tagName("tr"));
 		Boolean foundRow = false;
+		printStep("assertInTable", "Looking for [" + uniqueVal + "] in the table");
 
 		for (WebElement thisRow : elTableRows){
 			if (thisRow.getText().contains(uniqueVal)){
 				foundRow = true;
-				if (click){ thisRow.click(); }
+				printStep("assertInTable", "Found [" + uniqueVal + "] in the table.");
+				if (click){ click(thisRow, "Clicking on the row that has [" +uniqueVal + "]."); }
 				break;
 			}
 		}
 
-		if (!foundRow){ Assert.fail("[" + uniqueVal + "] was not found in the table.");}
+		if (!foundRow){ Assert.fail("Cannot find [" + uniqueVal + "] in the table.");}
 	}
 
 	/**
@@ -346,7 +346,7 @@ public class Commands {
 
 	/**
 	 * Scrolls the page vertically and horizontally based upon given {@param xPos} and {@param yPos}. These parameters
-	 * are based on the location of a given {@param elemenet}
+	 * are based on the location of a given {@param element}
 	 *
 	 * @param  driver		the web driver through which the action will take place
 	 * @param  element		the web element that is to be clicked
@@ -367,7 +367,7 @@ public class Commands {
 	 * @param  driver		the web driver through which the action will take place
 	 * @param  element		the web element that is to be scrolled to and visible on the page
 	 */
-	public static void scrollToEl(WebDriver driver, WebElement element){
+	public static void scrollToElement(WebDriver driver, WebElement element){
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("arguments[0].scrollIntoView()", element);
 	}

@@ -33,25 +33,77 @@ Basic example:
 Your testing code would look like this:
 ```
 //Method 1 for getting the WebElement object (The Selenium Way)
-WebElement btnSubmit = driver.findElement(By.id("submit"));
+WebElement paragraph = driver.findElement(By.id("text"));
 
 //OR
 
 //Method 2 for getting the WebElement object (The TestNG Way)
-@FindBy(id = "submit)
-public static WebElement btnSubmit = null;
+@FindBy(id = "text")
+public static WebElement paragraph = null;
 
 //THEN
 
-//Click on a Submit button
-Commands.click(btnSubmit, "Clicking on the Submit button");   
+//Assert that the text found in the given WebElement contains the expected value
+Commands.assertTextContains(paragraph, "Foobar", "Asserting that [Foobar] is found in the paragraph WebElement");
 ```
 
-The SeleniumToolkit method for handling the "click" function:
+The SeleniumToolkit method for handling the "assertTextContains" function:
 ```
 //The SeleniumToolkit command:
-public static void click(WebElement element, String desc){
-  printStep("click", desc);     //Printing the step in the console
-  element.click();              //Executing the Selenium command on the WebElement
+public static void assertTextContains(WebElement element, String expectedValue, String desc){
+  printStep("assertTextContains", desc);
+  if (!element.getText().contains(expectedValue)){
+    Assert.fail("[" + element.getText() + "] doesn't contain the text [" + expectedValue + "].");
+  }
 }
 ```
+
+Here is a list of all of the current SeleniumToolkit commands for quick reference. (Please note that any commands not listed here may be private or not utilized anymore):
+* assertClick
+* assertInTable
+* assertInList
+* assertPageSource
+* assertNotInList
+* assertRadio
+* assertTextEquals
+* assertTextContains
+* click
+* clickOffSet
+* enterText
+* fileUpload
+* hoverOver
+* printStep
+* uploadInputHidden
+* uploadInputHiddenLoop
+* scrollByPosition
+* scrollToElement
+* scrollToTopOfPage
+* scrollToBottomOfPage
+* scrollToRightOfPage
+* selectOption
+* switchToIFrame
+* waitForAssert
+* waitForElement
+* waitForSeconds
+* waitForURL
+* waitForNotURL
+
+
+#SauceLabs Integration (Requires active account)
+
+To utilize the integration, use the following method:
+```
+WebDriver driver = SauceLabsUtils.sauceLabsConfig(slUser, slPass, browser, platform, appAddress)
+```
+
+This method will return the appropriate type of WebDriver based on the given browser ("chrome", "firefox", "safari").
+
+
+#PractiTest Integration (Requires active account)
+
+To utilize the integration, it would be best to use the following method in a TestNG listener class:
+```
+PractiTestRequests.executeTestRun(devEmail, apiToken, projectId, testSetId, testId, result)
+```
+
+Note: the "result" parameter is the ITestResult object that is provided by TestNG in the listener class. For more info about this class, visit https://www.guru99.com/listeners-selenium-webdriver.html
