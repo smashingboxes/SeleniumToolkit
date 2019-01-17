@@ -19,9 +19,9 @@ public class AssertNotInList {
 
     @BeforeTest
     public static void beforeTest(){
-        File f = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
-        d = Drivers.driverInit("Windows 10", "chrome", "https://xkcd.com/", null, null, true, false);
-        d.manage().window().maximize();
+        DefaultConfig.appAddress = "https://xkcd.com/";
+        d = DefaultConfig.defaultConfig();
+
         PageFactory.initElements(d, AssertNotInList.class);
     }
 

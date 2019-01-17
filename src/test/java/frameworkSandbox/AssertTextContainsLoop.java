@@ -23,7 +23,8 @@ public class AssertTextContainsLoop {
 //        d = Drivers.firefoxDriver(d, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
 //        d = Drivers.chromeDriver("http://sl-test.herokuapp.com/guinea_pig/file_upload");
         File f = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
-        d = Drivers.driverInit("Windows 10", "chrome", "https://xkcd.com/", null, null, true, false);
+        d = Drivers.driverInit("chrome", "https://www.xkcd.com/", true);
+//        d = Drivers.driverInit("Windows 10", "chrome", "https://xkcd.com/", null, null, true, false);
         d.manage().window().maximize();
         PageFactory.initElements(d, AssertTextContainsLoop.class);
     }

@@ -18,13 +18,8 @@ public class HoverOver {
 
     @BeforeTest
     public static void beforeTest(){
-//        File f = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
-//        d = Drivers.sauceLabsConfig(f, PropsSystem.chrome, "Windows 10", "https://www.amazon.com/");
-//        d.manage().window().maximize();
-
-        File file = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
-        d = Drivers.driverInit("Windows 10", "chrome",
-                "https://www.amazon.com/", null, null, false, false);
+        DefaultConfig.appAddress = "https://www.amazon.com/";
+        d = DefaultConfig.defaultConfig();
         PageFactory.initElements(d, HoverOver.class);
     }
 

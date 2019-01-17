@@ -14,12 +14,17 @@ public class AcceptCerts {
 
     @BeforeTest
     public static void beforeTest(){
-        String app = "https://ec2-18-191-60-177.us-east-2.compute.amazonaws.com";
+//        String app = "https://ec2-18-191-60-177.us-east-2.compute.amazonaws.com";
+        DefaultConfig.appAddress = "https://www.newegg.com/";
+        d = DefaultConfig.defaultConfig();
+
+
 //        d = Drivers.newSafariDriver("https://ec2-18-191-60-177.us-east-2.compute.amazonaws.com");
 //        d = Drivers.safariDriver(d, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
 //        d = Drivers.firefoxDriver(d, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
 //        d = Drivers.chromeDriver(null, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
-        d = Drivers.driverInit("Windows 10", "chrome", app, null, null, true, false);
+        d = Drivers.driverInit("chrome", "https://www.newegg.com/", true);
+//        d = Drivers.driverInit("Windows 10", "chrome", app, null, null, true, false);
         d.manage().window().maximize();
     }
 

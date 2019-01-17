@@ -21,12 +21,10 @@ public class AssertInList {
 	
 	@BeforeTest
 	public static void beforeTest(){
-		d = Drivers.chromeDriver(thisURL3, false);
+		DefaultConfig.appAddress = thisURL3;
+		d = DefaultConfig.defaultConfig();
 	}
-//	public static void beforeTest(){
-//		d = Drivers.chromeDriver(null, thisURL3);
-//	}
-	
+
 	@Test
 	public static void test(){
 //		Commands.waitForEl(d, PropsCommands.cssSelector, cssNewsList);

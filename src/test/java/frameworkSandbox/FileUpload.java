@@ -15,16 +15,10 @@ public class FileUpload {
 	
 	@BeforeTest
 	public static void beforeTest(){
-		File file = new File("/Users/darrinwhitley/Documents/workspace/slCreds");
-		String [] kv = ReadFile.readFile(file, "sauceLabs");
-
-		d = Drivers.driverInit("Windows 10", "chrome",
-				"http://sl-test.herokuapp.com/guinea_pig/file_upload", kv[0], kv[1], true, true);
-//		d = Drivers.checkSauceLabs("Windows 10", "chrome", "http://sl-test.herokuapp.com/guinea_pig/file_upload", file, false);
-//		d = Drivers.firefoxDriver(null, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
-//		d = Drivers.firefoxDriver("http://sl-test.herokuapp.com/guinea_pig/file_upload");
-//		d = Drivers.safariDriver(null, "http://sl-test.herokuapp.com/guinea_pig/file_upload");
-		d.manage().window().maximize();
+		DefaultConfig.appAddress = "http://sl-test.herokuapp.com/guinea_pig/file_upload";
+		DefaultConfig.runSauceLabs = false;
+		d = DefaultConfig.defaultSauceLabsConfig();
+//		d = DefaultConfig.defaultConfig();
 	}
 	
 	@Test

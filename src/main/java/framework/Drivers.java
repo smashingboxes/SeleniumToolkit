@@ -14,31 +14,41 @@ import org.openqa.selenium.safari.SafariDriver;
 public class Drivers {
 
 	/**
-	 * Initializes the web driver according to the given parameters. This method determines if the test will be run
-	 * locally or on SauceLabs and determines which type of driver to use.
+	 * Initializes the web driver according to the given parameters locally
+	 *
+	 * @param  browser		the intended browser that the test will run in
+	 * @param  appAddress	the url that the browser will load
+	 * @param  headless		the flag for running in headless mode; true if test will run on headless mode, false if
+	 *                      	test will run in the browser
+	 */
+	public static WebDriver driverInit(String browser, String appAddress, Boolean headless){
+		switch(browser){
+			case "firefox": return firefoxDriver(appAddress, headless);
+			case "chrome": return chromeDriver(appAddress, headless);
+			case "safari": return safariDriver(appAddress);
+			default: return chromeDriver(appAddress, headless);
+		}
+	}
+
+	/**
+	 * Initializes the web driver according to the given parameters in SauceLabs.
 	 *
 	 * @param  platform		the intended operating system that the test will run in
 	 * @param  browser		the intended browser that the test will run in
 	 * @param  appAddress	the url that the browser will load
 	 * @param  slUser	   	the username that will be passed to SauceLabs
 	 * @param  slPass		the password that will be passed to SauceLabs
-	 * @param  runSL		the flag for running SauceLabs; true if test will run on SauceLabs, false if test will run
-	 *                      	locally
 	 * @param  headless		the flag for running in headless mode; true if test will run on headless mode, false if
-	 *                      	test will run in the browser
+	 *                      	test will run in the browser; does not matter if {@param runSauceLabs} is true
 	 */
-	public static WebDriver driverInit(String platform, String browser, String appAddress, String slUser,
-									   String slPass, Boolean runSL, Boolean headless){
-		if (runSL){
+	public static WebDriver driverInit(String platform, String browser, String appAddress, Boolean runSauceLabs,
+									   String slUser, String slPass, Boolean headless){
+		if (runSauceLabs){
 			return SauceLabsUtils.sauceLabsConfig(slUser, slPass, browser, platform, appAddress);
 		} else {
-			switch(browser){
-				case "firefox": return firefoxDriver(appAddress, headless);
-				case "chrome": return chromeDriver(appAddress, headless);
-				case "safari": return safariDriver(appAddress);
-				default: return chromeDriver(appAddress, headless);
-			}
+			return driverInit(browser, appAddress, headless);
 		}
+
 	}
 
 	/**
