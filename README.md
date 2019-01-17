@@ -25,6 +25,13 @@ Dependencies
 * Selenium Jupiter 2.2.0
 * Sauce TestNG 2.1.21
 
+# Gradle setup:
+```
+dependencies {
+  compile 'com.github.smashingboxes:SeleniumToolkit:0.7.4'
+}
+```
+
 #Toolkit Commands
 
 The Commands.java class contains the bulk of the commands that can be used in the Toolkit. Typically, each command requires a WebElement object and a short Description string. The Selenium action would be done on the WebElement object and the short Description would be used for the console printout to identify which steps have been executed.
