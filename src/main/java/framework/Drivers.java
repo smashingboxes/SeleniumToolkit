@@ -44,7 +44,7 @@ public class Drivers {
 	 * @param  headless			the flag for running in headless mode; true if test will run on headless mode, false if
 	 *                      		test will run in the browser; does not matter if {@param runSauceLabs} is true
 	 */
-	public static WebDriver driverInit(String platform, String browser, String appAddress, Boolean runSauceLabs,
+	public static WebDriver driverInit(String browser, String appAddress, String platform, Boolean runSauceLabs,
 									   String slUser, String slPass, Boolean headless){
 
 		if (appAddress == null){ Assert.fail("Please provide an application URL."); }

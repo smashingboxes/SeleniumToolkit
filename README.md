@@ -34,6 +34,17 @@ dependencies {
 
 # Initializing the driver
 
+For basic driver initialization:
+```
+Drivers.driverInit(browser, appAddress, headless)
+```
+
+For SauceLabs driver initialization:
+```
+Drivers.driverInit(browser, appAddress, platform, runSauceLabs, slUser, slPass, headless)
+```
+
+For info about available platforms in SauceLabs, go to [INSERT LINK HERE]. Please note that the "runSauceLabs" and "headless" parameters are of boolean type in order to provide the option to run particular tests locally in spite of your SauceLabs setup.
 
 #Toolkit Commands
 

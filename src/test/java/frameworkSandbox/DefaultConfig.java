@@ -23,7 +23,7 @@ public class DefaultConfig {
     }
 
     public static WebDriver defaultSauceLabsConfig(){
-        return Drivers.driverInit(platform, browser, appAddress, runSauceLabs, sauceLabsUser, sauceLabsPass, headless);
+        return Drivers.driverInit(browser, appAddress, platform, runSauceLabs, sauceLabsUser, sauceLabsPass, headless);
     }
 
     private static String[] getSLCreds(){
