@@ -10,11 +10,12 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
+import org.testng.Assert;
 
 public class Drivers {
 
 	/**
-	 * Initializes the web driver according to the given parameters locally
+	 * Initializes the web driver locally according to the given parameters
 	 *
 	 * @param  browser		the intended browser that the test will run in
 	 * @param  appAddress	the url that the browser will load
@@ -31,18 +32,23 @@ public class Drivers {
 	}
 
 	/**
-	 * Initializes the web driver according to the given parameters in SauceLabs.
+	 * Initializes the web driver in SauceLabs according to the given parameters
 	 *
-	 * @param  platform		the intended operating system that the test will run in
-	 * @param  browser		the intended browser that the test will run in
-	 * @param  appAddress	the url that the browser will load
-	 * @param  slUser	   	the username that will be passed to SauceLabs
-	 * @param  slPass		the password that will be passed to SauceLabs
-	 * @param  headless		the flag for running in headless mode; true if test will run on headless mode, false if
-	 *                      	test will run in the browser; does not matter if {@param runSauceLabs} is true
+	 * @param  platform			the intended operating system that the test will run in
+	 * @param  browser			the intended browser that the test will run in
+	 * @param  appAddress		the url that the browser will load
+	 * @param  runSauceLabs		the flag for running test in SauceLabs; true if test will run in SauceLabs, false if
+	 *                          	test will run locally
+	 * @param  slUser	   		the username that will be passed to SauceLabs
+	 * @param  slPass			the password that will be passed to SauceLabs
+	 * @param  headless			the flag for running in headless mode; true if test will run on headless mode, false if
+	 *                      		test will run in the browser; does not matter if {@param runSauceLabs} is true
 	 */
 	public static WebDriver driverInit(String platform, String browser, String appAddress, Boolean runSauceLabs,
 									   String slUser, String slPass, Boolean headless){
+
+		if (appAddress == null){ Assert.fail("Please provide an application URL."); }
+
 		if (runSauceLabs){
 			return SauceLabsUtils.sauceLabsConfig(slUser, slPass, browser, platform, appAddress);
 		} else {
