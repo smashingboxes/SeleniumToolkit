@@ -26,20 +26,18 @@ public class SauceLabsUtils {
                                             String appAddress) {
         RemoteWebDriver driver = null;
 
-        if (slUser == null){
-            Assert.fail("Please provide a SauceLabs username");
-        } else if (slPass == null){
-            Assert.fail("Please provide a SauceLabs password");
-        } else {
-            try {
-                final String URL = "https://" + slUser + ":" + slPass + "@ondemand.saucelabs.com:443/wd/hub";
-                driver = new RemoteWebDriver(new URL(URL), Drivers.setCaps(browser, platform));
-                driver.setFileDetector(new LocalFileDetector());
-                driver.get(appAddress);
-                System.out.println("title of page is: " + driver.getTitle());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        if (slUser == null){ Assert.fail("Please provide a SauceLabs username"); }
+        if (slPass == null){ Assert.fail("Please provide a SauceLabs password"); }
+        if (appAddress == null){ Assert.fail("Please provide an application URL."); }
+
+        try {
+            final String URL = "https://" + slUser + ":" + slPass + "@ondemand.saucelabs.com:443/wd/hub";
+            driver = new RemoteWebDriver(new URL(URL), Drivers.setCaps(browser, platform));
+            driver.setFileDetector(new LocalFileDetector());
+            driver.get(appAddress);
+            System.out.println("title of page is: " + driver.getTitle());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
         return driver;

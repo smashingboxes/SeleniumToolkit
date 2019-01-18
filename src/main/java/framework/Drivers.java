@@ -47,8 +47,6 @@ public class Drivers {
 	public static WebDriver driverInit(String browser, String appAddress, String platform, Boolean runSauceLabs,
 									   String slUser, String slPass, Boolean headless){
 
-		if (appAddress == null){ Assert.fail("Please provide an application URL."); }
-
 		if (runSauceLabs){
 			return SauceLabsUtils.sauceLabsConfig(slUser, slPass, browser, platform, appAddress);
 		} else {
@@ -104,8 +102,7 @@ public class Drivers {
 
 		WebDriverManager.chromedriver().setup(); //Retrieves the most current and compatible chrome web driver
 		WebDriver driver = new ChromeDriver(co);
-		driver.get(appAddress);
-		return driver;
+		return checkAppAddress(driver, appAddress);
 	}
 	
 	/**
@@ -116,8 +113,7 @@ public class Drivers {
 	public static WebDriver safariDriver(String appAddress){
 		System.setProperty("webdriver.safari.noinstall", "true");
 		WebDriver driver = new SafariDriver();
-		driver.get(appAddress);
-		return driver;
+		return checkAppAddress(driver, appAddress);
 	}
 
 	/**
@@ -144,6 +140,17 @@ public class Drivers {
 		WebDriverManager.firefoxdriver().setup(); //Retrieves the most current and compatible firefox web driver
 		
 		WebDriver driver = new FirefoxDriver(fo);
+		return checkAppAddress(driver, appAddress);
+	}
+
+	/**
+	 * Checks if {@param appAddress} is null. If not, then visit the given page
+	 *
+	 * @param  driver	the web driver through which the action will take place
+	 * @param  appAddress	the url that the browser will load
+	 */
+	public static WebDriver checkAppAddress(WebDriver driver, String appAddress){
+		if (appAddress == null){ Assert.fail("Please provide an application URL."); }
 		driver.get(appAddress);
 		return driver;
 	}
