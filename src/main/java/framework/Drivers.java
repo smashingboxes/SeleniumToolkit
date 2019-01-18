@@ -23,6 +23,7 @@ public class Drivers {
 	 *                      	test will run in the browser
 	 */
 	public static WebDriver driverInit(String browser, String appAddress, Boolean headless){
+	    checkAvailableBrowsers(browser);
 		switch(browser){
 			case "firefox": return firefoxDriver(appAddress, headless);
 			case "chrome": return chromeDriver(appAddress, headless);
@@ -58,6 +59,16 @@ public class Drivers {
 	/**
 	 * Sets the capabilities for the web driver based on given {@param browser} and {@param platform}.
 	 *
+	 * Note: PC platform options are: Windows 10, Windows 8.1, Windows 8, Windows 7, Linux
+	 * Note: MAC platform options are:
+	 * 		macOS 10.14 = Mojave
+	 * 		macOS 10.13	= High Sierra
+	 * 		macOS 10.12 = Sierra
+	 * 		OS X 10.11 = El Capitan
+	 * 		OS X 10.10 = Yosemite
+	 * Note: Chrome version options are: 71.0 to 26.0
+	 * Note: Firefox version options are: 64.0 to 4.0 (in addition to 25.0b2 and 21.0b1)
+	 *
 	 * @param  platform		the intended operating system that the test will run in
 	 * @param  browser		the intended browser that the test will run in
 	 */
@@ -67,23 +78,20 @@ public class Drivers {
 		switch (browser){
 			case "firefox":
 				caps = DesiredCapabilities.firefox();
-				caps.setCapability("version", "52.0");
-				
-				switch (platform){
-					case "Windows 10": caps.setCapability("platform", platform); return caps;
-					default: return null;
-				}
+				caps.setCapability("version", "60.0"); break;
 			case "chrome":
 				caps = DesiredCapabilities.chrome();
-				caps.setCapability("version", "58");
-				
-				switch (platform){
-					case "Windows 10": caps.setCapability("platform", platform); return caps;
-				default: return null;
-			}
-			default: return null;
-		}
-	}
+				caps.setCapability("version", "69.0"); break;
+            case "safari":
+                caps = DesiredCapabilities.safari();break;
+            default: caps = DesiredCapabilities.chrome(); caps.setCapability("version", "69.0");
+                break;
+        }
+
+        checkAvailablePlatforms(platform);
+        caps.setCapability("platform", platform);
+        return caps;
+    }
 
 	/**
 	 * Sets up the Chrome web driver
@@ -149,9 +157,69 @@ public class Drivers {
 	 * @param  driver	the web driver through which the action will take place
 	 * @param  appAddress	the url that the browser will load
 	 */
-	public static WebDriver checkAppAddress(WebDriver driver, String appAddress){
+	private static WebDriver checkAppAddress(WebDriver driver, String appAddress){
 		if (appAddress == null){ Assert.fail("Please provide an application URL."); }
 		driver.get(appAddress);
 		return driver;
 	}
+
+    /**
+     * Checks if {@param platform} matches a supported platform in SauceLabs.
+     *
+     * @param  platform		the intended operating system that the test will run in
+     */
+	private static void checkAvailablePlatforms(String platform){
+		Boolean found = false;
+
+		for(String thisP : listOfPlatforms()){
+		    if (platform.equals(thisP)){
+		        found = true;
+		        break;
+            }
+        }
+
+        if (!found){
+		    Assert.fail("You must enter a valid platform that is handled by SauceLabs. Here are the available " +
+                    "options: \n * For PC platforms: \"Windows 10\", \"Windows 8.1\", \"Windows 8\", \"Windows 7\", " +
+                    "\"Linux\" \n * For MAC platforms: \"macOS 10.14\" (Mojave), \"macOS 10.13\" (High Sierra), " +
+                    "\"macOS 10.12\" (Sierra), \"OS X 10.11\" (El Capitan), \"OS X 10.10\" (Yosemite)");
+        }
+	}
+
+    public static void checkAvailableBrowsers(String browser){
+        Boolean found = false;
+
+        for(String thisB : listOfBrowsers()){
+            if (browser.equals(thisB)){
+                found = true;
+                break;
+            }
+        }
+
+        if (!found){
+            Assert.fail("You must enter a valid platform that is handled by SauceLabs. Here are the available " +
+                    "options: \"chrome\", \"firefox\", \"safari\"");
+        }
+    }
+
+    /**
+     * A list of platforms supported by SauceLabs
+     */
+	private static String[] listOfPlatforms(){
+	    return new String[]{"Windows 10", "Windows 8.1", "Windows 8", "Windows 7", "Linux",
+                "macOS 10.14", "macOS 10.13", "macOS 10.12", "OS X 10.11", "OS X 10.10"};
+    }
+
+    /**
+     * A list of browsers supported by the Toolkit
+     */
+    private static String[] listOfBrowsers(){
+	    return new String[]{"firefox", "chrome", "safari"};
+    }
+
+//    private static void checkPlatFormBrowserCompatability(String platform){
+//        if (System.getProperty("os.name").contains("Windows") && platform.equals("safari")){
+//            Assert.fail("Browser/Platform mismatch! ");
+//        }
+//    }
 }

@@ -29,6 +29,7 @@ public class SauceLabsUtils {
         if (slUser == null){ Assert.fail("Please provide a SauceLabs username"); }
         if (slPass == null){ Assert.fail("Please provide a SauceLabs password"); }
         if (appAddress == null){ Assert.fail("Please provide an application URL."); }
+        Drivers.checkAvailableBrowsers(browser);
 
         try {
             final String URL = "https://" + slUser + ":" + slPass + "@ondemand.saucelabs.com:443/wd/hub";

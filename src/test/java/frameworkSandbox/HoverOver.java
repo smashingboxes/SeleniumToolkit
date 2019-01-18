@@ -1,7 +1,9 @@
 package frameworkSandbox;
 
+import framework.Browsers;
 import framework.Commands;
 import framework.Drivers;
+import framework.Platforms;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,7 +21,11 @@ public class HoverOver {
     @BeforeTest
     public static void beforeTest(){
         DefaultConfig.appAddress = "https://www.amazon.com/";
-        d = DefaultConfig.defaultConfig();
+        DefaultConfig.runSauceLabs = true;
+        DefaultConfig.platform = Platforms.highSierra;
+        DefaultConfig.browser = Browsers.safari;
+//        d = DefaultConfig.defaultConfig();
+        d = DefaultConfig.defaultSauceLabsConfig();
         PageFactory.initElements(d, HoverOver.class);
     }
 

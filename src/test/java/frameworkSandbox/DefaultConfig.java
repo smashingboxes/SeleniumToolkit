@@ -1,14 +1,16 @@
 package frameworkSandbox;
 
+import framework.Browsers;
 import framework.Drivers;
+import framework.Platforms;
 import org.openqa.selenium.WebDriver;
 
 import java.io.File;
 
 public class DefaultConfig {
 
-    public static String platform = "Windows 10";
-    public static String browser = "chrome";
+    public static String platform = Platforms.windows10;
+    public static String browser = Browsers.chrome;
     public static String appAddress;
     public static Boolean headless = true;
 
