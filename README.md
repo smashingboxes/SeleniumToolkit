@@ -5,7 +5,7 @@ SeleniumToolkit is a Java library that allows for faster development of function
 The toolkit handles the following:
 
 * Executing Selenium commands transparently
-* Running test scripts in Chrome, Firefox, and Safari with headless option
+* Running test scripts in Chrome, Firefox, and Safari with headless option for Chrome and Firefox
 * Running test scripts in SauceLabs for remote/virtual testing (SauceLabs account required)
 * Sending test run results to PractiTest for documentation (PractiTest account required)
 * WebDriver version management and configuration according to given parameters
@@ -28,7 +28,7 @@ Dependencies
 # Gradle setup:
 ```
 dependencies {
-  compile 'com.github.smashingboxes:SeleniumToolkit:0.7.4'
+  compile 'com.github.smashingboxes:SeleniumToolkit:0.7.6'
 }
 ```
 
