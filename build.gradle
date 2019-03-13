@@ -30,7 +30,7 @@ dependencies {
     //implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.41.0'
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.0'
 
-    // Use JUnit test framework
+    // Use JUnit test framework (duplicate)
 //    testImplementation 'junit:junit:4.12'
     implementation group: 'org.testng', name: 'testng', version: '6.11'
 
