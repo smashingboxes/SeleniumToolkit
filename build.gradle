@@ -38,6 +38,6 @@ dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '3.14.0'
 
     // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
-    compile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '2.2.1'
-    compile group: 'io.github.bonigarcia', name: 'selenium-jupiter', version: '2.2.0'
+    compile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '3.3.0'
+    compile group: 'io.github.bonigarcia', name: 'selenium-jupiter', version: '3.1.1'
 }
