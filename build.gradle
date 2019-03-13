@@ -28,14 +28,14 @@ dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:21.0'
     //implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.41.0'
-    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.8.1'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.0'
 
     // Use JUnit test framework
-    testImplementation 'junit:junit:4.12'
+//    testImplementation 'junit:junit:4.12'
     implementation group: 'org.testng', name: 'testng', version: '6.11'
 
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver
-    compile group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '3.14.0'
+//    compile group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '3.14.0'
 
     // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
     compile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '3.3.0'
