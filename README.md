@@ -22,13 +22,12 @@ Dependencies
 * JUnit 4.12
 * TestNG 6.11
 * WebDriverManager 2.2.1
-* Selenium Jupiter 2.2.0
 * Sauce TestNG 2.1.21
 
 # Gradle setup:
 ```
 dependencies {
-  compile 'com.github.smashingboxes:SeleniumToolkit:0.7.6'
+  compile 'com.github.smashingboxes:SeleniumToolkit:0.7.9'
 }
 ```
 
@@ -44,7 +43,7 @@ For SauceLabs driver initialization:
 Drivers.driverInit(browser, appAddress, platform, runSauceLabs, slUser, slPass, headless)
 ```
 
-For info about available platforms in SauceLabs, go to [INSERT LINK HERE]. Please note that the "runSauceLabs" and "headless" parameters are of boolean type in order to provide the option to run particular tests locally in spite of your SauceLabs setup.
+For info about available platforms in SauceLabs, go to https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/. Please note that the "runSauceLabs" and "headless" parameters are of boolean type in order to provide the option to run particular tests locally in spite of your SauceLabs setup.
 
 #Toolkit Commands
 

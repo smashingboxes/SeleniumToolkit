@@ -10,7 +10,7 @@ import java.io.File;
 public class DefaultConfig {
 
     public static String platform = Platforms.windows10;
-    public static String browser = Browsers.firefox;
+    public static String browser = Browsers.chrome;
     public static String appAddress;
     public static Boolean headless = true;
 

@@ -1,5 +1,6 @@
 package frameworkSandbox;
 
+import framework.Commands;
 import framework.Drivers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import java.util.logging.Logger;
 
 public class BrowserTest {
 
@@ -25,6 +28,17 @@ public class BrowserTest {
     @Test
     public void testSauce() throws Exception {
         WebElement upload = d.findElement(By.id("myfile"));
+        Commands.printStep("thisStep", "do this thing");
+        upload.sendKeys("/Users/darrinwhitley/Downloads/057_original_print.jpg");
+        d.findElement(By.id("submit")).click();
+        d.findElement(By.tagName("img"));
+        Assert.assertEquals("057_original_print.jpg (image/jpeg)", d.findElement(By.tagName("p")).getText());
+    }
+
+    @Test
+    public void testSauce1() throws Exception {
+        WebElement upload = d.findElement(By.id("myfile"));
+        Commands.printStep("thisStep", "do this thing");
         upload.sendKeys("/Users/darrinwhitley/Downloads/057_original_print.jpg");
         d.findElement(By.id("submit")).click();
         d.findElement(By.tagName("img"));
